@@ -14,15 +14,17 @@ from qa_engine.base import QABase
 
 # Our simple grammar from class (and the book)
 GRAMMAR =   """
-            N: {<PRP>|<NN.*>}
+            N: {<NN>}
             V: {<V.*>}
             ADJ: {<JJ.*>}
-            NP: {<DT>? <ADJ>* <N>+}
+            NP: {<DT>? <ADJ>* <N>}
             PP: {<IN> <NP>}
             VP: {<TO>? <V> (<NP>|<PP>)*}
             """
 
-LOC_PP = set(["in", "on", "at"])
+LOC_PP = ["in", "on", "at", "under", "near", "by", "along", "in front of", "on top of", "inside", "outside", "up",
+          "towards", "past", "over", "through", "above", "across", "against", "among", "back", "in back of",
+          "at the back of", "behind", "beside", "next to", "between", "close to", "inside", "underneath"]
 
 
 def get_sentences(text):
@@ -87,7 +89,7 @@ if __name__ == '__main__':
     chunker = nltk.RegexpParser(GRAMMAR)
     lmtzr = WordNetLemmatizer()
     
-    question_id = "fables-01-1"
+    question_id = "fables-01-5"
 
     driver = QABase()
     q = driver.get_question(question_id)
@@ -99,9 +101,11 @@ if __name__ == '__main__':
     
     # Assume we're given the keywords for now
     # What is happening
-    verb = "sitting"
+    verb = "standing"
+    # verb = "sitting"
     # Who is doing it
-    subj = "crow"
+    subj = "fox"
+    # subj = "crow"
     # Where is it happening (what we want to know)
     loc = None
     
