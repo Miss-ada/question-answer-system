@@ -8,7 +8,7 @@ Modified on May 21, 2015
 
 import sys, nltk, operator, collections
 from qa_engine.base import QABase
-
+from dependency_demo_stub import *
 
 # The standard NLTK pipeline for POS tagging a document
 def get_sentences(text):
@@ -55,10 +55,89 @@ def baseline(qbow, sentences, stopwords):
     best_answer = (answers[0])[1]    
     return best_answer
 
+def get_address(node, rel):
+    if node['deps'][rel]:
+        return node['deps'][rel]
+    return None
 
+def add_dependency(node, qgraph):
+    if len(node['deps']) > 0:
+        deps = get_dependents(node, qgraph)
+        deps = sorted(deps+[node], key=operator.itemgetter("address"))
+        return " ".join(dep["word"] for dep in deps)
+    return node['word']
+
+def reformulate_question(q):
+    question = q["text"]
+    qgraph = q['dep']
+    qmain = find_main(qgraph)
+    qword = qmain["word"]
+    qnode = find_node(qword, qgraph)
+    
+    nsubj_address = get_address(qnode, 'nsubj')
+    dobj_address = get_address(qnode, 'dobj')
+    nmod_address = get_address(qnode, 'nmod')
+    be_address = get_address(qnode, 'cop')
+    
+    nsubj = ''
+    dobj = ''
+    nmod = ''
+    be = ''
+    
+    dependencies = get_dependents(qnode, qgraph)
+    #where
+    reformulatedQ = ''
+    if "Where" in question:
+        #a. where is nsubj.?/#b. where did nsubj do something? 
+        for node in dependencies:
+            if node['address'] == nsubj_address:
+                nsubj = add_dependency(node,qgraph)
+        reformulatedQ = " ".join([nsubj, qword, "somewhere"])
+    elif "When" in question:
+        for node in dependencies:
+            if node['address'] == nsubj_address:
+                nsubj = add_dependency(node, qgraph)
+        reformulatedQ = " ".join([nsubj, qword, "sometime"])
+    elif "Who" in question:
+        #a. who did something?
+        if qword != "Who":
+            for node in dependencies:
+                if node['address'] == dobj_address:
+                    dobj = node['word']
+            reformulatedQ = " ".join(["someone", qword, dobj])
+        #b. who is nsubj. about?  qword == "Who"
+        else:
+            for node in dependencies:
+                if node['address'] == nsubj_address:
+                    nsubj = node['word']
+                elif node['address'] == be_address:
+                    be = node['word']
+                elif node['address'] == nmod_address:
+                    nmod = node['word']
+            reformulatedQ = " ".join([nsubj, be, nmod, "someone"])
+    elif "What" in question:
+        #a. what did nsubj. do?
+        for node in dependencies:
+            if node['address'] == nsubj_address:
+                nsubj = add_dependency(node,qgraph)
+        reformulatedQ = " ".join([nsubj, qword, "something"])
+        
+    return reformulatedQ
+
+def QAmatching_reformulate(question,text):
+    reformulated_question = reformulate_question(question)
+    for sentence in text:
+        #highest level: strict matching
+        #secondary level: most words overlap
+        pass
+        
+
+def QAmatching_word_embedding(question, text):
+    pass
+    
 if __name__ == '__main__':
 
-    question_id = "fables-01-2"
+    question_id = "blogs-01-4"
     # for qid in hw6-questions.csv:
     driver = QABase()
     q = driver.get_question(question_id)

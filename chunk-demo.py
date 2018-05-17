@@ -26,6 +26,7 @@ LOC_PP = ["in", "on", "at", "under", "near", "by", "along", "in front of", "on t
           "towards", "past", "over", "through", "above", "across", "against", "among", "back", "in back of",
           "at the back of", "behind", "beside", "next to", "between", "close to", "inside", "underneath"]
 
+TIME_PP = ["at", "on", "in", "when", "last", "next", "today", "yesterday", "tomorrow"]
 
 def get_sentences(text):
     sentences = nltk.sent_tokenize(text)
@@ -39,6 +40,9 @@ def pp_filter(subtree):
 
 def is_location(prep):
     return prep[0] in LOC_PP
+
+def is_time(prep):
+    return prep[0] in TIME_PP
 
 def find_locations(tree):
     # Starting at the root of the tree
@@ -57,6 +61,19 @@ def find_locations(tree):
             locations.append(subtree)
     
     return locations
+
+def find_subj(tree):
+    pass
+
+def find_obj(tree):
+    pass
+
+def find_time(tree):
+    pass
+
+def find_reason(tree):
+    pass
+
 
 def find_candidates(sentences, chunker):
     candidates = []

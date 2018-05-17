@@ -44,7 +44,7 @@ def get_answer(question, story):
     q = question['text']
     if (question['type'] == 'sch'):
         text = story['sch']
-    else
+    else:
         text = story['text']
 
     qbow = get_bow(get_sentences(q)[0], stopwords)
