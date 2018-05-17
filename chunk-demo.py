@@ -18,7 +18,7 @@ GRAMMAR =   """
             V: {<V.*>}
             ADJ: {<JJ.*>}
             NP: {<DT>? <ADJ>* <N>}
-            PP: {<IN> <NP>}
+            PP: {<IN> <NP> <IN>? <NP>?}
             VP: {<TO>? <V> (<NP>|<PP>)*}
             """
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     chunker = nltk.RegexpParser(GRAMMAR)
     lmtzr = WordNetLemmatizer()
     
-    question_id = "fables-01-5"
+    question_id = "fables-01-1"
 
     driver = QABase()
     q = driver.get_question(question_id)
@@ -101,11 +101,11 @@ if __name__ == '__main__':
     
     # Assume we're given the keywords for now
     # What is happening
-    verb = "standing"
-    # verb = "sitting"
+    # verb = "standing"
+    verb = "sitting"
     # Who is doing it
-    subj = "fox"
-    # subj = "crow"
+    # subj = "fox"
+    subj = "crow"
     # Where is it happening (what we want to know)
     loc = None
     
