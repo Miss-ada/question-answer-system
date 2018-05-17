@@ -9,6 +9,10 @@ Modified on May 21, 2015
 import sys, nltk, operator, collections
 from qa_engine.base import QABase
 from dependency_demo_stub import *
+import gensim
+model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
+#from word2vec_extractor import Word2vecExtractor
+#w2vecextractor = Word2vecExtractor("GoogleNews-vectors-negative300.bin")
 
 # The standard NLTK pipeline for POS tagging a document
 def get_sentences(text):
@@ -133,11 +137,21 @@ def QAmatching_reformulate(question,text):
         
 
 def QAmatching_word_embedding(question, text):
-    pass
+    sentences = nltk.sent_tokenize(text)
+    lowest_distance = 10
+    closest_sentence = ''
+    for sentence in sentences:
+        distance = model.wmdistance(question, sentence)
+        if distance < lowest_distance:
+            lowest_distance = distance
+            closest_sentence = sentence
+    print (closest_sentence, "distance = %.3f" % lowest_distance)
     
+    return closest_sentence
+
 if __name__ == '__main__':
 
-    question_id = "blogs-01-4"
+    question_id = "blogs-01-3"
     # for qid in hw6-questions.csv:
     driver = QABase()
     q = driver.get_question(question_id)
