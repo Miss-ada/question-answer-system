@@ -3,6 +3,7 @@ from qa_engine.base import QABase
 from qa_engine.score_answers import main as score_answers
 from baseline_stub import *
 from dependency_demo_stub import *
+from chunk_demo import *
 
 stopwords = set(nltk.corpus.stopwords.words("english"))
 
@@ -50,7 +51,13 @@ def get_answer(question, story):
     qbow = get_bow(get_sentences(q)[0], stopwords)
     sentences = get_sentences(text)
     answer = baseline(qbow, sentences, stopwords)
-    return( " ".join(t[0] for t in answer))
+    better_answer = chunk_demo.get_better_answer(q)
+    if better_answer is None:
+        best_answer = answer
+    else:
+        best_answer = better_answer
+
+    return( " ".join(t[0] for t in best_answer))
 
     # answer = "whatever you think the answer is"
 
