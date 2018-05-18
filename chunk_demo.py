@@ -128,35 +128,49 @@ def find_sentences(patterns, sentences):
     return result
 
 def get_better_answer(q):
+    crow_sentences = find_sentences([subj, verb], sentences)
+    chunker = nltk.RegexpParser(GRAMMAR)
+    locations = find_candidates(crow_sentences, chunker)
     answer = None
+    driver = QABase()
+    q = driver.get_question(question_id)
+    story = driver.get_story(q["sid"])
+    text = story["text"]
+    sentences = get_sentences(text)
     state_question = baseline_stub.reformulate_question(q)
-        if 'somewhere' in state_question:
-            nsubj = parsed_question_dic["nsubj"]
-            verb = parsed_question_dic["verb"]
+    parsed_dic = parsed_question_dic(q)
+    if 'somewhere' in state_question:
+        subj = parsed_dic["nsubj"]
+        verb = parsed_dic["verb"]
+        # loc = None
+        answer = find_locations(tree)
+    if 'sometime' in state_question:
+        subj = parsed_dic["nsubj"]
+        verb = parsed_dic["verb"]
+    if 'someone' in state_question:
+        if state_question.startwith('someone'):
+            answer = find_subj(sentences)
+        # else:
+        #     dobj = None
+    if 'somewhat' in state_question:
+        if 'direct_object' in state_question:
+            subj = parsed_dic["nsubj"]
+            verb = parsed_dic["verb"]
+        if 'indirect_object' in state_question:
+            subj = parsed_dic["nsubj"]
+            verb = parsed_dic["verb"]
+        if 'verb' in state_question:
+            subj = parsed_dic["nsubj"]
 
-        if 'sometime' in state_question:
-            verb = parsed_question_dic["verb"]
-            nsubj = parsed_question_dic["nsubj"]
-        if 'someone' in state_question:
-            if state_question.startwith('someone'):
-                subj = None
-            else:
-                dobj = None
-        if 'somewhat' in state_question:
-            if 'direct_object' in state_question:
-                dobj = None
-            if 'indirect_object' in state_question:
-                iobj = None
-            if 'verb' in state_question:
-                verb = None
-        if 'somewhy' in state_question:
-
-        return answer
+    if 'somewhy' in state_question:
+        subj = parsed_dic["nsubj"]
+        verb = parsed_dic["verb"]
+    return answer
 
 if __name__ == '__main__':
-    # Our tools
-    chunker = nltk.RegexpParser(GRAMMAR)
-    lmtzr = WordNetLemmatizer()
+    # # Our tools
+    # chunker = nltk.RegexpParser(GRAMMAR)
+    # lmtzr = WordNetLemmatizer()
 
     # question_id = "blogs-01-3"
     # question_id = "mc500.train.0.12"
@@ -166,21 +180,21 @@ if __name__ == '__main__':
     # question_id = "fables-02-1"
     # question_id = "fables-01-3"
 
-    driver = QABase()
-    q = driver.get_question(question_id)
-    story = driver.get_story(q["sid"])
-    # sentences = story["story_par"]
-    text = story["text"]
-    # print(text)
+    # driver = QABase()
+    # q = driver.get_question(question_id)
+    # story = driver.get_story(q["sid"])
+    # # sentences = story["story_par"]
+    # text = story["text"]
+    # # print(text)
     # Apply the standard NLP pipeline we've seen before
 
-    sentences = get_sentences(text)
+    # sentences = get_sentences(text)
 
     # print(sentences)
     # Assume we're given the keywords for now
-
-    better_answer = get_better_answer(q)
-    print(better_answer)
+    #
+    # better_answer = get_better_answer(q)
+    # print(better_answer)
 
 
     # What is happening
@@ -212,18 +226,18 @@ if __name__ == '__main__':
 
     # crow_sentences = find_sentences(subj, sentences)
 
-    crow_sentences = find_sentences([subj, verb], sentences)
+    # crow_sentences = find_sentences([subj, verb], sentences)
 
     # crow_sentences = find_sentences([subj_stem, verb_stem], sentences)
 
     # Extract the candidate locations from these sentences
-    locations = find_candidates(crow_sentences, chunker)
+    # locations = find_candidates(crow_sentences, chunker)
 
     # Print them out
-
-    for loc in locations:
-        print(loc)
-        print(" ".join([token[0] for token in loc.leaves()]))
+    #
+    # for loc in locations:
+    #     print(loc)
+    #     print(" ".join([token[0] for token in loc.leaves()]))
 
     # for who in find_subj(sentences):
     #     print(who)
