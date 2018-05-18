@@ -61,7 +61,7 @@ def baseline(qbow, sentences, stopwords):
 
 def get_address(node, rel):
     if node['deps'][rel]:
-        return node['deps'][rel]
+        return node['deps'][rel][0]
     return None
 
 def add_dependency(node, qgraph):
@@ -71,69 +71,124 @@ def add_dependency(node, qgraph):
         return " ".join(dep["word"] for dep in deps)
     return node['word']
 
-def reformulate_question(q):
-    question = q["text"]
+
+def get_dependents(node, graph):
+    results = []
+    for item in node["deps"]:
+        if len(node["deps"][item]) > 0:
+            address = node["deps"][item][0]
+            dep = graph.nodes[address]
+            results.append(dep)
+            results = results + get_dependents(dep, graph)     
+    return results
+
+def parse_question(q):
     qgraph = q['dep']
     qmain = find_main(qgraph)
     qword = qmain["word"]
     qnode = find_node(qword, qgraph)
+    dependencies = get_dependents(qnode, qgraph)
+    
+    nsubj = None
+    dobj = None
+    iobj =None
+    nmod = None
+    loc = None
+    be = None
+    verb = None
     
     nsubj_address = get_address(qnode, 'nsubj')
     dobj_address = get_address(qnode, 'dobj')
+    iobj_address = get_address(qnode, 'iobj')
+    loc_address = get_address(qnode, 'loc')
     nmod_address = get_address(qnode, 'nmod')
     be_address = get_address(qnode, 'cop')
+    verb_address = None
     
-    nsubj = ''
-    dobj = ''
-    nmod = ''
-    be = ''
+    if be_address is None:
+        verb = qword
+
     
-    dependencies = get_dependents(qnode, qgraph)
+    for node in dependencies:
+        if node['address'] == nsubj_address:
+            nsubj = add_dependency(node,qgraph)
+        elif node['address'] == dobj_address:
+            dobj = add_dependency(node,qgraph)
+        elif node['address'] == iobj_address:
+            iobj = add_dependency(node,qgraph)
+        elif node['address'] == loc_address:
+            loc = add_dependency(node,qgraph)
+        elif node['address'] == nmod_address:
+            nmod = add_dependency(node,qgraph)
+        elif node['address'] == be_address:
+            be = add_dependency(node,qgraph)
+        
+    return qnode, dependencies, nsubj, dobj, iobj, nmod, loc, be, verb
+    
+
+def parsed_question_dic(q):
+    qnode, dependencies, nsubj, dobj, iobj, nmod, loc, be, verb = parse_question(q)
+    dic = {}
+    dic['nsubj'] = nsubj
+    dic['dobj'] = dobj
+    dic['iobj'] = iobj
+    dic['nmod'] = nmod
+    dic['loc'] = loc
+    dic['be'] = be
+    dic['verb'] = verb
+    return dic
+
+def reformulate_question(q):
+    qnode, dependencies, nsubj, dobj, iobj, nmod, loc, be, verb = parse_question(q)
+    
+    if nsubj == None:
+        nsubj = ''
+    if dobj == None:
+        dobj = ''
+    if iobj == None:
+        iobj = ''
+    if nmod == None:
+        nmod = ''
+    if loc == None:
+        loc = ''
+    if be == None:
+        be = ''
+    if verb == None:
+        verb = ''
     #where
     reformulatedQ = ''
     if "Where" in question:
         #a. where is nsubj.?/#b. where did nsubj do something? 
-        for node in dependencies:
-            if node['address'] == nsubj_address:
-                nsubj = add_dependency(node,qgraph)
-        reformulatedQ = " ".join([nsubj, qword, "somewhere"])
+        reformulatedQ = " ".join([nsubj, verb, "somewhere"])
     elif "When" in question:
-        for node in dependencies:
-            if node['address'] == nsubj_address:
-                nsubj = add_dependency(node, qgraph)
-        reformulatedQ = " ".join([nsubj, qword, "sometime"])
+        reformulatedQ = " ".join([nsubj, verb, "sometime"])
     elif "Who" in question:
         #a. who did something?
-        if qword != "Who":
-            for node in dependencies:
-                if node['address'] == dobj_address:
-                    dobj = node['word']
-            reformulatedQ = " ".join(["someone", qword, dobj])
+        if verb is not '':
+           reformulatedQ = " ".join(["someone", verb, dobj])
         #b. who is nsubj. about?  qword == "Who"
         else:
-            for node in dependencies:
-                if node['address'] == nsubj_address:
-                    nsubj = node['word']
-                elif node['address'] == be_address:
-                    be = node['word']
-                elif node['address'] == nmod_address:
-                    nmod = node['word']
             reformulatedQ = " ".join([nsubj, be, nmod, "someone"])
     elif "What" in question:
-        #a. what did nsubj. do?
-        for node in dependencies:
-            if node['address'] == nsubj_address:
-                nsubj = add_dependency(node,qgraph)
-        reformulatedQ = " ".join([nsubj, qword, "something"])
+        #a. what did nsubj. do? question on verb
+        reformulatedQ = " ".join([nsubj, verb, "something", nmod])
+        #b. direct object/ (indirect object) question on verb.
+    elif "Why" in question:
+        pass
         
     return reformulatedQ
 
 def QAmatching_reformulate(question,text):
     reformulated_question = reformulate_question(question)
-    for sentence in text:
-        #highest level: strict matching
-        #secondary level: most words overlap
-        pass
+    sentences = nltk.sent_tokenize(text)
+    closest_sentence = ''
+    max_overlap = 0
+    for sentence in sentences:
+        overlap = len(sentence & reformulated_question)
+        if overlap > max_overlap:
+            max_overlap = overlap
+            closest_sentence = sentence
+    return closest_sentence
         
 
 def QAmatching_word_embedding(question, text):
@@ -145,13 +200,32 @@ def QAmatching_word_embedding(question, text):
         if distance < lowest_distance:
             lowest_distance = distance
             closest_sentence = sentence
-    print (closest_sentence, "distance = %.3f" % lowest_distance)
-    
+    #print (closest_sentence, "distance = %.3f" % lowest_distance)
     return closest_sentence
 
+def QAmatching_baseline(question, text):
+    qbow = get_bow(get_sentences(question)[0], stopwords)
+    sentences = get_sentences(text)
+    best = baseline(qbow, sentences, stopwords)
+    best_sentence = ' '.join(word[0] for word in best)[:-2]+'.'  
+    return best_sentence
+    
+def QAmatching_combined(question, text):
+    baseline = QAmatching_baseline(question, text)
+    reformulate = QAmatching_word_embedding(question, text)
+    wordemb = QAmatching_word_embedding(question, text)
+    
+    if reformulate == wordemb:
+        return reformulate
+    elif wordemb == baseline:
+        return wordemb
+    elif baseline == reformulate:
+        return baseline
+    return wordemb
+    
 if __name__ == '__main__':
 
-    question_id = "blogs-01-3"
+    question_id = "fables-02-10"
     # for qid in hw6-questions.csv:
     driver = QABase()
     q = driver.get_question(question_id)
