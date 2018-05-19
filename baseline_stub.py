@@ -23,7 +23,6 @@ def get_sentences(text):
     return sentences	
 
 def get_bow(tagged_tokens, stopwords):
-    # return collections.OrderedDict([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
     return set([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
 
 def find_phrase(tagged_tokens, qbow):

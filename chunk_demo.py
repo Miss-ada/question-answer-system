@@ -1,8 +1,8 @@
 '''
-Created on May 14, 2014
-@author: Reid Swanson
 
-Modified on May 21, 2015
+@authors: Reid Swanson
+Brian Schwarzmann, Ada, and Nathaniel
+
 '''
 
 import re, sys, nltk
@@ -16,12 +16,13 @@ GRAMMAR = """
             N: {<NN>|<PRP> }
             V: {<V>|(<TO> <V>)}
             ADJ: {<JJ.*>}
-            NP: {<DT>? <ADJ>* <N>}
+            NP: {(<DT>? <ADJ>* <N>)|(<DT>? <NNP>)}
             PP: {(<IN> <NP> <IN>? <NP>?)|(<TO> <NP> <IN>? <NP>?)|(<IN> <NNP> <POS> <NP>)|(<TO> <PRP$> <NN> <NNP> <POS> <NP>)|(<IN> <NP> <WRB> <PRP> <VBR>)}
             VP: {<TO>? <V> (<NP>|<PP>)*}
 
             """
 # {<TO> <PRP$> <NN> <NNP> <POS> <NN>}
+# }VBG{  TODO this is a chink = removes / excludes: }VBG{
 # PP: {(<IN> <NP> <IN>? <NP>?)|(<TO> <NP> <IN>? <NP>?)|(<IN> <NNP> <POS> <NN>)}
 # PP: { < TO > < PRP$ > ? < NN >? < NNP > < POS > < NN >}
 
@@ -31,6 +32,7 @@ LOC_PP = ["in", "on", "at", "under", "near", "by", "along", "in front of", "on t
 
 TIME_PP = ["at", "on", "in", "when", "last", "next", "today", "yesterday", "tomorrow"]
 
+WHO_NP = ["Bull"]#["the Bull", "the Lion", "a Lion", "a fat Bull", "the people", "the girls", "a Fox", "a Crow", "Alyssa", "Kristin"]
 
 def get_sentences(text):
     sentences = nltk.sent_tokenize(text)
@@ -39,18 +41,27 @@ def get_sentences(text):
     # print(sentences)
     return sentences
 #
-# def get_sentences_without_quotes(text):
-#     test_NQ = re.sub(r'(?!(([^"]*[^"]*$),', '', text)
-#     test_NQ = nltk.sent_tokenize(text)
-#     test_NQ = [nltk.word_tokenize(sent) for sent in sentences]
-#
+def get_sentences_without_quotes(text):
+    pattern = r'("\w.*")|(\'\w.*\')'
+    text = re.sub(pattern, '', text)
+    sentences = nltk.sent_tokenize(text)
+    sentences = [nltk.word_tokenize(sent) for sent in sentences]
+    sentences = [nltk.pos_tag(sent) for sent in sentences]
+    #sentence = [' '.join(sent.split()[1:]) for sent in sentences]
+    # print(sentences)
+    return sentences
+
 def pp_filter(subtree):
     return subtree.label() == "PP"
 
+def who_filter(subtree):
+    return subtree.label() == "NP"
 
 def is_location(prep):
     return prep[0] in LOC_PP
 
+def is_who(noun):
+    return noun[0] in WHO_NP
 
 def is_time(prep):
     return prep[0] in TIME_PP
@@ -75,16 +86,21 @@ def find_locations(tree):
     # print(locations)
     return locations
 
-# TODO: eliminate words in quotes!
-
 def find_subj(sentences):
     # print(sentences)
-    currentCandidate = []
+    candidates = []
     for sent in sentences:
         for word, pos in sent:
-            if pos == 'NNP' and word not in currentCandidate:
-                currentCandidate.append(word)
-    who = set(currentCandidate)
+            if pos == 'NNP' and word not in candidates:
+                candidates.append(word)
+    return candidates
+
+def find_who(tree):
+    who = []
+    for subtree in tree.subtrees(filter=who_filter):
+        # print(subtree)
+        if is_who(subtree[0]):
+            who.append(subtree)
     return who
 
 def find_obj(tree):
@@ -96,6 +112,13 @@ def find_time(tree):
 
 
 def find_reason(tree):
+    candidates = []
+    for sent in sentences:
+        for word, pos in sent:
+            if word == 'because':
+                return text['because':]
+                # candidates.append(word)
+    return candidates
     pass
 
 
@@ -168,27 +191,33 @@ def get_better_answer(q):
     return answer
 
 if __name__ == '__main__':
+
     # # Our tools
-    # chunker = nltk.RegexpParser(GRAMMAR)
+    chunker = nltk.RegexpParser(GRAMMAR)
     # lmtzr = WordNetLemmatizer()
 
     # question_id = "blogs-01-3"
-    # question_id = "mc500.train.0.12"
+    question_id = "fables-02-1"
     # question_id = "mc500.train.0.12"
     # question_id = "fables-02-3"
     # question_id = "blogs-01-5"
     # question_id = "fables-02-1"
     # question_id = "fables-01-3"
 
-    # driver = QABase()
-    # q = driver.get_question(question_id)
-    # story = driver.get_story(q["sid"])
-    # # sentences = story["story_par"]
-    # text = story["text"]
-    # # print(text)
+    driver = QABase()
+    q = driver.get_question(question_id)
+    story = driver.get_story(q["sid"])
+    # sentences = story["story_par"]
+    text = story["text"]
+    # print(text)
     # Apply the standard NLP pipeline we've seen before
 
-    # sentences = get_sentences(text)
+    sentences = get_sentences(text)
+    # sentences = get_sentences_without_quotes(text)
+    # print(sentences)
+    # answer = find_subj(sentences)
+    # answer = find_who(sentences)
+    # print(answer)
 
     # print(sentences)
     # Assume we're given the keywords for now
@@ -235,9 +264,9 @@ if __name__ == '__main__':
 
     # Print them out
     #
-    # for loc in locations:
-    #     print(loc)
-    #     print(" ".join([token[0] for token in loc.leaves()]))
+    for loc in locations:
+        print(loc)
+        print(" ".join([token[0] for token in loc.leaves()]))
 
     # for who in find_subj(sentences):
     #     print(who)

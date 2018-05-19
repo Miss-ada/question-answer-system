@@ -27,6 +27,8 @@ def matches(pattern, root):
     plabel = pattern if isinstance(pattern, str) else pattern.label()
     rlabel = root if isinstance(root, str) else root.label()
 
+#TODO: define other symbols for grammars
+
     # If our pattern label is the * then match no matter what
     if plabel == "*":
         return root
@@ -52,10 +54,12 @@ def pattern_matcher(pattern, tree):
 if __name__ == '__main__':
 
     driver = QABase()
-    q = driver.get_question("fables-01-3")
+    q = driver.get_question("fables-01-1")
+    # q = driver.get_question("fables-01-3")
     story = driver.get_story(q["sid"])
 
-    tree = story["sch_par"][7]
+    tree = story["sch_par"][1]
+    # tree = story["sch_par"][7]
 
     # Create our pattern
     pattern = nltk.ParentedTree.fromstring("(VP (*) (PP))")
