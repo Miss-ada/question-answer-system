@@ -95,13 +95,23 @@ def find_subj(sentences):
                 candidates.append(word)
     return candidates
 
+def find_verb(sentences):
+    print(sentences)
+    candidates = []
+    for sent in sentences:
+        for word, pos in sent:
+            if pos in ('VB', 'VBD') and word not in candidates:
+                candidates.append(word)
+    # print(candidates)
+    return candidates
+
 def find_who(tree):
-    who = []
+    candidates = []
     for subtree in tree.subtrees(filter=who_filter):
         # print(subtree)
         if is_who(subtree[0]):
-            who.append(subtree)
-    return who
+            candidates.append(subtree)
+    return candidates
 
 def find_obj(tree):
     pass
@@ -119,7 +129,6 @@ def find_reason(tree):
                 return text['because':]
                 # candidates.append(word)
     return candidates
-    pass
 
 
 def find_candidates(sentences, chunker):
@@ -216,8 +225,8 @@ if __name__ == '__main__':
     # sentences = get_sentences_without_quotes(text)
     # print(sentences)
     # answer = find_subj(sentences)
-    # answer = find_who(sentences)
-    # print(answer)
+    answer = find_verb(sentences)
+    print(answer)
 
     # print(sentences)
     # Assume we're given the keywords for now
@@ -264,12 +273,10 @@ if __name__ == '__main__':
 
     # Print them out
     #
-    for loc in locations:
-        print(loc)
-        print(" ".join([token[0] for token in loc.leaves()]))
+    # for loc in locations:
+    #     print(loc)
+    #     print(" ".join([token[0] for token in loc.leaves()]))
 
-    # for who in find_subj(sentences):
-    #     print(who)
 
 
 

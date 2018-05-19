@@ -104,8 +104,8 @@ if __name__ == '__main__':
                 print(lmtzr.lemmatize(word, 'n'))
     # print()
 
-    answer = find_where_answer(qgraph, sgraph)
-    print("answer:", answer)
+    where = find_where_answer(qgraph, sgraph)
+    print("where:", answer)
     subject = find_subj_answer(qgraph, sgraph)
     print("subject:", subject)
     # happen = find_root(sgraph)
