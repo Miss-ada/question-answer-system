@@ -243,17 +243,17 @@ def QAmatching_combined(question, text):
     reformulate = QAmatching_word_embedding(question, text)
     wordemb = QAmatching_word_embedding(question, text)
     
-    if reformulate == wordemb:
-        return reformulate
-    elif wordemb == baseline:
-        return wordemb
-    elif baseline == reformulate:
-        return baseline
+#    if reformulate == wordemb:
+#        return reformulate
+#    elif wordemb == baseline:
+#        return wordemb
+#    elif baseline == reformulate:
+#        return baseline
     return reformulate
     
 if __name__ == '__main__':
 
-    question_id = "blogs-01-4"
+    question_id = "fables-01-6"
     # for qid in hw6-questions.csv:
     driver = QABase()
     q = driver.get_question(question_id)
