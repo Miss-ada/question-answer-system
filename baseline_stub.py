@@ -22,7 +22,8 @@ def get_sentences(text):
     
     return sentences	
 
-def get_bow(tagged_tokens, stopwords):
+def get_bow(tagged_tokens):
+    stopwords = set(nltk.corpus.stopwords.words("english"))
     return set([t[0].lower() for t in tagged_tokens if t[0].lower() not in stopwords])
 
 def find_phrase(tagged_tokens, qbow):
@@ -35,12 +36,12 @@ def find_phrase(tagged_tokens, qbow):
 # qtokens: is a list of pos tagged question tokens with SW removed
 # sentences: is a list of pos tagged story sentences
 # stopwords is a set of stopwords
-def baseline(qbow, sentences, stopwords):
+def baseline(qbow, sentences):
     # Collect all the candidate answers
     answers = []
     for sent in sentences:
         # A list of all the word tokens in the sentence
-        sbow = get_bow(sent, stopwords)
+        sbow = get_bow(sent)
 
         # print(sbow)
         # Count the # of overlapping words between the Q and the A
@@ -89,19 +90,25 @@ def parse_question(q):
     dependencies = get_dependents(qnode, qgraph)
     
     nsubj = None
+    nsubjpass = None, 
+    auxpass = None,
     dobj = None
     iobj =None
     nmod = None
     loc = None
     be = None
     verb = None
+    neg = None
     
     nsubj_address = get_address(qnode, 'nsubj')
+    nsubjpass_address = get_address(qnode, 'nsubjpass')
+    auxpass_address = get_address(qnode, 'auxpass')
     dobj_address = get_address(qnode, 'dobj')
     iobj_address = get_address(qnode, 'iobj')
     loc_address = get_address(qnode, 'loc')
     nmod_address = get_address(qnode, 'nmod')
     be_address = get_address(qnode, 'cop')
+    neg_address = get_address(qnode, 'neg')
     verb_address = None
     
     if be_address is None:
@@ -111,6 +118,10 @@ def parse_question(q):
     for node in dependencies:
         if node['address'] == nsubj_address:
             nsubj = add_dependency(node,qgraph)
+        elif node['address'] == nsubjpass_address:
+            nsubjpass = add_dependency(node,qgraph)
+        elif node['address'] == auxpass_address:
+            auxpass = add_dependency(node,qgraph)
         elif node['address'] == dobj_address:
             dobj = add_dependency(node,qgraph)
         elif node['address'] == iobj_address:
@@ -121,27 +132,36 @@ def parse_question(q):
             nmod = add_dependency(node,qgraph)
         elif node['address'] == be_address:
             be = add_dependency(node,qgraph)
+        elif node['address'] == neg_address:
+            neg = add_dependency(node,qgraph)
         
-    return qnode, dependencies, nsubj, dobj, iobj, nmod, loc, be, verb
+    return qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg
     
 
 def parsed_question_dic(q):
-    qnode, dependencies, nsubj, dobj, iobj, nmod, loc, be, verb = parse_question(q)
+    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg = parse_question(q)
     dic = {}
     dic['nsubj'] = nsubj
+    dic['nsubjpass'] = nsubjpass
+    dic['auxpass'] = auxpass
     dic['dobj'] = dobj
     dic['iobj'] = iobj
     dic['nmod'] = nmod
     dic['loc'] = loc
     dic['be'] = be
     dic['verb'] = verb
+    dic['neg'] = neg
     return dic
 
 def reformulate_question(q):
-    qnode, dependencies, nsubj, dobj, iobj, nmod, loc, be, verb = parse_question(q)
+    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg = parse_question(q)
     
     if nsubj == None:
         nsubj = ''
+    if nsubjpass == None:
+        nsubjpass = ''
+    if auxpass == None:
+        auxpass = ''
     if dobj == None:
         dobj = ''
     if iobj == None:
@@ -154,6 +174,8 @@ def reformulate_question(q):
         be = ''
     if verb == None:
         verb = ''
+    if neg == None:
+        neg = ''
     #where
     reformulatedQ = ''
     if "Where" in question:
@@ -169,11 +191,18 @@ def reformulate_question(q):
         else:
             reformulatedQ = " ".join([nsubj, be, nmod, "someone"])
     elif "What" in question:
-        #a. what did nsubj. do? question on verb
-        reformulatedQ = " ".join([nsubj, verb, "something", nmod])
-        #b. direct object/ (indirect object) question on verb.
+        #a. what did nsubj. do to her? question on verb
+        
+        #b. what did nsubj. eat? question on direct object
+        if dobj == "What": 
+            reformulatedQ = " ".join([nsubj, verb, "something", nmod])
+        #c. what was fired at dobj
+        elif nsubjpass == "What":
+            reformulatedQ = " ".join(["something", auxpass, verb, nmod])
+        
     elif "Why" in question:
-        pass
+        reformulatedQ = " ".join([nsubj, neg, verb, iobj, dobj, nmod, "somewhy"])
+        
         
     return reformulatedQ
 
@@ -203,9 +232,9 @@ def QAmatching_word_embedding(question, text):
     return closest_sentence
 
 def QAmatching_baseline(question, text):
-    qbow = get_bow(get_sentences(question)[0], stopwords)
+    qbow = get_bow(get_sentences(question)[0])
     sentences = get_sentences(text)
-    best = baseline(qbow, sentences, stopwords)
+    best = baseline(qbow, sentences)
     best_sentence = ' '.join(word[0] for word in best)[:-2]+'.'  
     return best_sentence
     
@@ -220,11 +249,11 @@ def QAmatching_combined(question, text):
         return wordemb
     elif baseline == reformulate:
         return baseline
-    return wordemb
+    return reformulate
     
 if __name__ == '__main__':
 
-    question_id = "fables-02-10"
+    question_id = "blogs-01-4"
     # for qid in hw6-questions.csv:
     driver = QABase()
     q = driver.get_question(question_id)
@@ -234,7 +263,7 @@ if __name__ == '__main__':
     print("question:", question)
     stopwords = set(nltk.corpus.stopwords.words("english"))
 
-    qbow = get_bow(get_sentences(question)[0], stopwords)
+    qbow = get_bow(get_sentences(question)[0])
     sentences = get_sentences(text)
-    answer = baseline(qbow, sentences, stopwords)
+    answer = baseline(qbow, sentences)
     print("answer:", " ".join(t[0] for t in answer))

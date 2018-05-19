@@ -43,21 +43,24 @@ def get_answer(question, story):
     """
     ###     Your Code Goes Here         ###
     q = question['text']
+    text= ''
     if (question['type'] == 'sch'):
         text = story['sch']
     else:
         text = story['text']
+    print ()
+    #qbow = get_bow(get_sentences(q)[0])
+    #sentences = get_sentences(text)
+    #answer = baseline(qbow, sentences)
+    better_answer = QAmatching_combined(q, text)
+    
+    return better_answer
+    #if better_answer is None:
+    #    best_answer = answer
+    #else:
+    #    best_answer = better_answer
 
-    qbow = get_bow(get_sentences(q)[0], stopwords)
-    sentences = get_sentences(text)
-    answer = baseline(qbow, sentences, stopwords)
-    better_answer = chunk_demo.get_better_answer(q)
-    if better_answer is None:
-        best_answer = answer
-    else:
-        best_answer = better_answer
-
-    return( " ".join(t[0] for t in best_answer))
+    #return( " ".join(t[0] for t in best_answer))
 
     # answer = "whatever you think the answer is"
 
