@@ -52,7 +52,7 @@ def get_answer(question, story):
     #qbow = get_bow(get_sentences(q)[0])
     #sentences = get_sentences(text)
     #answer = baseline(qbow, sentences)
-    better_answer = QAmatching_combined(q, text)
+    better_answer = QAmatching_combined(question, text)
     
     return better_answer
     #if better_answer is None:

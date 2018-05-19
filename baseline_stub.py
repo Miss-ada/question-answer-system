@@ -212,7 +212,7 @@ def QAmatching_reformulate(question,text):
     closest_sentence = ''
     max_overlap = 0
     for sentence in sentences:
-        overlap = len(sentence & reformulated_question)
+        overlap = len(set(sentence.split()) & set(reformulated_question.split()))
         if overlap > max_overlap:
             max_overlap = overlap
             closest_sentence = sentence
@@ -238,18 +238,17 @@ def QAmatching_baseline(question, text):
     best_sentence = ' '.join(word[0] for word in best)[:-2]+'.'  
     return best_sentence
     
-def QAmatching_combined(question, text):
-    baseline = QAmatching_baseline(question, text)
-    reformulate = QAmatching_word_embedding(question, text)
-    wordemb = QAmatching_word_embedding(question, text)
-    
-#    if reformulate == wordemb:
-#        return reformulate
-#    elif wordemb == baseline:
-#        return wordemb
-#    elif baseline == reformulate:
-#        return baseline
-    return reformulate
+def QAmatching_combined(q, text):
+    baseline = QAmatching_baseline(q['text'], text)
+    reformulate = QAmatching_reformulate(q, text)
+    wordemb = QAmatching_word_embedding(q['text'], text)
+    if reformulate == wordemb:
+        return reformulate
+    elif wordemb == baseline:
+        return wordemb
+    elif baseline == reformulate:
+        return baseline
+    return baseline
     
 if __name__ == '__main__':
 
