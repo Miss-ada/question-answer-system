@@ -176,6 +176,7 @@ def reformulate_question(q):
         verb = ''
     if neg == None:
         neg = ''
+    question = q['text']
     #where
     reformulatedQ = ''
     if "Where" in question:
