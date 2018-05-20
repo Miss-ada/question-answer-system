@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+'''
+@authors: Brian Schwarzmann, Ada Ma, and Nathaniel Suriawijaya
+'''
 
 import re, sys, nltk, operator
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -105,7 +108,7 @@ if __name__ == '__main__':
     # print()
 
     where = find_where_answer(qgraph, sgraph)
-    print("where:", answer)
+    print("where:", where)
     subject = find_subj_answer(qgraph, sgraph)
     print("subject:", subject)
     # happen = find_root(sgraph)
