@@ -78,25 +78,29 @@ def get_better_answer(q,text):
     answer = None
     answers =[]
     driver = QABase()
+    single = False
     
     #q = driver.get_question(question_id)
     story = driver.get_story(q["sid"])
     text = story["text"]
 
-    # unparsed_sent contains the sentence containing the answer
-    unparsed_sent = QAmatching_combined(q, text)
+    # matched_sent contains the sentence containing the answer
+    matched_sent = QAmatching_combined(q, text)
+    tokenized_sentences = get_sentences(text)
     sentences = nltk.sent_tokenize(text)
     sent_array = []
     for sentence in sentences:
         sent_array.append(sentence.strip(''))
     print("SENTENCE ARRAY:\n", sent_array)
-    # if the unparsed_sent is '', as in QAmatching_combined(q, text)
-    if(unparsed_sent != ''):
-        index = sentences.index(unparsed_sent)
+    # if the matched_sent is '', as in QAmatching_combined(q, text)
+    if(matched_sent != ''):
+        index = sentences.index(matched_sent)
+        single = True
     else:
-        unparsed_sent = text
-    print("unparsed_sent:",unparsed_sent)
-
+        matched_sent = text
+        
+    print("matched_sent:",matched_sent)
+    
     #chunker = nltk.RegexpParser(GRAMMAR)
     
     
@@ -105,42 +109,53 @@ def get_better_answer(q,text):
     if 'story' and 'about' in state_question:
         special_cases(q,text)
     if 'somewhere' in state_question:
-        if (story["sch_dep"] == ''):
-            answers.append(find_where_answer((q["dep"]),(story["sch_dep"][index])))
-        #if len(answers) == 0:
-            """replace with new find_where function"""
-            #tree = chunker.parse(unparsed_sent)
-            #find_locations(tree)
+        """
+        if (story["sch_dep"] != '' and index):
+            qgraph = q["dep"]
+            sgraph = story["sch_dep"][index]
+            answers.append(find_where_answer(qgraph,sgraph))
+        """
+        if len(answers) == 0:
+            if single == True:
+                find_where_sent(matched_sent)
+            else:
+                find_where(tokenized_sentences)
         else:
-            answers.append(unparsed_sent)
+            answers.append(matched_sent)
     if 'sometime' in state_question:
-        answers.append(unparsed_sent)
+        answers.append(matched_sent)
         
     if 'someone' in state_question:
         #if state_question.startwith('someone'):
-        if (story["sch_dep"] == ''):
-            answers.append(find_subj_answer(q["dep"]),(story["sch_dep"][index]))
+        """
+        if (story["sch_dep"] != ''):
+            qgraph = q["dep"]
+            sgraph = story["sch_dep"][index]
+            answers.append(find_where_answer(qgraph,sgraph))
+        """
         #chunk_demo for an alternate answer
-        #if len(answers) == 0:
-            #find_who(unparsed_sent)
+        if len(answers) == 0:
+            if single == True:
+                find_who_sent(matched_sent)
+            else:
+                find_who(tokenized_sentences)
             #dobj = None
         else:
-            answers.append(unparsed_sent)
+            answers.append(matched_sent)
     if 'somewhat' in state_question:
         if 'direct_object' in state_question:
-            answers.append(unparsed_sent)
+            answers.append(matched_sent)
         if 'indirect_object' in state_question:
-            answers.append(unparsed_sent)
+            answers.append(matched_sent)
         if 'verb' in state_question:
-            answers.append(unparsed_sent)
+            answers.append(matched_sent)
         else:
-            answers.append(unparsed_sent)
+            answers.append(matched_sent)
     if 'somewhy' in state_question:
-        answers.append(unparsed_sent)
+        answers.append(matched_sent)
     if len(answers) == 0:
-        answers.append(unparsed_sent)
+        answers.append(matched_sent)
     print("answers object:", answers)
-    print("answer:", " ".join(t[0] for t in answers))
     return answers
 
 def special_cases(question, text):
