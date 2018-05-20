@@ -80,14 +80,11 @@ def get_better_answer(q):
     q = driver.get_question(question_id)
     story = driver.get_story(q["sid"])
     text = story["text"]
-
+    question = q['text']
     #unparsed_sent contains the sentence containing the answer
     unparsed_sent = QAmatching_combined(question, text)
     #sentences = sentence.strip('')for sentence in text.split('\n')
-    sentences = text.split('\n')
-    for sentence in sentences:
-        sent_array = sentence.strip('')
-    index = sent_array.index(target_sentence)
+    index = find_index(unparsed_sent, text)
     
     lmtzr = WordNetLemmatizer()
     subj_stem = lmtzr.lemmatize(subj, "n")
@@ -109,8 +106,7 @@ def get_better_answer(q):
                 find_locations(tree)
         else:
             answers.append(unparsed_sent)
-        # loc = None
-        
+        # loc = None        
     if 'sometime' in state_question:
         answers.append(unparsed_sent)
         
@@ -121,20 +117,16 @@ def get_better_answer(q):
         else:
             answers.append(unparsed_sent)
             dobj = None
-    if 'somewhat' in state_question:
-        if 'direct_object' in state_question:
-            subj = parsed_dic["nsubj"]
-            verb = parsed_dic["verb"]
-            answers.append(subj)
-            answers.append(verb)
-        if 'indirect_object' in state_question:
-            subj = parsed_dic["nsubj"]
-            verb = parsed_dic["verb"]
-            answers.append(subj)
-            answers.append(verb)
-        if 'verb' in state_question:
-            subj = parsed_dic["nsubj"]
-            answer.append(subj)
+    if 'something' in state_question:
+        if state_question.startswith("something"):
+            answer = find_dobj(q, unparsed_sent, text, story)
+            answers.append(answer)
+        elif "do" in question and ("did" in question or "does" in question ):
+            answer= find_verb(sentences)
+            answer.append(answer)
+        else:
+            answer= find_iobj(q, sentence_with_answer, text, story)
+            answer.append(answer)
     if 'somewhy' in state_question:
         subj = parsed_dic["nsubj"]
         verb = parsed_dic["verb"]

@@ -10,7 +10,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from qa_engine.base import QABase
 from nltk.corpus import wordnet as wn
 from baseline_stub import *
-
+from dependency_demo_stub import find_answer, find_index
 # Our simple grammar from class (and the book)
 GRAMMAR = """
             N: {<NN>|<PRP> }
@@ -125,9 +125,37 @@ def find_verb(sentences):
 #             candidates.append(subtree)
 #     return candidates
 
-def find_obj(tree):
-    pass
 
+#run find_dobj if reformulated_question.startswith("something")
+def find_dobj(q, sentence_with_answer, text, story):
+    qgraph =  q["dep"]
+    s_index = find_index(sentence_with_answer, text)
+    sgraph = None
+    if text == story['sch']:
+        sgraph = story["sch_dep"][s_index]
+    else:
+        sgraph = story["story_dep"][s_index]
+    try:  
+        answer = find_answer(qgraph, sgraph, "dobj")
+    except TypeError:
+        answer = sentence_with_answer
+    return answer
+        
+def find_iobj(q, sentence_with_answer, text, story):
+    qgraph =  q["dep"]
+    s_index = find_index(sentence_with_answer, text)
+    sgraph = None
+    if text == story['sch']:
+        sgraph = story["sch_dep"][s_index]
+    else:
+        sgraph = story["story_dep"][s_index]
+        
+    #s_dic = parsed_question_dic(sgraph) 
+    try:  
+        answer = find_answer(qgraph, sgraph, "nsubjpass")
+    except TypeError:
+        answer = sentence_with_answer
+    return answer
 
 def find_time(tree):
     time = []
@@ -223,7 +251,7 @@ if __name__ == '__main__':
     chunker = nltk.RegexpParser(GRAMMAR)
     # lmtzr = WordNetLemmatizer()
 
-    question_id = "blogs-01-5"
+    question_id = "blogs-01-11"
     # question_id = "fables-02-1"
     # question_id = "mc500.train.0.12"
     # question_id = "fables-02-3"

@@ -13,7 +13,7 @@ def find_main(graph):
     
 def find_node(word, graph):
     for node in graph.nodes.values():
-        if node["word"] == word:
+        if node["lemma"] == word:
             return node
     return None
     
@@ -27,8 +27,13 @@ def get_dependents(node, graph):
         
     return results
 
+def find_index(sentence_with_answer, text):
+    sentences = [sentence.strip(' ')for sentence in nltk.sent_tokenize(text)]
+    index = sentences.index(sentence_with_answer)
+    return index; 
 
-def find_answer(qgraph, sgraph):
+
+def find_answer(qgraph, sgraph, rel):
     qmain = find_main(qgraph)
     qword = qmain["word"]
 
@@ -39,7 +44,7 @@ def find_answer(qgraph, sgraph):
         if node.get('head', None) == snode["address"]:
             #print(node["word"], node["rel"])
 
-            if node['rel'] == "nmod":
+            if node['rel'] == rel: #node['rel'] =="nmod"
                 deps = get_dependents(node, sgraph)
                 deps = sorted(deps+[node], key=operator.itemgetter("address"))
                 
