@@ -91,15 +91,13 @@ def get_better_answer(q,text):
     sent_array = []
     for sentence in sentences:
         sent_array.append(sentence.strip(''))
-    print("SENTENCE ARRAY:\n", sent_array)
+    #print("SENTENCE ARRAY:\n", sent_array)
     # if the matched_sent is '', as in QAmatching_combined(q, text)
     if(matched_sent != ''):
         index = sentences.index(matched_sent)
         single = True
     else:
         matched_sent = text
-        
-    print("matched_sent:",matched_sent)
     
     #chunker = nltk.RegexpParser(GRAMMAR)
     
@@ -109,39 +107,51 @@ def get_better_answer(q,text):
     if 'story' and 'about' in state_question:
         special_cases(q,text)
     if 'somewhere' in state_question:
+        if len(answers) == 0:
+            if single == True:
+                tokenized_matched_sent = tokenize_sentence(matched_sent)
+                #print("tokenized_matched_sent:", tokenized_matched_sent)
+                answer_tree = find_where_sent(tokenized_matched_sent)
+                for whe in answer_tree:
+                    answers.append(" ".join([token[0] for token in whe.leaves()]))
+            else:
+                answer_tree = find_where(tokenized_sentences)
+                for whe in answer_tree:
+                    answers.append(" ".join([token[0] for token in whe.leaves()]))
+        else:
+            answers.append(matched_sent)
         """
         if (story["sch_dep"] != '' and index):
             qgraph = q["dep"]
             sgraph = story["sch_dep"][index]
             answers.append(find_where_answer(qgraph,sgraph))
+        
         """
-        if len(answers) == 0:
-            if single == True:
-                find_where_sent(matched_sent)
-            else:
-                find_where(tokenized_sentences)
-        else:
-            answers.append(matched_sent)
     if 'sometime' in state_question:
         answers.append(matched_sent)
         
     if 'someone' in state_question:
-        #if state_question.startwith('someone'):
+        #chunk_demo for an alternate answer
+        if len(answers) == 0:
+            if single == True:
+                tokenized_matched_sent = tokenize_sentence(matched_sent)
+                #print("tokenized_matched_sent:", tokenized_matched_sent)
+                answer_tree = find_who_sent(tokenized_matched_sent)
+                for whe in answer_tree:
+                    answers.append(" ".join([token[0] for token in whe.leaves()]))
+            else:
+                answer_tree = find_who(tokenized_sentences)
+                for whe in answer_tree:
+                    answers.append(" ".join([token[0] for token in whe.leaves()]))
+            #dobj = None
+        else:
+            answers.append(matched_sent)
         """
         if (story["sch_dep"] != ''):
             qgraph = q["dep"]
             sgraph = story["sch_dep"][index]
             answers.append(find_where_answer(qgraph,sgraph))
         """
-        #chunk_demo for an alternate answer
-        if len(answers) == 0:
-            if single == True:
-                find_who_sent(matched_sent)
-            else:
-                find_who(tokenized_sentences)
-            #dobj = None
-        else:
-            answers.append(matched_sent)
     if 'somewhat' in state_question:
         if 'direct_object' in state_question:
             answers.append(matched_sent)
@@ -156,7 +166,10 @@ def get_better_answer(q,text):
     if len(answers) == 0:
         answers.append(matched_sent)
     print("answers object:", answers)
-    return answers
+    # joining 'answers' into a single string 'answer' with a ' '
+    # answers holds all possible answers, not just the one
+    answer = ' '.join(answers)
+    return answer
 
 def special_cases(question, text):
     #special case for 'who is this about?' : 'story' *\b* 'about'
