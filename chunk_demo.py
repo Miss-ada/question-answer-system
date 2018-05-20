@@ -89,7 +89,7 @@ def find_locations(tree):
 
 def find_who(sentences):
     # print(sentences)
-    who = nltk.RegexpParser('WHO: {<DT>? <NNP>}')
+    who = nltk.RegexpParser('WHO: {(<DT>? <NNP> <NN>*)|(<DT> <NNS>)}')
     candidates = []
     for sent in sentences:
         tree = who.parse(sent)
@@ -223,7 +223,7 @@ if __name__ == '__main__':
     chunker = nltk.RegexpParser(GRAMMAR)
     # lmtzr = WordNetLemmatizer()
 
-    question_id = "blogs-01-3"
+    question_id = "blogs-01-5"
     # question_id = "fables-02-1"
     # question_id = "mc500.train.0.12"
     # question_id = "fables-02-3"
