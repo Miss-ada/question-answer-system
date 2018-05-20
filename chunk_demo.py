@@ -85,6 +85,7 @@ def find_locations(tree):
 
 def find_where(sentences):
     where = []
+    chunker = nltk.RegexpParser(GRAMMAR)
     for sent in sentences:
         tree = chunker.parse(sent)
         for subtree in tree.subtrees(filter=pp_filter):
@@ -92,8 +93,16 @@ def find_where(sentences):
                 where.append(subtree)
     return where
 
+def find_where_sent(sent):
+    where = []
+    chunker = nltk.RegexpParser(GRAMMAR)
+    tree = chunker.parse(sent)
+    for subtree in tree.subtrees(filter=pp_filter):
+        if is_location(subtree[0]):
+            where.append(subtree)
+    return where
+
 def find_who(sentences):
-    # print(sentences)
     who = nltk.RegexpParser('WHO: {(<DT>? <NNP> <NN>*)|(<DT> <NNS>)}')
     candidates = []
     for sent in sentences:
@@ -103,6 +112,17 @@ def find_who(sentences):
                 if subtree not in candidates:
                     candidates.append(subtree)
     return candidates
+
+def find_who_sent(sent):
+    who = nltk.RegexpParser('WHO: {(<DT>? <NNP> <NN>*)|(<DT> <NNS>)}')
+    candidates = []
+    tree = who.parse(sent)
+    for subtree in tree.subtrees():
+        if subtree.label() == 'WHO':
+            if subtree not in candidates:
+                candidates.append(subtree)
+    return candidates
+
 
 # def find_subj(sentences):
 #     candidates = []
