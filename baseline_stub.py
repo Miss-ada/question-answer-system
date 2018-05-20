@@ -16,6 +16,8 @@ model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-nega
 
 # The standard NLTK pipeline for POS tagging a document
 def get_sentences(text):
+    pattern = r'("\w.*")|(\'\w.*\')'
+    text = re.sub(pattern, '', text)
     sentences = nltk.sent_tokenize(text)
     sentences = [nltk.word_tokenize(sent) for sent in sentences]
     sentences = [nltk.pos_tag(sent) for sent in sentences]
@@ -242,14 +244,14 @@ def QAmatching_baseline(question, text):
 def QAmatching_combined(q, text):
     baseline = QAmatching_baseline(q['text'], text)
     reformulate = QAmatching_reformulate(q, text)
-    wordemb = QAmatching_word_embedding(q['text'], text)
-    if reformulate == wordemb:
-        return reformulate
-    elif wordemb == baseline:
-        return wordemb
-    elif baseline == reformulate:
-        return baseline
-    return baseline
+    #wordemb = QAmatching_word_embedding(q['text'], text)
+    #if reformulate == wordemb:
+    return reformulate
+    #elif wordemb == baseline:
+    #    return wordemb
+    #elif baseline == reformulate:
+    #    return baseline
+    #return baseline
     
 if __name__ == '__main__':
 

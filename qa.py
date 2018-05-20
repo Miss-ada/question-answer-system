@@ -4,6 +4,8 @@ from qa_engine.score_answers import main as score_answers
 from baseline_stub import *
 from dependency_demo_stub import *
 from chunk_demo import *
+from dependency_demo_stubV1 import *
+from nltk.stem.wordnet import WordNetLemmatizer
 
 stopwords = set(nltk.corpus.stopwords.words("english"))
 
@@ -44,7 +46,7 @@ def get_answer(question, story):
     ###     Your Code Goes Here         ###
     q = question['text']
     text= ''
-    if (question['type'] == 'sch'):
+    if (question['type'] == 'Sch'):
         text = story['sch']
     else:
         text = story['text']
@@ -65,8 +67,90 @@ def get_answer(question, story):
     # answer = "whatever you think the answer is"
 
     ###     End of Your Code         ###
+#get_better_answer takes in question
+def get_better_answer(q):
 
 
+    chunker = nltk.RegexpParser(GRAMMAR)
+    locations = find_answer(crow_sentences, chunker)
+    answer = None
+    answers =[]
+    driver = QABase()
+    
+    q = driver.get_question(question_id)
+    story = driver.get_story(q["sid"])
+    text = story["text"]
+
+    #unparsed_sent contains the sentence containing the answer
+    unparsed_sent = QAmatching_combined(question, text)
+    #sentences = sentence.strip('')for sentence in text.split('\n')
+    sentences = text.split('\n')
+    for sentence in sentences:
+        sent_array = sentence.strip('')
+    index = sent_array.index(target_sentence)
+    
+    lmtzr = WordNetLemmatizer()
+    subj_stem = lmtzr.lemmatize(subj, "n")
+    verb_stem = lmtzr.lemmatize(verb, "v")
+    crow_sentences = find_sentences([subj_stem, verb_stem], sentences)
+    #crow_sentences = find_sentences([subj, verb], sentences)
+    
+    state_question = baseline_stub.reformulate_question(q)
+    parsed_dic = parsed_question_dic(q)
+    if 'story' and 'about' in state_question:
+        special_cases(q)
+    if 'somewhere' in state_question:
+        answers.append(find_where_answer(q["dep"],story["sch_dep"][index]))
+        if len(answers) == 0:
+            #if verb exits, then we perform find_locations from that verb
+            if (verb_stem):
+                find_locations(tree)# needs to be changed
+            elif(subj_stem):
+                find_locations(tree)
+        else:
+            answers.append(unparsed_sent)
+        # loc = None
+        
+    if 'sometime' in state_question:
+        answers.append(unparsed_sent)
+        
+    if 'someone' in state_question:
+        if state_question.startwith('someone'):
+            answers.append(find_subj_answer(q["dep"],story["sch_dep"][index]))
+        #chunk_demo for an alternate answer
+        else:
+            answers.append(unparsed_sent)
+            dobj = None
+    if 'somewhat' in state_question:
+        if 'direct_object' in state_question:
+            subj = parsed_dic["nsubj"]
+            verb = parsed_dic["verb"]
+            answers.append(subj)
+            answers.append(verb)
+        if 'indirect_object' in state_question:
+            subj = parsed_dic["nsubj"]
+            verb = parsed_dic["verb"]
+            answers.append(subj)
+            answers.append(verb)
+        if 'verb' in state_question:
+            subj = parsed_dic["nsubj"]
+            answer.append(subj)
+    if 'somewhy' in state_question:
+        subj = parsed_dic["nsubj"]
+        verb = parsed_dic["verb"]
+        answers.append(subj)
+        answers.append(verb)
+    return answer
+
+def special_cases(question, text):
+    #special case for 'who is this about?' : 'story' *\b* 'about'
+    sentences = get_sentences(text)
+    answer = []
+    for sent in sentences:
+        for word, pos in sent:
+            if pos == 'NNP' and word not in answer:
+                answer.append(word)            
+    return answer
 
 #############################################################
 ###     Dont change the code below here
