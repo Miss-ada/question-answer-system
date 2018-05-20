@@ -54,7 +54,9 @@ def get_answer(question, story):
     #qbow = get_bow(get_sentences(q)[0])
     #sentences = get_sentences(text)
     #answer = baseline(qbow, sentences)
-    better_answer = QAmatching_combined(question, text)
+    
+    #better_answer = QAmatching_combined(question, text)
+    better_answer = get_better_answer(question,text)
     
     return better_answer
     #if better_answer is None:
@@ -68,45 +70,41 @@ def get_answer(question, story):
 
     ###     End of Your Code         ###
 #get_better_answer takes in question
-def get_better_answer(q):
-
-
-    chunker = nltk.RegexpParser(GRAMMAR)
-    locations = find_answer(crow_sentences, chunker)
+def get_better_answer(q,text):
     answer = None
     answers =[]
     driver = QABase()
     
-    q = driver.get_question(question_id)
+    #q = driver.get_question(question_id)
     story = driver.get_story(q["sid"])
     text = story["text"]
 
     #unparsed_sent contains the sentence containing the answer
-    unparsed_sent = QAmatching_combined(question, text)
+    unparsed_sent = QAmatching_combined(q, text)
     #sentences = sentence.strip('')for sentence in text.split('\n')
-    sentences = text.split('\n')
+    sentences = nltk.sent_tokenize(text)
+    sent_array = []
     for sentence in sentences:
-        sent_array = sentence.strip('')
-    index = sent_array.index(target_sentence)
+        sent_array.append(sentence.strip(''))
+    print("SENTENCE ARRAY:\n", sent_array)
+    index = sent_array.index(unparsed_sent)
     
-    lmtzr = WordNetLemmatizer()
-    subj_stem = lmtzr.lemmatize(subj, "n")
-    verb_stem = lmtzr.lemmatize(verb, "v")
-    crow_sentences = find_sentences([subj_stem, verb_stem], sentences)
-    #crow_sentences = find_sentences([subj, verb], sentences)
+    #lmtzr = WordNetLemmatizer()
+    #subj_stem = lmtzr.lemmatize(subj, "n")
+    #verb_stem = lmtzr.lemmatize(verb, "v")
+    chunker = nltk.RegexpParser(GRAMMAR)
+    #locations = find_answer(crow_sentences, chunker)
     
-    state_question = baseline_stub.reformulate_question(q)
+    
+    state_question = reformulate_question(q)
     parsed_dic = parsed_question_dic(q)
     if 'story' and 'about' in state_question:
         special_cases(q)
     if 'somewhere' in state_question:
-        answers.append(find_where_answer(q["dep"],story["sch_dep"][index]))
+        if (q["dep"]):
+            answers.append(find_where_answer((q["dep"]),(story["sch_dep"][index])))
         if len(answers) == 0:
-            #if verb exits, then we perform find_locations from that verb
-            if (verb_stem):
-                find_locations(tree)# needs to be changed
-            elif(subj_stem):
-                find_locations(tree)
+            find_locations()
         else:
             answers.append(unparsed_sent)
         # loc = None
@@ -115,32 +113,25 @@ def get_better_answer(q):
         answers.append(unparsed_sent)
         
     if 'someone' in state_question:
-        if state_question.startwith('someone'):
-            answers.append(find_subj_answer(q["dep"],story["sch_dep"][index]))
+        #if state_question.startwith('someone'):
+        answers.append(find_subj_answer(q["dep"]),(story["sch_dep"][index]))
         #chunk_demo for an alternate answer
-        else:
+        if len(answers) == 0:
             answers.append(unparsed_sent)
-            dobj = None
+            #dobj = None
     if 'somewhat' in state_question:
         if 'direct_object' in state_question:
-            subj = parsed_dic["nsubj"]
-            verb = parsed_dic["verb"]
-            answers.append(subj)
-            answers.append(verb)
+            answers.append(unparsed_sent)
         if 'indirect_object' in state_question:
-            subj = parsed_dic["nsubj"]
-            verb = parsed_dic["verb"]
-            answers.append(subj)
-            answers.append(verb)
+            answers.append(unparsed_sent)
         if 'verb' in state_question:
-            subj = parsed_dic["nsubj"]
-            answer.append(subj)
+            answers.append(unparsed_sent)
+        else:
+            answers.append(unparsed_sent)
     if 'somewhy' in state_question:
-        subj = parsed_dic["nsubj"]
-        verb = parsed_dic["verb"]
-        answers.append(subj)
-        answers.append(verb)
-    return answer
+        answers.append(unparsed_sent)
+    print("answer:", " ".join(t[0] for t in answers))
+    return answers
 
 def special_cases(question, text):
     #special case for 'who is this about?' : 'story' *\b* 'about'
