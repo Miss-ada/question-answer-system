@@ -1,7 +1,7 @@
 '''
 
 @authors: Reid Swanson
-Brian Schwarzmann, Ada, and Nathaniel
+Brian Schwarzmann, Ada Ma, and Nathaniel Suriawijaya
 
 '''
 
@@ -18,14 +18,11 @@ GRAMMAR = """
             ADJ: {<JJ.*>}
             NP: {(<DT>? <ADJ>* <N>)|(<DT>? <NNP>)}
             PP: {(<IN> <NP> <IN>? <NP>?)|(<TO> <NP> <IN>? <NP>?)|(<IN> <NNP> <POS> <NP>)|(<TO> <PRP$> <NN> <NNP> <POS> <NP>)|(<IN> <NP> <WRB> <PRP> <VBR>)}
+                }<JJ|PRP>{
             VP: {<TO>? <V> (<NP>|<PP>)*}
             PN: {<DT>? <NNP>}
 
             """
-# {<TO> <PRP$> <NN> <NNP> <POS> <NN>}
-# }VBG{  TODO this is a chink = removes / excludes: }VBG{
-# PP: {(<IN> <NP> <IN>? <NP>?)|(<TO> <NP> <IN>? <NP>?)|(<IN> <NNP> <POS> <NN>)}
-# PP: { < TO > < PRP$ > ? < NN >? < NNP > < POS > < NN >}
 
 LOC_PP = ["in", "on", "at", "under", "near", "by", "along", "in front of", "on top of", "inside", "outside", "up",
           "towards", "past", "over", "through", "above", "across", "against", "among", "back", "in back of",
@@ -33,7 +30,6 @@ LOC_PP = ["in", "on", "at", "under", "near", "by", "along", "in front of", "on t
 
 TIME_PP = ["at", "on", "in", "when", "last", "next", "today", "yesterday", "tomorrow", "every day", "noon", "around"]
 
-# WHO_NP = ["Bull", "the Bull", "the Lion", "a Lion", "a fat Bull", "the people", "the girls", "a Fox", "a Crow", "Alyssa", "Kristin", "A Fox", "A Crow"]
 
 def get_sentences(text):
     sentences = nltk.sent_tokenize(text)
@@ -49,7 +45,7 @@ def get_sentences_without_quotes(text):
     sentences = [nltk.word_tokenize(sent) for sent in sentences]
     sentences = [nltk.pos_tag(sent) for sent in sentences]
     #sentence = [' '.join(sent.split()[1:]) for sent in sentences]
-    # print(sentences)
+    print(sentences)
     return sentences
 
 def pp_filter(subtree):
@@ -86,6 +82,15 @@ def find_locations(tree):
             locations.append(subtree)
     # print(locations)
     return locations
+
+def find_where(sentences):
+    where = []
+    for sent in sentences:
+        tree = chunker.parse(sent)
+        for subtree in tree.subtrees(filter=pp_filter):
+            if is_location(subtree[0]):
+                where.append(subtree)
+    return where
 
 def find_who(sentences):
     # print(sentences)
@@ -223,7 +228,7 @@ if __name__ == '__main__':
     chunker = nltk.RegexpParser(GRAMMAR)
     # lmtzr = WordNetLemmatizer()
 
-    question_id = "blogs-01-5"
+    question_id = "blogs-01-3"
     # question_id = "fables-02-1"
     # question_id = "mc500.train.0.12"
     # question_id = "fables-02-3"
@@ -243,12 +248,15 @@ if __name__ == '__main__':
     sentences = get_sentences_without_quotes(text)
     # print(sentences)
     # answer = find_subj(sentences)
+    where = find_where(sentences)
+    for whe in where:
+        print(" ".join([token[0] for token in whe.leaves()]))
 
-
-    candidates = find_who(sentences)
-    # print(candidates)
-    for cand in candidates:
-        print(" ".join([token[0] for token in cand.leaves()]))
+    #
+    # candidates = find_who(sentences)
+    # # print(candidates)
+    # for cand in candidates:
+    #     print(" ".join([token[0] for token in cand.leaves()]))
 
     #
     # verb = 'was'
