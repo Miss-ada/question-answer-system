@@ -1,4 +1,7 @@
+"""
+@author: Brian Schwarzmann, Ada Ma, and Nathaniel Suriawijaya
 
+"""
 from qa_engine.base import QABase
 from qa_engine.score_answers import main as score_answers
 from baseline_stub import *
@@ -6,6 +9,7 @@ from dependency_demo_stub import *
 from chunk_demo import *
 from dependency_demo_stubV1 import *
 from nltk.stem.wordnet import WordNetLemmatizer
+from nltk import RegexpParser as rp
 
 stopwords = set(nltk.corpus.stopwords.words("english"))
 
@@ -79,46 +83,49 @@ def get_better_answer(q,text):
     story = driver.get_story(q["sid"])
     text = story["text"]
 
-    #unparsed_sent contains the sentence containing the answer
+    # unparsed_sent contains the sentence containing the answer
     unparsed_sent = QAmatching_combined(q, text)
-    #sentences = sentence.strip('')for sentence in text.split('\n')
     sentences = nltk.sent_tokenize(text)
     sent_array = []
     for sentence in sentences:
         sent_array.append(sentence.strip(''))
     print("SENTENCE ARRAY:\n", sent_array)
-    index = sent_array.index(unparsed_sent)
-    
-    #lmtzr = WordNetLemmatizer()
-    #subj_stem = lmtzr.lemmatize(subj, "n")
-    #verb_stem = lmtzr.lemmatize(verb, "v")
-    chunker = nltk.RegexpParser(GRAMMAR)
-    #locations = find_answer(crow_sentences, chunker)
+    # if the unparsed_sent is '', as in QAmatching_combined(q, text)
+    if(unparsed_sent != ''):
+        index = sentences.index(unparsed_sent)
+    else:
+        unparsed_sent = text
+    print("unparsed_sent:",unparsed_sent)
+
+    #chunker = nltk.RegexpParser(GRAMMAR)
     
     
     state_question = reformulate_question(q)
     parsed_dic = parsed_question_dic(q)
     if 'story' and 'about' in state_question:
-        special_cases(q)
+        special_cases(q,text)
     if 'somewhere' in state_question:
-        if (q["dep"]):
+        if (story["sch_dep"] == ''):
             answers.append(find_where_answer((q["dep"]),(story["sch_dep"][index])))
-        if len(answers) == 0:
-            find_locations()
+        #if len(answers) == 0:
+            """replace with new find_where function"""
+            #tree = chunker.parse(unparsed_sent)
+            #find_locations(tree)
         else:
             answers.append(unparsed_sent)
-        # loc = None
-        
     if 'sometime' in state_question:
         answers.append(unparsed_sent)
         
     if 'someone' in state_question:
         #if state_question.startwith('someone'):
-        answers.append(find_subj_answer(q["dep"]),(story["sch_dep"][index]))
+        if (story["sch_dep"] == ''):
+            answers.append(find_subj_answer(q["dep"]),(story["sch_dep"][index]))
         #chunk_demo for an alternate answer
-        if len(answers) == 0:
-            answers.append(unparsed_sent)
+        #if len(answers) == 0:
+            #find_who(unparsed_sent)
             #dobj = None
+        else:
+            answers.append(unparsed_sent)
     if 'somewhat' in state_question:
         if 'direct_object' in state_question:
             answers.append(unparsed_sent)
@@ -130,6 +137,9 @@ def get_better_answer(q,text):
             answers.append(unparsed_sent)
     if 'somewhy' in state_question:
         answers.append(unparsed_sent)
+    if len(answers) == 0:
+        answers.append(unparsed_sent)
+    print("answers object:", answers)
     print("answer:", " ".join(t[0] for t in answers))
     return answers
 

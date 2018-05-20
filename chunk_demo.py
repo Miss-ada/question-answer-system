@@ -1,7 +1,7 @@
 '''
 
 @authors: Reid Swanson
-Brian Schwarzmann, Ada, and Nathaniel
+Brian Schwarzmann, Ada Ma, and Nathaniel Suriawijaya
 
 '''
 
@@ -19,6 +19,7 @@ GRAMMAR = """
             NP: {(<DT>? <ADJ>* <N>)|(<DT>? <NNP>)}
             PP: {(<IN> <NP> <IN>? <NP>?)|(<TO> <NP> <IN>? <NP>?)|(<IN> <NNP> <POS> <NP>)|(<TO> <PRP$> <NN> <NNP> <POS> <NP>)|(<IN> <NP> <WRB> <PRP> <VBR>)}
             VP: {<TO>? <V> (<NP>|<PP>)*}
+            PN: {<DT>? <NNP>}
 
             """
 # {<TO> <PRP$> <NN> <NNP> <POS> <NN>}
@@ -30,9 +31,9 @@ LOC_PP = ["in", "on", "at", "under", "near", "by", "along", "in front of", "on t
           "towards", "past", "over", "through", "above", "across", "against", "among", "back", "in back of",
           "at the back of", "behind", "beside", "next to", "between", "close to", "inside", "underneath"]
 
-TIME_PP = ["at", "on", "in", "when", "last", "next", "today", "yesterday", "tomorrow"]
+TIME_PP = ["at", "on", "in", "when", "last", "next", "today", "yesterday", "tomorrow", "every day", "noon", "around"]
 
-WHO_NP = ["Bull"]#["the Bull", "the Lion", "a Lion", "a fat Bull", "the people", "the girls", "a Fox", "a Crow", "Alyssa", "Kristin"]
+# WHO_NP = ["Bull", "the Bull", "the Lion", "a Lion", "a fat Bull", "the people", "the girls", "a Fox", "a Crow", "Alyssa", "Kristin", "A Fox", "A Crow"]
 
 def get_sentences(text):
     sentences = nltk.sent_tokenize(text)
@@ -55,13 +56,13 @@ def pp_filter(subtree):
     return subtree.label() == "PP"
 
 def who_filter(subtree):
-    return subtree.label() == "NP"
+    return subtree.label() == "PN"
 
 def is_location(prep):
     return prep[0] in LOC_PP
 
-def is_who(noun):
-    return noun[0] in WHO_NP
+# def is_who(noun):
+#     return noun[0] in WHO_NP
 
 def is_time(prep):
     return prep[0] in TIME_PP
@@ -86,17 +87,28 @@ def find_locations(tree):
     # print(locations)
     return locations
 
-def find_subj(sentences):
+def find_who(sentences):
     # print(sentences)
+    who = nltk.RegexpParser('WHO: {<DT>? <NNP>}')
     candidates = []
     for sent in sentences:
-        for word, pos in sent:
-            if pos == 'NNP' and word not in candidates:
-                candidates.append(word)
+        tree = who.parse(sent)
+        for subtree in tree.subtrees():
+            if subtree.label() == 'WHO':
+                if subtree not in candidates:
+                    candidates.append(subtree)
     return candidates
 
+# def find_subj(sentences):
+#     candidates = []
+#     for sent in sentences:
+#         for word, pos in sent:
+#             if pos == 'NNP' and word not in candidates:
+#                 candidates.append(word)
+#     return candidates
+
 def find_verb(sentences):
-    print(sentences)
+    # print(sentences)
     candidates = []
     for sent in sentences:
         for word, pos in sent:
@@ -104,31 +116,37 @@ def find_verb(sentences):
                 candidates.append(word)
     # print(candidates)
     return candidates
-
-def find_who(tree):
-    candidates = []
-    for subtree in tree.subtrees(filter=who_filter):
-        # print(subtree)
-        if is_who(subtree[0]):
-            candidates.append(subtree)
-    return candidates
+#
+# def find_who(tree):
+#     candidates = []
+#     for subtree in tree.subtrees(filter=who_filter):
+#         # print(subtree)
+#         if is_who(subtree[0]):
+#             candidates.append(subtree)
+#     return candidates
 
 def find_obj(tree):
     pass
 
 
 def find_time(tree):
-    pass
+    time = []
+    for subtree in tree.subtrees(filter=time_filter):
+        # print(subtree)
+        if is_time(subtree[0]):
+            time.append(subtree)
+    # print(time)
+    return time
 
-
-def find_reason(tree):
-    candidates = []
-    for sent in sentences:
-        for word, pos in sent:
-            if word == 'because':
-                return text['because':]
-                # candidates.append(word)
-    return candidates
+#
+# def find_reason(tree):
+#     candidates = []
+#     for sent in sentences:
+#         for word, pos in sent:
+#             if word in ('because', 'for'):
+#                 return text(['because':]|['for':])
+#                 # candidates.append(word)
+#     return candidates
 
 
 def find_candidates(sentences, chunker):
@@ -205,8 +223,8 @@ if __name__ == '__main__':
     chunker = nltk.RegexpParser(GRAMMAR)
     # lmtzr = WordNetLemmatizer()
 
-    # question_id = "blogs-01-3"
-    question_id = "fables-02-1"
+    question_id = "blogs-01-3"
+    # question_id = "fables-02-1"
     # question_id = "mc500.train.0.12"
     # question_id = "fables-02-3"
     # question_id = "blogs-01-5"
@@ -221,12 +239,27 @@ if __name__ == '__main__':
     # print(text)
     # Apply the standard NLP pipeline we've seen before
 
-    sentences = get_sentences(text)
-    # sentences = get_sentences_without_quotes(text)
+    # sentences = get_sentences(text)
+    sentences = get_sentences_without_quotes(text)
     # print(sentences)
     # answer = find_subj(sentences)
-    answer = find_verb(sentences)
-    print(answer)
+
+
+    candidates = find_who(sentences)
+    # print(candidates)
+    for cand in candidates:
+        print(" ".join([token[0] for token in cand.leaves()]))
+
+    #
+    # verb = 'was'
+    # verb_stem = lmtzr.lemmatize(verb, "v")
+    # crow_sentences = find_sentences(verb, sentences)
+    # time = find_candidates(crow_sentences, chunker)
+    #
+    # pos_time = find_time(sentences)
+    # for pt in pos_time:
+    #     print(" ".join([token[0] for token in pt.leaves()]))
+
 
     # print(sentences)
     # Assume we're given the keywords for now
