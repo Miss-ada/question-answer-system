@@ -165,14 +165,18 @@ def get_better_answer(q,text):
         answers.append(matched_sent)
     if 'something' in state_question: #this line
         if state_question.startswith("something"):
-            tmp = find_dobj(q, matched_sent, text, story)
-            answers.append(tmp)
+            dir_obj = find_dobj(q, matched_sent, text, story)
+            answers.append(dir_obj)
         elif "do" in question and ("did" in question or "does" in question ):
-            tmp= find_verb(sentences)
-            answers.append(tmp)
+            if single == True:
+                action = find_verb_sent(matched_sent)
+                answers.append(action)
+            else:
+                action = find_verb(sentences)
+                answers.append(action)
         else:
-            tmp= find_iobj(q, matched_sent, text, story)
-            answers.append(tmp)
+            ind_obj= find_iobj(q, matched_sent, text, story)
+            answers.append(ind_obj)
     if len(answers) == 0:
         answers.append(matched_sent)
     print("answers object:", answers)
