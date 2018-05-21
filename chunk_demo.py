@@ -150,9 +150,9 @@ def find_verb(sentences):
 def find_verb_sent(sent):
     # print(sentences)
     candidates = []
-        for word, pos in sent:
-            if pos in ('VB', 'VBD') and word not in candidates:
-                candidates.append(word)
+    for word, pos in sent:
+        if pos in ('VB', 'VBD') and word not in candidates:
+            candidates.append(word)
     # print(candidates)
     return candidates
 #

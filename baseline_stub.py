@@ -2,6 +2,7 @@
 '''
 Created on May 14, 2014
 @author: reid
+Brian Schwarzmann, Ada Ma, and Nathaniel Suriawijaya
 
 Modified on May 21, 2015
 '''
@@ -70,8 +71,8 @@ def add_dependency(node, qgraph):
     if len(node['deps']) > 0:
         deps = get_dependents(node, qgraph)
         deps = sorted(deps+[node], key=operator.itemgetter("address"))
-        return " ".join(dep["word"] for dep in deps)
-    return node['word']
+        return " ".join(dep["lemma"] for dep in deps)
+    return node['lemma']
 
 
 def get_dependents(node, graph):
@@ -244,14 +245,14 @@ def QAmatching_baseline(question, text):
 def QAmatching_combined(q, text):
     baseline = QAmatching_baseline(q['text'], text)
     reformulate = QAmatching_reformulate(q, text)
-    #wordemb = QAmatching_word_embedding(q['text'], text)
-    #if reformulate == wordemb:
+    wordemb = QAmatching_word_embedding(q['text'], text)
+    if reformulate == wordemb:
+        return reformulate
+    elif wordemb == baseline:
+        return wordemb
+    elif baseline == reformulate:
+        return baseline
     return reformulate
-    #elif wordemb == baseline:
-    #    return wordemb
-    #elif baseline == reformulate:
-    #    return baseline
-    #return baseline
     
 if __name__ == '__main__':
 

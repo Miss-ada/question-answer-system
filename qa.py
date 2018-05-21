@@ -152,15 +152,15 @@ def get_better_answer(q,text):
             sgraph = story["sch_dep"][index]
             answers.append(find_where_answer(qgraph,sgraph))
         """
-    if 'somewhat' in state_question:
-        if 'direct_object' in state_question:
-            answers.append(matched_sent)
-        if 'indirect_object' in state_question:
-            answers.append(matched_sent)
-        if 'verb' in state_question:
-            answers.append(matched_sent)
-        else:
-            answers.append(matched_sent)
+#    if 'somewhat' in state_question:
+#        if 'direct_object' in state_question:
+#            answers.append(matched_sent)
+#        if 'indirect_object' in state_question:
+#            answers.append(matched_sent)
+#        if 'verb' in state_question:
+#            answers.append(matched_sent)
+#        else:
+#            answers.append(matched_sent)
     if 'somewhy' in state_question:
         answers.append(matched_sent)
     if 'something' in state_question: #this line
