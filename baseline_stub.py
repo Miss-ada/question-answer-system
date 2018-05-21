@@ -8,7 +8,7 @@ Modified on May 21, 2015
 
 import sys, nltk, operator, collections
 from qa_engine.base import QABase
-from dependency_demo_stub import *
+from dependency_demo_stubV1 import *
 import gensim
 model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
 #from word2vec_extractor import Word2vecExtractor
@@ -84,10 +84,9 @@ def get_dependents(node, graph):
             results = results + get_dependents(dep, graph)     
     return results
 
-def parse_question(q):
-    qgraph = q['dep']
+def parse_question(qgraph):
     qmain = find_main(qgraph)
-    qword = qmain["word"]
+    qword = qmain["lemma"]
     qnode = find_node(qword, qgraph)
     dependencies = get_dependents(qnode, qgraph)
     
@@ -140,8 +139,8 @@ def parse_question(q):
     return qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg
     
 
-def parsed_question_dic(q):
-    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg = parse_question(q)
+def parsed_question_dic(qgraph):
+    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg = parse_question(qgraph)
     dic = {}
     dic['nsubj'] = nsubj
     dic['nsubjpass'] = nsubjpass
@@ -156,7 +155,8 @@ def parsed_question_dic(q):
     return dic
 
 def reformulate_question(q):
-    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg = parse_question(q)
+    qgraph = q['dep']
+    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg = parse_question(qgraph)
     
     if nsubj == None:
         nsubj = ''
@@ -255,12 +255,12 @@ def QAmatching_combined(q, text):
     
 if __name__ == '__main__':
 
-    question_id = "fables-01-6"
+    question_id = "blogs-01-11"
     # for qid in hw6-questions.csv:
     driver = QABase()
     q = driver.get_question(question_id)
     story = driver.get_story(q["sid"])
-    text = story["text"]
+    text = story['sch']
     question = q["text"]
     print("question:", question)
     stopwords = set(nltk.corpus.stopwords.words("english"))

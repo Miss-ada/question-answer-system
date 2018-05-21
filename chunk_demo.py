@@ -10,7 +10,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from qa_engine.base import QABase
 from nltk.corpus import wordnet as wn
 from baseline_stub import *
-
+from dependency_demo_stubV1 import find_answer, find_index #this line
 # Our simple grammar from class (and the book)
 GRAMMAR = """
             N: {<NN>|<PRP> }
@@ -155,9 +155,35 @@ def find_verb(sentences):
 #             candidates.append(subtree)
 #     return candidates
 
-def find_obj(tree):
-    pass
-
+def find_dobj(q, sentence_with_answer, text, story):
+    qgraph =  q["dep"]
+    s_index = find_index(sentence_with_answer, text)
+    sgraph = None
+    if text == story['sch']:
+        sgraph = story["sch_dep"][s_index]
+    else:
+        sgraph = story["story_dep"][s_index]
+    try:  
+        answer = find_answer(qgraph, sgraph, "dobj") #this line
+    except TypeError:
+        answer = sentence_with_answer
+    return answer
+    
+def find_iobj(q, sentence_with_answer, text, story):
+    qgraph =  q["dep"]
+    s_index = find_index(sentence_with_answer, text)
+    sgraph = None
+    if text == story['sch']:
+        sgraph = story["sch_dep"][s_index]
+    else:
+        sgraph = story["story_dep"][s_index]
+        
+    #s_dic = parsed_question_dic(sgraph) 
+    try:  
+        answer = find_answer(qgraph, sgraph, "nsubjpass") #this line
+    except TypeError:
+        answer = sentence_with_answer
+    return answer
 
 def find_time(tree):
     time = []

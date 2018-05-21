@@ -16,7 +16,7 @@ def find_main(graph):
 
 def find_node(word, graph):
     for node in graph.nodes.values():
-        if node["word"] == word:
+        if node["lemma"] == word: #this line
             return node
     return None
     
@@ -30,7 +30,11 @@ def get_dependents(node, graph):
         
     return results
 
-
+def find_index(sentence_with_answer, text): #this line method
+    sentences = [sentence.strip(' ')for sentence in nltk.sent_tokenize(text)]
+    index = sentences.index(sentence_with_answer)
+    return index; 
+    
 def find_where_answer(qgraph, sgraph):
     qmain = find_main(qgraph)
     qword = qmain["word"]
@@ -71,7 +75,24 @@ def find_dobj_answer(qgrpah, sgraph):
                 deps = get_dependents(node, sgraph)
                 deps = sorted(deps+[node], key=operator.itemgetter("address"))
                 return " ".join(dep["word"] for dep in deps)
+                
+def find_answer(qgraph, sgraph, rel): #this line method
+    qmain = find_main(qgraph)
+    qword = qmain["word"]
 
+    snode = find_node(qword, sgraph)
+
+    for node in sgraph.nodes.values():
+        # print("node[head]=", node["head"])
+        if node.get('head', None) == snode["address"]:
+            #print(node["word"], node["rel"])
+
+            if node['rel'] == rel: #node['rel'] =="nmod"
+                deps = get_dependents(node, sgraph)
+                deps = sorted(deps+[node], key=operator.itemgetter("address"))
+                
+                return " ".join(dep["word"] for dep in deps)
+                
 if __name__ == '__main__':
     driver = QABase()
 

@@ -5,7 +5,6 @@
 from qa_engine.base import QABase
 from qa_engine.score_answers import main as score_answers
 from baseline_stub import *
-from dependency_demo_stub import *
 from chunk_demo import *
 from dependency_demo_stubV1 import *
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -83,6 +82,7 @@ def get_better_answer(q,text):
     #q = driver.get_question(question_id)
     story = driver.get_story(q["sid"])
     text = story["text"]
+    question = q['text'] #this line
 
     # matched_sent contains the sentence containing the answer
     matched_sent = QAmatching_combined(q, text)
@@ -94,7 +94,7 @@ def get_better_answer(q,text):
     #print("SENTENCE ARRAY:\n", sent_array)
     # if the matched_sent is '', as in QAmatching_combined(q, text)
     if(matched_sent != ''):
-        index = sentences.index(matched_sent)
+        index = find_index(matched_sent, text)
         single = True
     else:
         matched_sent = text
@@ -103,7 +103,7 @@ def get_better_answer(q,text):
     
     
     state_question = reformulate_question(q)
-    parsed_dic = parsed_question_dic(q)
+    #parsed_dic = parsed_question_dic(q)
     if 'story' and 'about' in state_question:
         special_cases(q,text)
     if 'somewhere' in state_question:
@@ -163,6 +163,16 @@ def get_better_answer(q,text):
             answers.append(matched_sent)
     if 'somewhy' in state_question:
         answers.append(matched_sent)
+    if 'something' in state_question: #this line
+        if state_question.startswith("something"):
+            tmp = find_dobj(q, matched_sent, text, story)
+            answers.append(tmp)
+        elif "do" in question and ("did" in question or "does" in question ):
+            tmp= find_verb(sentences)
+            answers.append(tmp)
+        else:
+            tmp= find_iobj(q, matched_sent, text, story)
+            answers.append(tmp)
     if len(answers) == 0:
         answers.append(matched_sent)
     print("answers object:", answers)
