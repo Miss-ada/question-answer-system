@@ -18,7 +18,7 @@ GRAMMAR = """
             ADJ: {<JJ.*>}
             NP: {(<DT>? <ADJ>* <N>)|(<DT>? <NNP>)}
             PP: {(<TO> <PRP$> <NN> <NNP> <POS> <NP>)|(<IN> <NP> <WRB> <PRP> <VBR>)|(<IN> <NP> <IN>? <NP>?)|(<TO> <NP> <IN>? <NP>?)|(<IN> <NNP> <POS> <NP>)}
-                }<JJ|PRP>{
+                }<IN|JJ|PRP>{
             VP: {<TO>? <V> (<NP>|<PP>)*}
             PN: {<DT>? <NNP>}
 
@@ -30,13 +30,13 @@ LOC_PP = ["in", "on", "at", "under", "near", "by", "along", "in front of", "on t
 
 TIME_PP = ["at", "on", "in", "when", "last", "next", "today", "yesterday", "tomorrow", "every day", "noon", "around"]
 
-
-def get_sentences(text):
-    sentences = nltk.sent_tokenize(text)
-    sentences = [nltk.word_tokenize(sent) for sent in sentences]
-    sentences = [nltk.pos_tag(sent) for sent in sentences]
-    # print(sentences)
-    return sentences
+#
+# def get_sentences(text):
+#     sentences = nltk.sent_tokenize(text)
+#     sentences = [nltk.word_tokenize(sent) for sent in sentences]
+#     sentences = [nltk.pos_tag(sent) for sent in sentences]
+#     # print(sentences)
+#     return sentences
 #
 def tokenize_sentence(sent):
     sentence = nltk.word_tokenize(sent)
