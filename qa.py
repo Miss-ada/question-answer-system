@@ -87,10 +87,10 @@ def get_better_answer(q,text):
     # matched_sent contains the sentence containing the answer
     matched_sent = QAmatching_combined(q, text)
     tokenized_sentences = get_sentences(text)
-    sentences = nltk.sent_tokenize(text)
-    sent_array = []
-    for sentence in sentences:
-        sent_array.append(sentence.strip(''))
+    sentences = get_sentences_without_quotes(text)
+    # sent_array = []
+    # for sentence in sentences:
+    #     sent_array.append(sentence.strip(''))
     #print("SENTENCE ARRAY:\n", sent_array)
     # if the matched_sent is '', as in QAmatching_combined(q, text)
     if(matched_sent != ''):

@@ -17,12 +17,11 @@ model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-nega
 
 # The standard NLTK pipeline for POS tagging a document
 def get_sentences(text):
-    pattern = r'("\w.*")|(\'\w.*\')'
-    text = re.sub(pattern, '', text)
+    pattern = r'(\,\s)?("\w.*")|(\'\w.*\')'
+    text = re.sub(pattern, '.', text)
     sentences = nltk.sent_tokenize(text)
     sentences = [nltk.word_tokenize(sent) for sent in sentences]
     sentences = [nltk.pos_tag(sent) for sent in sentences]
-    
     return sentences	
 
 def get_bow(tagged_tokens):
@@ -210,9 +209,14 @@ def reformulate_question(q):
         
     return reformulatedQ
 
+def get_tex_without_POS_or_quotes(text):
+    pattern = r'(\,\s)?("\w.*")|(\'\w.*\')'
+    text = re.sub(pattern, '.', text)
+    return nltk.sent_tokenize(text)
+
 def QAmatching_reformulate(question,text):
     reformulated_question = reformulate_question(question)
-    sentences = nltk.sent_tokenize(text)
+    sentences = get_tex_without_POS_or_quotes(text)
     closest_sentence = ''
     max_overlap = 0
     for sentence in sentences:
@@ -224,7 +228,7 @@ def QAmatching_reformulate(question,text):
         
 
 def QAmatching_word_embedding(question, text):
-    sentences = nltk.sent_tokenize(text)
+    sentences = get_tex_without_POS_or_quotes(text)
     lowest_distance = 10
     closest_sentence = ''
     for sentence in sentences:
@@ -256,12 +260,12 @@ def QAmatching_combined(q, text):
     
 if __name__ == '__main__':
 
-    question_id = "blogs-01-11"
+    question_id = "fables-02-1"
     # for qid in hw6-questions.csv:
     driver = QABase()
     q = driver.get_question(question_id)
     story = driver.get_story(q["sid"])
-    text = story['sch']
+    text = story['text']
     question = q["text"]
     print("question:", question)
     stopwords = set(nltk.corpus.stopwords.words("english"))
