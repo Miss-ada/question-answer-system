@@ -10,14 +10,14 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from qa_engine.base import QABase
 from nltk.corpus import wordnet as wn
 from baseline_stub import *
-from dependency_demo_stub import find_answer, find_index
+from dependency_demo_stubV1 import find_answer, find_index #this line
 # Our simple grammar from class (and the book)
 GRAMMAR = """
             N: {<NN>|<PRP> }
             V: {<V>|(<TO> <V>)}
             ADJ: {<JJ.*>}
             NP: {(<DT>? <ADJ>* <N>)|(<DT>? <NNP>)}
-            PP: {(<IN> <NP> <IN>? <NP>?)|(<TO> <NP> <IN>? <NP>?)|(<IN> <NNP> <POS> <NP>)|(<TO> <PRP$> <NN> <NNP> <POS> <NP>)|(<IN> <NP> <WRB> <PRP> <VBR>)}
+            PP: {(<TO> <PRP$> <NN> <NNP> <POS> <NP>)|(<IN> <NP> <WRB> <PRP> <VBR>)|(<IN> <NP> <IN>? <NP>?)|(<TO> <NP> <IN>? <NP>?)|(<IN> <NNP> <POS> <NP>)}
                 }<JJ|PRP>{
             VP: {<TO>? <V> (<NP>|<PP>)*}
             PN: {<DT>? <NNP>}
@@ -38,6 +38,11 @@ def get_sentences(text):
     # print(sentences)
     return sentences
 #
+def tokenize_sentence(sent):
+    sentence = nltk.word_tokenize(sent)
+    sentence = nltk.pos_tag(sentence)
+    return sentence
+
 def get_sentences_without_quotes(text):
     pattern = r'("\w.*")|(\'\w.*\')'
     text = re.sub(pattern, '', text)
@@ -45,7 +50,7 @@ def get_sentences_without_quotes(text):
     sentences = [nltk.word_tokenize(sent) for sent in sentences]
     sentences = [nltk.pos_tag(sent) for sent in sentences]
     #sentence = [' '.join(sent.split()[1:]) for sent in sentences]
-    print(sentences)
+    print("tokenized sents:\n", sentences)
     return sentences
 
 def pp_filter(subtree):
@@ -141,6 +146,15 @@ def find_verb(sentences):
                 candidates.append(word)
     # print(candidates)
     return candidates
+    
+def find_verb_sent(sent):
+    # print(sentences)
+    candidates = []
+    for word, pos in sent:
+        if pos in ('VB', 'VBD') and word not in candidates:
+            candidates.append(word)
+    # print(candidates)
+    return candidates
 #
 # def find_who(tree):
 #     candidates = []
@@ -150,8 +164,6 @@ def find_verb(sentences):
 #             candidates.append(subtree)
 #     return candidates
 
-
-#run find_dobj if reformulated_question.startswith("something")
 def find_dobj(q, sentence_with_answer, text, story):
     qgraph =  q["dep"]
     s_index = find_index(sentence_with_answer, text)
@@ -161,11 +173,11 @@ def find_dobj(q, sentence_with_answer, text, story):
     else:
         sgraph = story["story_dep"][s_index]
     try:  
-        answer = find_answer(qgraph, sgraph, "dobj")
+        answer = find_answer(qgraph, sgraph, "dobj") #this line
     except TypeError:
         answer = sentence_with_answer
     return answer
-        
+    
 def find_iobj(q, sentence_with_answer, text, story):
     qgraph =  q["dep"]
     s_index = find_index(sentence_with_answer, text)
@@ -177,7 +189,7 @@ def find_iobj(q, sentence_with_answer, text, story):
         
     #s_dic = parsed_question_dic(sgraph) 
     try:  
-        answer = find_answer(qgraph, sgraph, "nsubjpass")
+        answer = find_answer(qgraph, sgraph, "nsubjpass") #this line
     except TypeError:
         answer = sentence_with_answer
     return answer
@@ -276,11 +288,7 @@ if __name__ == '__main__':
     chunker = nltk.RegexpParser(GRAMMAR)
     # lmtzr = WordNetLemmatizer()
 
-<<<<<<< HEAD
-    question_id = "blogs-01-11"
-=======
     question_id = "blogs-01-3"
->>>>>>> 24a7157f0145f23b98cdc8028ccd086a52305049
     # question_id = "fables-02-1"
     # question_id = "mc500.train.0.12"
     # question_id = "fables-02-3"
