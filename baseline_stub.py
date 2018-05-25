@@ -209,9 +209,16 @@ def reformulate_question(q):
         
     return reformulatedQ
 
+def get_sentence_without_quote_or_pos(text):
+    pattern = r'(\,\s)?("\w.*")|(\'\w.*\')'
+    text = re.sub(pattern, '.', text)
+    return nltk.sent_tokenize(text)
+
+
+
 def QAmatching_reformulate(question,text):
     reformulated_question = reformulate_question(question)
-    sentences = nltk.sent_tokenize(text)
+    sentences = get_sentence_without_quote_or_pos(text)
     closest_sentence = ''
     max_overlap = 0
     for sentence in sentences:
@@ -223,7 +230,7 @@ def QAmatching_reformulate(question,text):
         
 
 def QAmatching_word_embedding(question, text):
-    sentences = nltk.sent_tokenize(text)
+    sentences = get_sentence_without_quote_or_pos(text)
     lowest_distance = 10
     closest_sentence = ''
     for sentence in sentences:
