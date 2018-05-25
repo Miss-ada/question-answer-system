@@ -33,7 +33,7 @@ def get_dependents(node, graph):
 def find_index(sentence_with_answer, text): #this line method
     sentences = [sentence.strip(' ')for sentence in nltk.sent_tokenize(text)]
     index = sentences.index(sentence_with_answer)
-    return index; 
+    return index
     
 def find_where_answer(qgraph, sgraph):
     qmain = find_main(qgraph)
