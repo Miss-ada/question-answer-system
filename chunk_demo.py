@@ -163,7 +163,7 @@ def find_verb_sent(sent):
 #         if is_who(subtree[0]):
 #             candidates.append(subtree)
 #     return candidates
-
+    
 def find_dobj(q, sentence_with_answer, text, story):
     qgraph =  q["dep"]
     s_index = find_index(sentence_with_answer, text)
@@ -173,7 +173,9 @@ def find_dobj(q, sentence_with_answer, text, story):
     else:
         sgraph = story["story_dep"][s_index]
     try:  
-        answer = find_answer(qgraph, sgraph, "dobj") #this line
+        answer = find_answer(qgraph, sgraph, "dobj") 
+        if answer is None:
+            answer = find_answer(qgraph, sgraph, "nsubjpass")
     except TypeError:
         answer = sentence_with_answer
     return answer

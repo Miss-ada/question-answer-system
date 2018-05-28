@@ -11,18 +11,28 @@ import sys, nltk, operator, collections
 from qa_engine.base import QABase
 from dependency_demo_stubV1 import *
 import gensim
+import string
+from nltk.stem.porter import PorterStemmer
+from nltk.stem import WordNetLemmatizer
+
 model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
 #from word2vec_extractor import Word2vecExtractor
 #w2vecextractor = Word2vecExtractor("GoogleNews-vectors-negative300.bin")
+punct = set(string.punctuation)
+porter = PorterStemmer()
+wl = WordNetLemmatizer()
 
 # The standard NLTK pipeline for POS tagging a document
 def get_sentences(text):
-    pattern = r'(\,\s)?("\w.*")|(\'\w.*\')'
-    text = re.sub(pattern, '.', text)
     sentences = nltk.sent_tokenize(text)
     sentences = [nltk.word_tokenize(sent) for sent in sentences]
     sentences = [nltk.pos_tag(sent) for sent in sentences]
     return sentences	
+
+def get_answer(text):
+    sentences = get_sentences(text)
+    tagged_txt = " ".join(sentences)
+    pass
 
 def get_bow(tagged_tokens):
     stopwords = set(nltk.corpus.stopwords.words("english"))
@@ -100,6 +110,7 @@ def parse_question(qgraph):
     be = None
     verb = None
     neg = None
+    advcl = None
     
     nsubj_address = get_address(qnode, 'nsubj')
     nsubjpass_address = get_address(qnode, 'nsubjpass')
@@ -111,7 +122,8 @@ def parse_question(qgraph):
     be_address = get_address(qnode, 'cop')
     neg_address = get_address(qnode, 'neg')
     verb_address = None
-    
+    advcl_address = get_address(qnode, 'advcl')
+
     if be_address is None:
         verb = qword
 
@@ -135,12 +147,14 @@ def parse_question(qgraph):
             be = add_dependency(node,qgraph)
         elif node['address'] == neg_address:
             neg = add_dependency(node,qgraph)
+        elif node['address'] == advcl_address:
+            advcl = add_dependency(node,qgraph)
         
-    return qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg
+    return qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg, advcl
     
 
 def parsed_question_dic(qgraph):
-    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg = parse_question(qgraph)
+    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg, advcl = parse_question(qgraph)
     dic = {}
     dic['nsubj'] = nsubj
     dic['nsubjpass'] = nsubjpass
@@ -152,11 +166,12 @@ def parsed_question_dic(qgraph):
     dic['be'] = be
     dic['verb'] = verb
     dic['neg'] = neg
+    dic['advcl'] = advcl
     return dic
 
 def reformulate_question(q):
     qgraph = q['dep']
-    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg = parse_question(qgraph)
+    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg, advcl = parse_question(qgraph)
     
     if nsubj == None:
         nsubj = ''
@@ -178,12 +193,15 @@ def reformulate_question(q):
         verb = ''
     if neg == None:
         neg = ''
+    if advcl == None:
+        advcl = ''
+        
     question = q['text']
     #where
     reformulatedQ = ''
     if "Where" in question:
         #a. where is nsubj.?/#b. where did nsubj do something? 
-        reformulatedQ = " ".join([nsubj, verb, "somewhere"])
+        reformulatedQ = " ".join([nsubj, verb, "somewhere", nmod])
     elif "When" in question:
         reformulatedQ = " ".join([nsubj, verb, "sometime"])
     elif "Who" in question:
@@ -194,13 +212,13 @@ def reformulate_question(q):
         else:
             reformulatedQ = " ".join([nsubj, be, nmod, "someone"])
     elif "What" in question:
-        #a. what did nsubj. do to her? question on verb
+        #a. what is somebody doing? question on verb
         
         #b. what did nsubj. eat? question on direct object
-        if dobj == "What": 
+        if dobj == "what": 
             reformulatedQ = " ".join([nsubj, verb, "something", nmod])
-        #c. what was fired at dobj
-        elif nsubjpass == "What":
+        #c. what was fired at dobj / what was burned? 
+        elif nsubjpass == "what":
             reformulatedQ = " ".join(["something", auxpass, verb, nmod])
         
     elif "Why" in question:
@@ -214,21 +232,37 @@ def get_tex_without_POS_or_quotes(text):
     text = re.sub(pattern, '.', text)
     return nltk.sent_tokenize(text)
 
-def QAmatching_reformulate(question,text):
-    reformulated_question = reformulate_question(question)
-    sentences = get_tex_without_POS_or_quotes(text)
+
+def lemmatized(sentence):
+    lemmatized_tokens = []
+    tokens = [token.lower() for token in nltk.word_tokenize(sentence) if token not in punct]
+    word_pos_tuples = nltk.pos_tag(tokens)
+    for tup in word_pos_tuples:
+        word = tup[0]
+        pos = tup[1]
+        if(pos.startswith('VB')):
+            lemmatized_tokens.append(wl.lemmatize(word, pos = 'v'))
+        else:
+            lemmatized_tokens.append(wl.lemmatize(word))
+    sentence = " ".join(lemmatized_tokens)
+    return sentence
+
+def QAmatching_reformulate(q,text):    
+    reformulated_question = reformulate_question(q)
+    sentences = nltk.sent_tokenize(text)
     closest_sentence = ''
     max_overlap = 0
     for sentence in sentences:
-        overlap = len(set(sentence.split()) & set(reformulated_question.split()))
+        lemmatized_sentence = lemmatized(sentence)
+        overlap = len(set(lemmatized_sentence.split()) & set(reformulated_question.split()))
         if overlap > max_overlap:
             max_overlap = overlap
             closest_sentence = sentence
+            print (closest_sentence, overlap)
     return closest_sentence
-        
 
-def QAmatching_word_embedding(question, text):
-    sentences = get_tex_without_POS_or_quotes(text)
+def QAmatching_word_embedding(question, text):    
+    sentences = nltk.sent_tokenize(text)
     lowest_distance = 10
     closest_sentence = ''
     for sentence in sentences:
@@ -236,7 +270,7 @@ def QAmatching_word_embedding(question, text):
         if distance < lowest_distance:
             lowest_distance = distance
             closest_sentence = sentence
-    #print (closest_sentence, "distance = %.3f" % lowest_distance)
+    print (closest_sentence, "distance = %.3f" % lowest_distance)
     return closest_sentence
 
 def QAmatching_baseline(question, text):
@@ -254,18 +288,18 @@ def QAmatching_combined(q, text):
         return reformulate
     elif wordemb == baseline:
         return wordemb
-    elif baseline == reformulate:
-        return baseline
+    elif reformulate == '':
+        return wordemb
     return reformulate
     
 if __name__ == '__main__':
 
-    question_id = "fables-02-1"
+    question_id = "fables-04-6"
     # for qid in hw6-questions.csv:
     driver = QABase()
     q = driver.get_question(question_id)
     story = driver.get_story(q["sid"])
-    text = story['text']
+    text = story['sch']
     question = q["text"]
     print("question:", question)
     stopwords = set(nltk.corpus.stopwords.words("english"))

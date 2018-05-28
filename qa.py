@@ -9,7 +9,7 @@ from chunk_demo import *
 from dependency_demo_stubV1 import *
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk import RegexpParser as rp
-
+from coreference import get_Ada_answer
 stopwords = set(nltk.corpus.stopwords.words("english"))
 
 
@@ -59,9 +59,9 @@ def get_answer(question, story):
     #answer = baseline(qbow, sentences)
     
     #better_answer = QAmatching_combined(question, text)
-    better_answer = get_better_answer(question,text)
+    better_answer = get_Ada_answer(question,story)
     
-    return better_answer
+    return str(better_answer)
     #if better_answer is None:
     #    best_answer = answer
     #else:
@@ -93,6 +93,7 @@ def get_better_answer(q,text):
     #     sent_array.append(sentence.strip(''))
     #print("SENTENCE ARRAY:\n", sent_array)
     # if the matched_sent is '', as in QAmatching_combined(q, text)
+    
     if(matched_sent != ''):
         index = find_index(matched_sent, text)
         single = True
