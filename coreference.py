@@ -16,7 +16,7 @@ from chunk_demo import *
 
 def find_index(sentence_with_answer, text): #this line method
     sentences = [sentence.strip(' ')for sentence in nltk.sent_tokenize(text)]
-    index = sentences.index(sentence_with_answer)
+    index = sentences.index(sentence_with_answer.strip())
     return index
 
 
@@ -47,84 +47,97 @@ def find_answer(qgraph, sgraph, rel): #this line method
 def find_Ada_time(q, sentence_with_answer, text, story):
     qgraph =  q["dep"]
     sgraph = find_sgraph(sentence_with_answer,text, story)
-    dic = parsed_question_dic(sgraph) 
-    try:  
-        answer = dic['nsubj']
-    except TypeError:
-        answer = sentence_with_answer
-    return answer
+    if sgraph is not None:
+        dic = parsed_question_dic(sgraph) 
+        try:  
+            answer = dic['nsubj']
+        except TypeError:
+            answer = sentence_with_answer
+        return answer
+    return sentence_with_answer
 
 def find_Ada_loc(q, sentence_with_answer, text, story):
     qgraph =  q["dep"]
     sgraph = find_sgraph(sentence_with_answer,text, story)
-    dic = parsed_question_dic(sgraph) 
-    try:  
-        answer = dic['nmod']
-    except TypeError:
-        answer = sentence_with_answer
-    return answer
+    if sgraph is not None:
+        dic = parsed_question_dic(sgraph) 
+        try:  
+            answer = dic['nmod']
+        except TypeError:
+            answer = sentence_with_answer
+        return answer
+    return sentence_with_answer
 
 def find_Ada_who_subj(q, sentence_with_answer, text, story):
     qgraph =  q["dep"]
     sgraph = find_sgraph(sentence_with_answer,text, story)
-    dic = parsed_question_dic(sgraph) 
-    try:  
-        if dic['dobj'] is None and dic['nsubj'] is not None:
-            answer = dic['nsubj']
-        else:
-            answer = dic['nsubj'] + ' '+ dic['dobj']
-    except TypeError:
-        answer = sentence_with_answer
-    return answer
-    
+    if sgraph is not None:
+        dic = parsed_question_dic(sgraph) 
+        try:  
+            if dic['dobj'] is None and dic['nsubj'] is not None:
+                answer = dic['nsubj']
+            else:
+                answer = dic['nsubj'] + ' '+ dic['dobj']
+        except TypeError:
+            answer = sentence_with_answer
+        return answer
+    return sentence_with_answer
+
 def find_Ada_verb(q, sentence_with_answer, text, story):
     qgraph =  q["dep"]
     sgraph = find_sgraph(sentence_with_answer,text, story)
-    dic = parsed_question_dic(sgraph) 
-    try:  
-        answer = dic['nsubj'] + ' ' + dic['verb'] + ' '+ dic['dobj']
-    except TypeError:
-        answer = sentence_with_answer
-    return answer
-    
+    if sgraph is not None:
+        dic = parsed_question_dic(sgraph) 
+        try:  
+            answer = dic['nsubj'] + ' ' + dic['verb'] + ' '+ dic['dobj']
+        except TypeError:
+            answer = sentence_with_answer
+        return answer
+    return sentence_with_answer
+
 def find_dobj(q, sentence_with_answer, text, story):
     qgraph =  q["dep"]
     sgraph = find_sgraph(sentence_with_answer,text, story)
-    try:  
-        answer = find_answer(qgraph, sgraph, "dobj") 
-        if answer is None:
-            answer = find_answer(qgraph, sgraph, "nsubjpass")
-    except TypeError:
-        answer = sentence_with_answer
-    return answer
-    
+    if sgraph is not None:
+        try:  
+            answer = find_answer(qgraph, sgraph, "dobj") 
+            if answer is None:
+                answer = find_answer(qgraph, sgraph, "nsubjpass")
+        except TypeError:
+            answer = sentence_with_answer
+        return answer
+    return sentence_with_answer   
+
 def find_iobj(q, sentence_with_answer, text, story):
     qgraph =  q["dep"]
     sgraph = find_sgraph(sentence_with_answer,text, story)
-        
+    if sgraph is not None:
     #s_dic = parsed_question_dic(sgraph) 
-    try:  
-        answer = find_answer(qgraph, sgraph, "nsubjpass") #this line
-    except TypeError:
-        answer = sentence_with_answer
-    return answer
+        try:  
+            answer = find_answer(qgraph, sgraph, "nsubjpass") #this line
+        except TypeError:
+            answer = sentence_with_answer
+        return answer
+    return sentence_with_answer
 
 def find_reason(q, sentence_with_answer, text, story):
     qgraph =  q["dep"]
     sgraph = find_sgraph(sentence_with_answer,text, story)
-    s_dic = parsed_question_dic(sgraph) 
-    try:  
-        answer = s_dic['advcl'] #this line
-    except TypeError:
-        answer = sentence_with_answer
-    return answer
+    if sgraph is not None:
+        s_dic = parsed_question_dic(sgraph) 
+        try:  
+            answer = s_dic['advcl'] #this line
+        except TypeError:
+            answer = sentence_with_answer
+        return answer
+    return sentence_with_answer
 
 def find_sgraph(sentence_with_answer,text, story):
     s_index = find_index(sentence_with_answer, text)
     sgraph = None
     if text == story['sch']:
         sgraph = story["sch_dep"][s_index]
-    else:
+    elif len(story["story_dep"]) > s_index:
         sgraph = story["story_dep"][s_index]
     return sgraph
     

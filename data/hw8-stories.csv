@@ -1,4 +1,483 @@
 sch,sch_dep,sch_par,sid,story_dep,story_par,text
+"An oven broke because the broiler of the oven activated.  
+The oven scorched a group of treats and created some fire.  
+The husband of a narrator who owned a house and owned the oven attempted for the husband of the narrator to retrieve the group of treats and discovered that the oven had created the fire.  
+The husband of the narrator unsuccessfully tried to eliminate the fire.  
+The husband of the narrator quickly shut the door of the oven in order to prevent the fire spreading.  
+The narrator retrieved a fire extinguisher.  
+The husband of the narrator opened the door of the oven.  
+The fire ascended to the ceiling of the house.  
+The oven began to be broken, and the fire extinguisher eliminated the fire.  
+The fire didn't damage the group of things of the house.  
+The house aired, and the husband of the narrator and the narrator cleaned the house in order for the house to be normal.  
+The husband of the narrator and the narrator used some griddle and used a toaster oven.  
+The narrator ordered a new second oven.  
+The narrator began to be excited because she had ordered the second oven.  
+","1	An	a	_	DT	_	2	det	_	_
+2	oven	oven	_	NN	_	3	nsubj	_	_
+3	broke	break	_	VBD	_	0	root	_	_
+4	because	because	_	IN	_	3	nmod:tmod	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	broiler	broiler	_	NN	_	4	root	_	_
+7	of	of	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	oven	oven	_	NN	_	6	nmod	_	_
+10	activated	activate	_	VBN	_	9	acl	_	_
+11	.	.	_	.	_	6	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	oven	oven	_	NN	_	3	nsubj	_	_
+3	scorched	scorch	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	group	group	_	NN	_	3	dobj	_	_
+6	of	of	_	IN	_	7	case	_	_
+7	treats	treat	_	VBZ	_	5	nmod	_	_
+8	and	and	_	CC	_	3	cc	_	_
+9	created	create	_	VBD	_	3	conj	_	_
+10	some	some	_	DT	_	11	det	_	_
+11	fire	fire	_	NN	_	9	dobj	_	_
+12	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	husband	husband	_	NN	_	0	root	_	_
+3	of	of	_	IN	_	5	case	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	narrator	narrator	_	NN	_	2	nmod	_	_
+6	who	who	_	WP	_	7	nsubj	_	_
+7	owned	own	_	VBD	_	5	acl:relcl	_	_
+8	a	a	_	DT	_	9	det	_	_
+9	house	house	_	NN	_	7	dobj	_	_
+10	and	and	_	CC	_	7	cc	_	_
+11	owned	own	_	VBD	_	7	conj	_	_
+12	the	the	_	DT	_	13	det	_	_
+13	oven	oven	_	NN	_	11	dobj	_	_
+14	attempted	attempt	_	VBN	_	13	acl	_	_
+15	for	for	_	IN	_	17	case	_	_
+16	the	the	_	DT	_	17	det	_	_
+17	husband	husband	_	NN	_	14	nmod	_	_
+18	of	of	_	IN	_	20	case	_	_
+19	the	the	_	DT	_	20	det	_	_
+20	narrator	narrator	_	NN	_	17	nmod	_	_
+21	to	to	_	TO	_	22	mark	_	_
+22	retrieve	retrieve	_	VB	_	11	advcl	_	_
+23	the	the	_	DT	_	24	det	_	_
+24	group	group	_	NN	_	22	dobj	_	_
+25	of	of	_	IN	_	26	case	_	_
+26	treats	treat	_	VBZ	_	24	nmod	_	_
+27	and	and	_	CC	_	7	cc	_	_
+28	discovered	discover	_	VBD	_	7	conj	_	_
+29	that	that	_	IN	_	33	mark	_	_
+30	the	the	_	DT	_	31	det	_	_
+31	oven	oven	_	NN	_	33	nsubj	_	_
+32	had	have	_	VBD	_	33	aux	_	_
+33	created	create	_	VBN	_	28	ccomp	_	_
+34	the	the	_	DT	_	35	det	_	_
+35	fire	fire	_	NN	_	33	dobj	_	_
+36	.	.	_	.	_	2	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	husband	husband	_	NN	_	7	nsubj	_	_
+3	of	of	_	IN	_	5	case	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	narrator	narrator	_	NN	_	2	nmod	_	_
+6	unsuccessfully	unsuccessfully	_	RB	_	7	advmod	_	_
+7	tried	try	_	VBD	_	0	root	_	_
+8	to	to	_	TO	_	9	mark	_	_
+9	eliminate	eliminate	_	VB	_	7	xcomp	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	fire	fire	_	NN	_	9	dobj	_	_
+12	.	.	_	.	_	7	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	husband	husband	_	NN	_	7	nsubj	_	_
+3	of	of	_	IN	_	5	case	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	narrator	narrator	_	NN	_	2	nmod	_	_
+6	quickly	quickly	_	RB	_	7	advmod	_	_
+7	shut	shut	_	VBD	_	0	root	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	door	door	_	NN	_	7	dobj	_	_
+10	of	of	_	IN	_	12	case	_	_
+11	the	the	_	DT	_	12	det	_	_
+12	oven	oven	_	NN	_	9	nmod	_	_
+13	in	in	_	IN	_	16	mark	_	_
+14	order	order	_	NN	_	13	mwe	_	_
+15	to	to	_	TO	_	16	mark	_	_
+16	prevent	prevent	_	VB	_	7	advcl	_	_
+17	the	the	_	DT	_	19	det	_	_
+18	fire	fire	_	NN	_	19	compound	_	_
+19	spreading	spreading	_	NN	_	16	dobj	_	_
+20	.	.	_	.	_	7	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	3	nsubj	_	_
+3	retrieved	retrieve	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	6	det	_	_
+5	fire	fire	_	NN	_	6	compound	_	_
+6	extinguisher	extinguisher	_	NN	_	3	dobj	_	_
+7	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	husband	husband	_	NN	_	6	nsubj	_	_
+3	of	of	_	IN	_	5	case	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	narrator	narrator	_	NN	_	2	nmod	_	_
+6	opened	open	_	VBD	_	0	root	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	door	door	_	NN	_	6	dobj	_	_
+9	of	of	_	IN	_	11	case	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	oven	oven	_	NN	_	8	nmod	_	_
+12	.	.	_	.	_	6	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	fire	fire	_	NN	_	3	nsubj	_	_
+3	ascended	ascend	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	case	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	ceiling	ceiling	_	NN	_	3	nmod	_	_
+7	of	of	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	house	house	_	NN	_	6	nmod	_	_
+10	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	oven	oven	_	NN	_	3	nsubj	_	_
+3	began	begin	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	mark	_	_
+5	be	be	_	VB	_	6	auxpass	_	_
+6	broken	break	_	VBN	_	3	xcomp	_	_
+7	,	,	_	,	_	3	punct	_	_
+8	and	and	_	CC	_	3	cc	_	_
+9	the	the	_	DT	_	11	det	_	_
+10	fire	fire	_	NN	_	11	compound	_	_
+11	extinguisher	extinguisher	_	NN	_	12	nsubj	_	_
+12	eliminated	eliminate	_	VBD	_	3	conj	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	fire	fire	_	NN	_	12	dobj	_	_
+15	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	fire	fire	_	NN	_	5	nsubj	_	_
+3	did	do	_	VBD	_	5	aux	_	_
+4	n't	not	_	RB	_	5	neg	_	_
+5	damage	damage	_	VB	_	0	root	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	group	group	_	NN	_	5	dobj	_	_
+8	of	of	_	IN	_	9	case	_	_
+9	things	thing	_	NNS	_	7	nmod	_	_
+10	of	of	_	IN	_	12	case	_	_
+11	the	the	_	DT	_	12	det	_	_
+12	house	house	_	NN	_	9	nmod	_	_
+13	.	.	_	.	_	5	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	house	house	_	NN	_	3	nsubj	_	_
+3	aired	air	_	VBD	_	0	root	_	_
+4	,	,	_	,	_	3	punct	_	_
+5	and	and	_	CC	_	3	cc	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	husband	husband	_	NN	_	14	nsubj	_	_
+8	of	of	_	IN	_	10	case	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	narrator	narrator	_	NN	_	7	nmod	_	_
+11	and	and	_	CC	_	10	cc	_	_
+12	the	the	_	DT	_	13	det	_	_
+13	narrator	narrator	_	NN	_	10	conj	_	_
+14	cleaned	clean	_	VBD	_	3	conj	_	_
+15	the	the	_	DT	_	16	det	_	_
+16	house	house	_	NN	_	14	dobj	_	_
+17	in	in	_	IN	_	24	mark	_	_
+18	order	order	_	NN	_	17	mwe	_	_
+19	for	for	_	IN	_	24	mark	_	_
+20	the	the	_	DT	_	21	det	_	_
+21	house	house	_	NN	_	24	nsubj	_	_
+22	to	to	_	TO	_	24	mark	_	_
+23	be	be	_	VB	_	24	cop	_	_
+24	normal	normal	_	JJ	_	14	advcl	_	_
+25	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	husband	husband	_	NN	_	9	nsubj	_	_
+3	of	of	_	IN	_	5	case	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	narrator	narrator	_	NN	_	2	nmod	_	_
+6	and	and	_	CC	_	5	cc	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	narrator	narrator	_	NN	_	5	conj	_	_
+9	used	use	_	VBD	_	0	root	_	_
+10	some	some	_	DT	_	11	det	_	_
+11	griddle	griddle	_	NN	_	9	dobj	_	_
+12	and	and	_	CC	_	9	cc	_	_
+13	used	use	_	VBD	_	9	conj	_	_
+14	a	a	_	DT	_	16	det	_	_
+15	toaster	toaster	_	NN	_	16	compound	_	_
+16	oven	oven	_	NN	_	13	dobj	_	_
+17	.	.	_	.	_	9	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	3	nsubj	_	_
+3	ordered	order	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	7	det	_	_
+5	new	new	_	JJ	_	7	amod	_	_
+6	second	second	_	JJ	_	7	amod	_	_
+7	oven	oven	_	NN	_	3	dobj	_	_
+8	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	3	nsubj	_	_
+3	began	begin	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	mark	_	_
+5	be	be	_	VB	_	6	auxpass	_	_
+6	excited	excite	_	VBN	_	3	xcomp	_	_
+7	because	because	_	IN	_	10	mark	_	_
+8	she	she	_	PRP	_	10	nsubj	_	_
+9	had	have	_	VBD	_	10	aux	_	_
+10	ordered	order	_	VBN	_	3	advcl	_	_
+11	the	the	_	DT	_	13	det	_	_
+12	second	second	_	JJ	_	13	amod	_	_
+13	oven	oven	_	NN	_	10	dobj	_	_
+14	.	.	_	.	_	3	punct	_	_
+
+","(ROOT (S (NP (DT An) (NN oven)) (VP (VBD broke) (SBAR (IN because) (S (NP (NP (DT the) (NN broiler)) (PP (IN of) (NP (DT the) (NN oven)))) (VP (VBN activated))))) (. .)))
+(ROOT (S (NP (DT The) (NN oven)) (VP (VBD scorched) (SBAR (S (NP (NP (DT a) (NN group)) (PP (IN of))) (VP (VP (VBZ treats)) (CC and) (VP (VBD created) (NP (DT some) (NN fire))))))) (. .)))
+(ROOT (S (NP (NP (DT The) (NN husband)) (PP (IN of) (NP (NP (DT a) (NN narrator)) (SBAR (WHNP (WP who)) (S (VP (VP (VBD owned) (NP (DT a) (NN house))) (CC and) (VP (VBD owned) (NP (NP (DT the) (NN oven)) (VP (VBN attempted) (PP (IN for) (NP (NP (DT the) (NN husband)) (PP (IN of) (NP (DT the) (NN narrator))))) (S (VP (TO to) (VP (VB retrieve) (NP (NP (DT the) (NN group)) (PP (IN of))))))))))))))) (VP (VP (VBZ treats)) (CC and) (VP (VBD discovered) (SBAR (IN that) (S (NP (DT the) (NN oven)) (VP (VBD had) (VP (VBN created) (NP (DT the) (NN fire)))))))) (. .)))
+(ROOT (S (NP (NP (DT The) (NN husband)) (PP (IN of) (NP (DT the) (NN narrator)))) (ADVP (RB unsuccessfully)) (VP (VBD tried) (S (VP (TO to) (VP (VB eliminate) (NP (DT the) (NN fire)))))) (. .)))
+(ROOT (S (NP (NP (DT The) (NN husband)) (PP (IN of) (NP (DT the) (NN narrator)))) (ADVP (RB quickly)) (VP (VBD shut) (NP (NP (DT the) (NN door)) (PP (IN of) (NP (DT the) (NN oven)))) (SBAR (IN in) (NN order) (S (VP (TO to) (VP (VB prevent) (NP (DT the) (NN fire) (NN spreading))))))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (VP (VBD retrieved) (NP (DT a) (NN fire) (NN extinguisher))) (. .)))
+(ROOT (S (NP (NP (DT The) (NN husband)) (PP (IN of) (NP (DT the) (NN narrator)))) (VP (VBD opened) (NP (NP (DT the) (NN door)) (PP (IN of) (NP (DT the) (NN oven))))) (. .)))
+(ROOT (S (NP (DT The) (NN fire)) (VP (VBD ascended) (PP (TO to) (NP (NP (DT the) (NN ceiling)) (PP (IN of) (NP (DT the) (NN house)))))) (. .)))
+(ROOT (S (S (NP (DT The) (NN oven)) (VP (VBD began) (S (VP (TO to) (VP (VB be) (VP (VBN broken))))))) (, ,) (CC and) (S (NP (DT the) (NN fire) (NN extinguisher)) (VP (VBD eliminated) (NP (DT the) (NN fire)))) (. .)))
+(ROOT (S (NP (DT The) (NN fire)) (VP (VBD did) (RB n't) (VP (VB damage) (NP (NP (DT the) (NN group)) (PP (IN of) (NP (NP (NNS things)) (PP (IN of) (NP (DT the) (NN house)))))))) (. .)))
+(ROOT (S (S (NP (DT The) (NN house)) (VP (VBD aired))) (, ,) (CC and) (S (NP (NP (DT the) (NN husband)) (PP (IN of) (NP (NP (DT the) (NN narrator)) (CC and) (NP (DT the) (NN narrator))))) (VP (VBD cleaned) (NP (DT the) (NN house)) (PP (IN in) (NP (NN order))) (PP (IN for) (NP (DT the) (NN house) (S (VP (TO to) (VP (VB be) (ADJP (JJ normal))))))))) (. .)))
+(ROOT (S (NP (NP (DT The) (NN husband)) (PP (IN of) (NP (NP (DT the) (NN narrator)) (CC and) (NP (DT the) (NN narrator))))) (VP (VP (VBD used) (NP (DT some) (NN griddle))) (CC and) (VP (VBD used) (NP (DT a) (NN toaster) (NN oven)))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (VP (VBD ordered) (NP (DT a) (JJ new) (JJ second) (NN oven))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (VP (VBD began) (S (VP (TO to) (VP (VB be) (VP (VBN excited) (SBAR (IN because) (S (NP (PRP she)) (VP (VBD had) (VP (VBN ordered) (NP (DT the) (JJ second) (NN oven))))))))))) (. .)))
+",blogs-06,"1	Woohoo	Woohoo	_	NNP	_	2	compound	_	_
+2	!!	!!	_	NN	_	0	root	_	_
+
+1	So	so	_	RB	_	2	advmod	_	_
+2	excited	excite	_	VBN	_	0	root	_	_
+3	about	about	_	IN	_	6	case	_	_
+4	my	my	_	PRP$	_	6	nmod:poss	_	_
+5	new	new	_	JJ	_	6	amod	_	_
+6	range	range	_	NN	_	2	nmod	_	_
+7	I	I	_	PRP	_	8	nsubj	_	_
+8	ordered	order	_	VBD	_	6	acl:relcl	_	_
+9	a	a	_	DT	_	11	det	_	_
+10	few	few	_	JJ	_	11	amod	_	_
+11	days	day	_	NNS	_	12	nmod:npmod	_	_
+12	ago	ago	_	RB	_	8	advmod	_	_
+13	.	.	_	.	_	2	punct	_	_
+
+1	Seriously	seriously	_	RB	_	6	advmod	_	_
+2	,	,	_	,	_	6	punct	_	_
+3	I	I	_	PRP	_	6	nsubj	_	_
+4	can	can	_	MD	_	6	aux	_	_
+5	hardly	hardly	_	RB	_	6	advmod	_	_
+6	wait	wait	_	VB	_	0	root	_	_
+7	.	.	_	.	_	6	punct	_	_
+
+1	A	a	_	DT	_	2	det	_	_
+2	couple	couple	_	NN	_	7	nsubj	_	_
+3	of	of	_	IN	_	4	case	_	_
+4	weeks	week	_	NNS	_	2	nmod	_	_
+5	ago	ago	_	IN	_	7	advmod	_	_
+6	we	we	_	PRP	_	7	nsubj	_	_
+7	had	have	_	VBD	_	0	root	_	_
+8	a	a	_	DT	_	9	det	_	_
+9	fire	fire	_	NN	_	7	dobj	_	_
+10	in	in	_	IN	_	13	case	_	_
+11	our	we	_	PRP$	_	13	nmod:poss	_	_
+12	old	old	_	JJ	_	13	amod	_	_
+13	oven/range	oven/range	_	NN	_	7	nmod	_	_
+14	.	.	_	.	_	7	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	oven	oven	_	NN	_	3	nsubj	_	_
+3	malfunctioned	malfunction	_	VBD	_	0	root	_	_
+4	...	...	_	:	_	3	punct	_	_
+5	it	it	_	PRP	_	7	nsubjpass	_	_
+6	was	be	_	VBD	_	7	auxpass	_	_
+7	supposed	suppose	_	VBN	_	3	parataxis	_	_
+8	to	to	_	TO	_	10	mark	_	_
+9	be	be	_	VB	_	10	aux	_	_
+10	baking	bake	_	VBG	_	7	xcomp	_	_
+11	at	at	_	IN	_	13	case	_	_
+12	350	350	_	CD	_	13	nummod	_	_
+13	degrees	degree	_	NNS	_	10	nmod	_	_
+14	but	but	_	CC	_	10	cc	_	_
+15	somehow	somehow	_	RB	_	16	advmod	_	_
+16	broiler	broiler	_	NN	_	17	nsubj	_	_
+17	came	come	_	VBD	_	10	conj	_	_
+18	on	on	_	IN	_	17	nmod	_	_
+19	and	and	_	CC	_	17	cc	_	_
+20	got	get	_	VBD	_	17	conj	_	_
+21	stuck	stuck	_	JJ	_	22	amod	_	_
+22	??	??	_	NN	_	20	dobj	_	_
+
+1	...	...	_	:	_	4	punct	_	_
+2	my	my	_	PRP$	_	3	nmod:poss	_	_
+3	husband	husband	_	NN	_	4	nsubj	_	_
+4	went	go	_	VBD	_	0	root	_	_
+5	to	to	_	TO	_	6	mark	_	_
+6	get	get	_	VB	_	4	xcomp	_	_
+7	a	a	_	DT	_	8	det	_	_
+8	batch	batch	_	NN	_	6	dobj	_	_
+9	of	of	_	IN	_	10	case	_	_
+10	cookies	cookie	_	NNS	_	8	nmod	_	_
+11	and	and	_	CC	_	4	cc	_	_
+12	found	find	_	VBD	_	4	conj	_	_
+13	them	they	_	PRP	_	12	dobj	_	_
+14	in	in	_	IN	_	15	case	_	_
+15	flames	flame	_	NNS	_	12	nmod	_	_
+16	.	.	_	.	_	4	punct	_	_
+
+1	He	he	_	PRP	_	2	nsubj	_	_
+2	tried	try	_	VBD	_	0	root	_	_
+3	to	to	_	TO	_	4	mark	_	_
+4	put	put	_	VB	_	2	xcomp	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	fire	fire	_	NN	_	4	dobj	_	_
+7	out	out	_	IN	_	8	advmod	_	_
+8	unsuccessfully	unsuccessfully	_	RB	_	4	advmod	_	_
+9	and	and	_	CC	_	4	cc	_	_
+10	then	then	_	RB	_	12	advmod	_	_
+11	quickly	quickly	_	RB	_	12	advmod	_	_
+12	shut	shut	_	VBD	_	4	conj	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	door	door	_	NN	_	12	dobj	_	_
+15	to	to	_	TO	_	16	mark	_	_
+16	keep	keep	_	VB	_	12	advcl	_	_
+17	the	the	_	DT	_	18	det	_	_
+18	fire	fire	_	NN	_	16	dobj	_	_
+19	from	from	_	IN	_	20	case	_	_
+20	spreading	spreading	_	NN	_	16	nmod	_	_
+21	.	.	_	.	_	2	punct	_	_
+
+1	I	I	_	PRP	_	2	nsubj	_	_
+2	ran	run	_	VBD	_	0	root	_	_
+3	and	and	_	CC	_	2	cc	_	_
+4	got	get	_	VBD	_	2	conj	_	_
+5	a	a	_	DT	_	7	det	_	_
+6	fire	fire	_	NN	_	7	compound	_	_
+7	extinguisher	extinguisher	_	NN	_	4	dobj	_	_
+8	.	.	_	.	_	2	punct	_	_
+
+1	He	he	_	PRP	_	2	nsubj	_	_
+2	opened	open	_	VBD	_	0	root	_	_
+3	the	the	_	DT	_	5	det	_	_
+4	oven	oven	_	NN	_	5	compound	_	_
+5	door	door	_	NN	_	9	nsubj	_	_
+6	and	and	_	CC	_	5	cc	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	flames	flame	_	NNS	_	5	conj	_	_
+9	shot	shoot	_	VBD	_	2	ccomp	_	_
+10	all	all	_	PDT	_	12	det:predet	_	_
+11	the	the	_	DT	_	12	det	_	_
+12	way	way	_	NN	_	9	dobj	_	_
+13	up	up	_	IN	_	16	case	_	_
+14	to	to	_	TO	_	16	case	_	_
+15	the	the	_	DT	_	16	det	_	_
+16	ceiling	ceiling	_	NN	_	9	nmod	_	_
+17	!!!	!!!	_	CD	_	16	nummod	_	_
+
+1	Luckily	luckily	_	RB	_	5	advmod	_	_
+2	the	the	_	DT	_	4	det	_	_
+3	fire	fire	_	NN	_	4	compound	_	_
+4	extinguisher	extinguisher	_	NN	_	5	nsubj	_	_
+5	worked	work	_	VBD	_	0	root	_	_
+6	but	but	_	CC	_	5	cc	_	_
+7	our	we	_	PRP$	_	8	nmod:poss	_	_
+8	stove	stove	_	NN	_	10	nsubj	_	_
+9	was	be	_	VBD	_	10	cop	_	_
+10	toast	toast	_	NN	_	5	conj	_	_
+11	.	.	_	.	_	5	punct	_	_
+
+1	Nothing	nothing	_	NN	_	3	nsubjpass	_	_
+2	got	get	_	VBD	_	3	auxpass	_	_
+3	damaged	damage	_	VBN	_	0	root	_	_
+4	besides	besides	_	IN	_	6	case	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	range	range	_	NN	_	3	nmod	_	_
+7	but	but	_	CC	_	3	cc	_	_
+8	it	it	_	PRP	_	9	nsubj	_	_
+9	took	take	_	VBD	_	3	conj	_	_
+10	days	day	_	NNS	_	9	dobj	_	_
+11	of	of	_	IN	_	12	mark	_	_
+12	airing	air	_	VBG	_	10	acl	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	house	house	_	NN	_	12	dobj	_	_
+15	out	out	_	IN	_	12	advmod	_	_
+16	and	and	_	CC	_	15	cc	_	_
+17	cleaning	cleaning	_	NN	_	15	conj	_	_
+18	before	before	_	IN	_	22	mark	_	_
+19	things	thing	_	NNS	_	22	nsubj	_	_
+20	were	be	_	VBD	_	22	cop	_	_
+21	100	100	_	CD	_	22	nummod	_	_
+22	%	%	_	NN	_	12	advcl	_	_
+23	back	back	_	RB	_	22	advmod	_	_
+24	to	to	_	TO	_	25	case	_	_
+25	normal	normal	_	JJ	_	22	advcl	_	_
+26	.	.	_	.	_	3	punct	_	_
+
+1	Since	since	_	IN	_	2	case	_	_
+2	then	then	_	RB	_	6	nmod	_	_
+3	we	we	_	PRP	_	6	nsubj	_	_
+4	have	have	_	VBP	_	6	aux	_	_
+5	been	be	_	VBN	_	6	aux	_	_
+6	using	use	_	VBG	_	0	root	_	_
+7	a	a	_	DT	_	9	det	_	_
+8	plug-in	plug-in	_	JJ	_	9	amod	_	_
+9	burner	burner	_	NN	_	6	dobj	_	_
+10	,	,	_	,	_	9	punct	_	_
+11	griddle	griddle	_	NN	_	9	conj	_	_
+12	,	,	_	,	_	9	punct	_	_
+13	and	and	_	CC	_	9	cc	_	_
+14	counter	counter	_	RB	_	16	advmod	_	_
+15	top	top	_	JJ	_	16	amod	_	_
+16	oven	oven	_	NN	_	9	conj	_	_
+17	.	.	_	.	_	6	punct	_	_
+
+1	Not	not	_	RB	_	5	neg	_	_
+2	exactly	exactly	_	RB	_	5	advmod	_	_
+3	the	the	_	DT	_	5	det	_	_
+4	most	most	_	RBS	_	5	advmod	_	_
+5	convenient	convenient	_	JJ	_	0	root	_	_
+6	but	but	_	CC	_	5	cc	_	_
+7	so	so	_	RB	_	8	advmod	_	_
+8	much	much	_	RB	_	9	advmod	_	_
+9	better	better	_	JJR	_	5	conj	_	_
+10	than	than	_	IN	_	11	case	_	_
+11	nothing	nothing	_	NN	_	9	nmod	_	_
+12	!!	!!	_	CD	_	11	nummod	_	_
+
+1	Ca	ca	_	NN	_	3	nsubj	_	_
+2	n't	not	_	RB	_	3	neg	_	_
+3	wait	wait	_	VB	_	0	root	_	_
+4	to	to	_	TO	_	5	mark	_	_
+5	have	have	_	VB	_	3	xcomp	_	_
+6	a	a	_	DT	_	8	det	_	_
+7	real	real	_	JJ	_	8	amod	_	_
+8	range	range	_	NN	_	5	dobj	_	_
+9	again	again	_	RB	_	5	advmod	_	_
+10	.	.	_	.	_	3	punct	_	_
+
+","(ROOT (NP (NP (NNP Woohoo)) (NP (NN !!))))
+(ROOT (S (S (VP (ADVP (RB So)) (VBN excited) (PP (IN about) (NP (PRP$ my) (JJ new) (NN range))))) (NP (PRP I)) (VP (VBD ordered) (ADVP (NP (DT a) (JJ few) (NNS days)) (RB ago))) (. .)))
+(ROOT (S (ADVP (RB Seriously)) (, ,) (NP (PRP I)) (VP (MD can) (ADVP (RB hardly)) (VP (VB wait))) (. .)))
+(ROOT (S (ADVP (NP (NP (DT A) (NN couple)) (PP (IN of) (NP (NNS weeks)))) (IN ago)) (NP (PRP we)) (VP (VBD had) (NP (NP (DT a) (NN fire)) (PP (IN in) (NP (PRP$ our) (JJ old) (NN oven/range))))) (. .)))
+(ROOT (S (S (NP (DT The) (NN oven)) (VP (VBD malfunctioned))) (: ...) (S (S (NP (PRP it)) (VP (VBD was) (VP (VBN supposed) (S (VP (TO to) (VP (VB be) (VP (VBG baking) (PP (IN at) (NP (CD 350) (NNS degrees)))))))))) (CC but) (S (ADVP (RB somehow)) (NP (NN broiler)) (VP (VP (VBD came) (PP (IN on))) (CC and) (VP (VBD got) (NP (JJ stuck) (NN ??))))))))
+(ROOT (S (: ...) (NP (PRP$ my) (NN husband)) (VP (VP (VBD went) (S (VP (TO to) (VP (VB get) (NP (NP (DT a) (NN batch)) (PP (IN of) (NP (NNS cookies)))))))) (CC and) (VP (VBD found) (NP (PRP them)) (PP (IN in) (NP (NNS flames))))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VP (VBD tried) (S (VP (TO to) (VP (VB put) (NP (DT the) (NN fire)) (PRT (IN out)) (ADVP (RB unsuccessfully)))))) (CC and) (VP (ADVP (RB then)) (ADVP (RB quickly)) (VBD shut) (NP (DT the) (NN door)) (S (VP (TO to) (VP (VB keep) (NP (DT the) (NN fire)) (PP (IN from) (NP (NN spreading)))))))) (. .)))
+(ROOT (S (NP (PRP I)) (VP (VP (VBD ran)) (CC and) (VP (VBD got) (NP (DT a) (NN fire) (NN extinguisher)))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD opened) (SBAR (S (NP (NP (DT the) (NN oven) (NN door)) (CC and) (NP (DT the) (NNS flames))) (VP (VBD shot) (NP (PDT all) (DT the) (NN way)) (ADVP (IN up) (PP (TO to) (NP (DT the) (NN ceiling) (CD !!!))))))))))
+(ROOT (S (ADVP (RB Luckily)) (NP (DT the) (NN fire) (NN extinguisher)) (VP (VBD worked) (SBAR (CC but) (S (NP (PRP$ our) (NN stove)) (VP (VBD was) (NP (NN toast)))))) (. .)))
+(ROOT (S (S (NP (NN Nothing)) (VP (VBD got) (VP (VBN damaged) (PP (IN besides) (NP (DT the) (NN range)))))) (CC but) (S (NP (PRP it)) (VP (VBD took) (NP (NP (NNS days)) (PP (IN of) (S (VP (VBG airing) (NP (DT the) (NN house)) (ADVP (IN out)))))))) (CC and) (S (NP (NP (NN cleaning)) (PP (IN before) (NP (NNS things)))) (VP (VBD were) (ADVP (NP (CD 100) (NN %)) (RB back)) (PP (TO to) (ADJP (JJ normal))))) (. .)))
+(ROOT (S (PP (IN Since) (NP (RB then))) (NP (PRP we)) (VP (VBP have) (VP (VBN been) (VP (VBG using) (NP (NP (DT a) (JJ plug-in) (NN burner)) (, ,) (NP (NN griddle)) (, ,) (CC and) (ADVP (RB counter) (NP (JJ top) (NN oven))))))) (. .)))
+(ROOT (FRAG (NP (NP (RB Not) (RB exactly) (DT the)) (ADJP (ADJP (RBS most) (JJ convenient)) (CC but) (RB so) (ADJP (RB much) (JJR better)))) (PP (IN than) (NP (NN nothing) (CD !!)))))
+(ROOT (S (NP (NN Ca)) (VP (RB n't) (VP (VB wait) (S (VP (TO to) (VP (VB have) (NP (DT a) (JJ real) (NN range)) (ADVP (RB again))))))) (. .)))
+","Woohoo!! So excited about my new range I ordered a few days ago. Seriously, I can hardly wait. A couple of weeks ago we had a fire in our old oven/range. The oven malfunctioned... it was supposed to be baking at 350 degrees but somehow broiler came on and got stuck??... my husband went to get a batch of cookies and found them in flames. He tried to put the fire out unsuccessfully and then quickly shut the door to keep the fire from spreading. I ran and got a fire extinguisher. He opened the oven door and the flames shot all the way up to the ceiling!!! Luckily the fire extinguisher worked but our stove was toast. Nothing got damaged besides the range but it took days of airing the house out and cleaning before things were 100% back to normal. Since then we have been using a plug-in burner, griddle, and counter top oven. Not exactly the most convenient but so much better than nothing!! Can't wait to have a real range again."
 "There once was a crow.  The crow was sitting on a branch of a tree.  Some cheese was in the beak of the crow.  
 A fox observed the crow and tried to discover how to get the cheese.  
 The fox came and stood under the tree.  
@@ -394,6 +873,220 @@ The fox snatched the cheese, said that the crow was able to sing and the fox sai
 ","A Crow was sitting on a branch of a tree with a piece of cheese in her beak when a Fox observed her and set his wits to work to discover some way of getting the cheese. 
 Coming and standing under the tree he looked up and said, ""What a noble bird I see above me! Her beauty is without equal, the hue of her plumage exquisite. If only her voice is as sweet as her looks are fair, she ought without doubt to be Queen of the Birds."" 
 The Crow was hugely flattered by this, and just to show the Fox that she could sing she gave a loud caw. Down came the cheese, of course, and the Fox, snatching it up, said, ""You have a voice, madam, I see: what you want is wits."""
+,,,mc500.train.111,"1	Will	will	_	MD	_	3	aux	_	_
+2	was	be	_	VBD	_	3	aux	_	_
+3	playing	play	_	VBG	_	0	root	_	_
+4	his	he	_	PRP$	_	6	nmod:poss	_	_
+5	favorite	favorite	_	JJ	_	6	amod	_	_
+6	song	song	_	NN	_	3	dobj	_	_
+7	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	song	song	_	NN	_	6	nsubj	_	_
+3	was	be	_	VBD	_	6	cop	_	_
+4	about	about	_	IN	_	6	case	_	_
+5	a	a	_	DT	_	6	det	_	_
+6	flower	flower	_	NN	_	0	root	_	_
+7	.	.	_	.	_	6	punct	_	_
+
+1	Will	will	_	MD	_	2	aux	_	_
+2	stopped	stop	_	VBD	_	0	root	_	_
+3	singing	singing	_	NN	_	2	dobj	_	_
+4	and	and	_	CC	_	2	cc	_	_
+5	went	go	_	VBD	_	2	conj	_	_
+6	outside	outside	_	RB	_	5	advmod	_	_
+7	.	.	_	.	_	2	punct	_	_
+
+1	A	a	_	DT	_	3	det	_	_
+2	single	single	_	JJ	_	3	amod	_	_
+3	star	star	_	NN	_	9	nsubj	_	_
+4	was	be	_	VBD	_	9	cop	_	_
+5	out	out	_	RB	_	9	advmod	_	_
+6	in	in	_	IN	_	9	case	_	_
+7	the	the	_	DT	_	9	det	_	_
+8	night	night	_	NN	_	9	compound	_	_
+9	sky	sky	_	NN	_	0	root	_	_
+10	.	.	_	.	_	9	punct	_	_
+
+1	Will	will	_	MD	_	2	aux	_	_
+2	got	get	_	VBD	_	0	root	_	_
+3	hungry	hungry	_	JJ	_	2	xcomp	_	_
+4	and	and	_	CC	_	2	cc	_	_
+5	went	go	_	VBD	_	2	conj	_	_
+6	inside	inside	_	RB	_	5	advmod	_	_
+7	to	to	_	TO	_	8	mark	_	_
+8	get	get	_	VB	_	5	xcomp	_	_
+9	a	a	_	DT	_	10	det	_	_
+10	biscuit	biscuit	_	NN	_	8	dobj	_	_
+11	.	.	_	.	_	2	punct	_	_
+
+1	He	he	_	PRP	_	3	nsubj	_	_
+2	also	also	_	RB	_	3	advmod	_	_
+3	had	have	_	VBD	_	0	root	_	_
+4	jam	jam	_	NN	_	3	dobj	_	_
+5	with	with	_	IN	_	6	case	_	_
+6	it	it	_	PRP	_	3	nmod	_	_
+7	.	.	_	.	_	3	punct	_	_
+
+1	He	he	_	PRP	_	4	nsubj	_	_
+2	did	do	_	VBD	_	4	aux	_	_
+3	n't	not	_	RB	_	4	neg	_	_
+4	want	want	_	VB	_	0	root	_	_
+5	chicken	chicken	_	NN	_	4	dobj	_	_
+6	,	,	_	,	_	5	punct	_	_
+7	gravy	gravy	_	NN	_	5	conj	_	_
+8	,	,	_	,	_	5	punct	_	_
+9	or	or	_	CC	_	5	cc	_	_
+10	butter	butter	_	NN	_	5	conj	_	_
+11	on	on	_	IN	_	13	case	_	_
+12	his	he	_	PRP$	_	13	nmod:poss	_	_
+13	biscuit	biscuit	_	NN	_	4	nmod	_	_
+14	.	.	_	.	_	4	punct	_	_
+
+1	Will	will	_	MD	_	2	aux	_	_
+2	sat	sit	_	VBD	_	0	root	_	_
+3	and	and	_	CC	_	2	cc	_	_
+4	finished	finish	_	VBD	_	2	conj	_	_
+5	his	he	_	PRP$	_	6	nmod:poss	_	_
+6	dinner	dinner	_	NN	_	2	dobj	_	_
+7	in	in	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	kitchen	kitchen	_	NN	_	6	nmod	_	_
+10	.	.	_	.	_	2	punct	_	_
+
+1	Will	will	_	MD	_	2	aux	_	_
+2	walked	walk	_	VBD	_	0	root	_	_
+3	over	over	_	IN	_	2	compound:prt	_	_
+4	to	to	_	TO	_	7	case	_	_
+5	the	the	_	DT	_	7	det	_	_
+6	living	living	_	NN	_	7	compound	_	_
+7	room	room	_	NN	_	2	nmod	_	_
+8	.	.	_	.	_	2	punct	_	_
+
+1	On	on	_	IN	_	3	case	_	_
+2	his	he	_	PRP$	_	3	nmod:poss	_	_
+3	way	way	_	NN	_	7	nmod	_	_
+4	there	there	_	RB	_	3	advmod	_	_
+5	,	,	_	,	_	7	punct	_	_
+6	he	he	_	PRP	_	7	nsubj	_	_
+7	put	put	_	VBD	_	0	root	_	_
+8	a	a	_	DT	_	9	det	_	_
+9	napkin	napkin	_	NN	_	7	dobj	_	_
+10	in	in	_	IN	_	12	case	_	_
+11	the	the	_	DT	_	12	det	_	_
+12	trashcan	trashcan	_	NN	_	7	nmod	_	_
+13	.	.	_	.	_	7	punct	_	_
+
+1	When	when	_	WRB	_	7	advmod	_	_
+2	he	he	_	PRP	_	7	nsubj	_	_
+3	was	be	_	VBD	_	7	cop	_	_
+4	in	in	_	IN	_	7	case	_	_
+5	the	the	_	DT	_	7	det	_	_
+6	living	living	_	NN	_	7	compound	_	_
+7	room	room	_	NN	_	10	advcl	_	_
+8	,	,	_	,	_	10	punct	_	_
+9	it	it	_	PRP	_	10	nsubj	_	_
+10	started	start	_	VBD	_	0	root	_	_
+11	to	to	_	TO	_	12	case	_	_
+12	rain	rain	_	NN	_	10	nmod	_	_
+13	.	.	_	.	_	10	punct	_	_
+
+1	It	it	_	PRP	_	2	nsubj	_	_
+2	stopped	stop	_	VBD	_	0	root	_	_
+3	raining	rain	_	VBG	_	2	xcomp	_	_
+4	and	and	_	CC	_	2	cc	_	_
+5	Will	will	_	MD	_	6	aux	_	_
+6	walked	walk	_	VBD	_	2	conj	_	_
+7	all	all	_	PDT	_	9	det:predet	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	way	way	_	NN	_	6	dobj	_	_
+10	to	to	_	TO	_	12	case	_	_
+11	the	the	_	DT	_	12	det	_	_
+12	store	store	_	NN	_	6	nmod	_	_
+13	.	.	_	.	_	2	punct	_	_
+
+1	When	when	_	WRB	_	4	advmod	_	_
+2	at	at	_	IN	_	4	case	_	_
+3	the	the	_	DT	_	4	det	_	_
+4	store	store	_	NN	_	7	advcl	_	_
+5	,	,	_	,	_	7	punct	_	_
+6	Will	Will	_	NNP	_	7	nsubj	_	_
+7	had	have	_	VBD	_	0	root	_	_
+8	a	a	_	DT	_	10	det	_	_
+9	good	good	_	JJ	_	10	amod	_	_
+10	laugh	laugh	_	NN	_	7	dobj	_	_
+11	at	at	_	IN	_	16	case	_	_
+12	a	a	_	DT	_	16	det	_	_
+13	very	very	_	RB	_	14	advmod	_	_
+14	silly	silly	_	JJ	_	16	amod	_	_
+15	looking	look	_	VBG	_	16	amod	_	_
+16	dog	dog	_	NN	_	7	nmod	_	_
+17	.	.	_	.	_	7	punct	_	_
+
+1	Will	will	_	MD	_	2	aux	_	_
+2	heard	hear	_	VBD	_	0	root	_	_
+3	it	it	_	PRP	_	4	nsubj	_	_
+4	start	start	_	VB	_	2	ccomp	_	_
+5	to	to	_	TO	_	6	case	_	_
+6	thunder	thunder	_	NN	_	4	nmod	_	_
+7	.	.	_	.	_	2	punct	_	_
+
+1	Will	will	_	MD	_	2	aux	_	_
+2	looked	look	_	VBD	_	0	root	_	_
+3	outside	outside	_	IN	_	2	advmod	_	_
+4	to	to	_	TO	_	5	mark	_	_
+5	see	see	_	VB	_	2	xcomp	_	_
+6	if	if	_	IN	_	9	mark	_	_
+7	it	it	_	PRP	_	9	nsubj	_	_
+8	was	be	_	VBD	_	9	aux	_	_
+9	raining	rain	_	VBG	_	5	advcl	_	_
+10	again	again	_	RB	_	9	advmod	_	_
+11	,	,	_	,	_	2	punct	_	_
+12	and	and	_	CC	_	2	cc	_	_
+13	it	it	_	PRP	_	14	nsubj	_	_
+14	was	be	_	VBD	_	2	conj	_	_
+15	not	not	_	RB	_	14	neg	_	_
+16	.	.	_	.	_	2	punct	_	_
+
+1	Will	will	_	MD	_	3	aux	_	_
+2	was	be	_	VBD	_	3	cop	_	_
+3	happy	happy	_	JJ	_	0	root	_	_
+4	he	he	_	PRP	_	7	nsubj	_	_
+5	did	do	_	VBD	_	7	aux	_	_
+6	n't	not	_	RB	_	7	neg	_	_
+7	have	have	_	VB	_	3	ccomp	_	_
+8	to	to	_	TO	_	9	mark	_	_
+9	get	get	_	VB	_	7	xcomp	_	_
+10	wet	wet	_	JJ	_	12	amod	_	_
+11	walking	walk	_	VBG	_	12	amod	_	_
+12	home	home	_	NN	_	9	dobj	_	_
+13	.	.	_	.	_	3	punct	_	_
+
+1	He	he	_	PRP	_	2	nsubj	_	_
+2	went	go	_	VBD	_	0	root	_	_
+3	outside	outside	_	JJ	_	4	amod	_	_
+4	smiling	smile	_	VBG	_	2	xcomp	_	_
+5	.	.	_	.	_	2	punct	_	_
+
+","(ROOT (S (S (VP (MD Will))) (VP (VBD was) (VP (VBG playing) (NP (PRP$ his) (JJ favorite) (NN song)))) (. .)))
+(ROOT (S (NP (DT The) (NN song)) (VP (VBD was) (PP (IN about) (NP (DT a) (NN flower)))) (. .)))
+(ROOT (S (S (VP (MD Will))) (VP (VP (VBD stopped) (NP (NN singing))) (CC and) (VP (VBD went) (ADVP (RB outside)))) (. .)))
+(ROOT (S (NP (DT A) (JJ single) (NN star)) (VP (VBD was) (ADVP (RB out)) (PP (IN in) (NP (DT the) (NN night) (NN sky)))) (. .)))
+(ROOT (S (S (VP (MD Will))) (VP (VP (VBD got) (S (ADJP (JJ hungry)))) (CC and) (VP (VBD went) (ADVP (RB inside)) (S (VP (TO to) (VP (VB get) (NP (DT a) (NN biscuit))))))) (. .)))
+(ROOT (S (NP (PRP He)) (ADVP (RB also)) (VP (VBD had) (NP (NP (NN jam)) (PP (IN with) (NP (PRP it))))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD did) (RB n't) (VP (VB want) (NP (NN chicken) (, ,) (NN gravy) (, ,) (CC or) (NN butter)) (PP (IN on) (NP (PRP$ his) (NN biscuit))))) (. .)))
+(ROOT (S (VP (MD Will) (VP (VBD sat) (CC and) (VBD finished) (NP (PRP$ his) (NN dinner)) (PP (IN in) (NP (DT the) (NN kitchen))))) (. .)))
+(ROOT (S (VP (MD Will) (VP (VBD walked) (PP (IN over) (PP (TO to) (NP (DT the) (NN living) (NN room)))))) (. .)))
+(ROOT (S (PP (IN On) (NP (PRP$ his) (NN way))) (NP-TMP (RB there)) (, ,) (NP (PRP he)) (VP (VBD put) (NP (DT a) (NN napkin)) (PP (IN in) (NP (DT the) (NN trashcan)))) (. .)))
+(ROOT (S (SBAR (WHADVP (WRB When)) (S (NP (PRP he)) (VP (VBD was) (PP (IN in) (NP (DT the) (NN living) (NN room)))))) (, ,) (NP (PRP it)) (VP (VBD started) (PP (TO to) (NP (NN rain)))) (. .)))
+(ROOT (S (NP (PRP It)) (VP (VP (VBD stopped) (S (VP (VBG raining)))) (CC and) (VP (MD Will) (VP (VBD walked) (NP (PDT all) (DT the) (NN way)) (PP (TO to) (NP (DT the) (NN store)))))) (. .)))
+(ROOT (S (SBAR (WHADVP (WRB When)) (FRAG (PP (IN at) (NP (DT the) (NN store))))) (, ,) (NP (NNP Will)) (VP (VBD had) (NP (NP (DT a) (JJ good) (NN laugh)) (PP (IN at) (NP (DT a) (ADJP (RB very) (JJ silly)) (ADJP (VBG looking)) (NN dog))))) (. .)))
+(ROOT (S (S (VP (MD Will))) (VP (VBD heard) (S (NP (PRP it)) (VP (VB start) (PP (TO to) (NP (NN thunder)))))) (. .)))
+(ROOT (S (S (S (VP (MD Will))) (VP (VBD looked) (ADVP (IN outside)) (S (VP (TO to) (VP (VB see) (SBAR (IN if) (S (NP (PRP it)) (VP (VBD was) (VP (VBG raining) (ADVP (RB again))))))))))) (, ,) (CC and) (S (NP (PRP it)) (VP (VBD was) (RB not))) (. .)))
+(ROOT (S (S (VP (MD Will))) (VP (VBD was) (ADJP (JJ happy) (SBAR (S (NP (PRP he)) (VP (VBD did) (RB n't) (VP (VB have) (S (VP (TO to) (VP (VB get) (NP (JJ wet) (VBG walking) (NN home))))))))))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD went) (NP (JJ outside) (VBG smiling))) (. .)))
+","Will was playing his favorite song.  The song was about a flower.  Will stopped singing and went outside.  A single star was out in the night sky.  Will got hungry and went inside to get a biscuit.  He also had jam with it.  He didn't want chicken, gravy, or butter on his biscuit.  Will sat and finished his dinner in the kitchen.  Will walked over to the living room.  On his way there, he put a napkin in the trashcan.  When he was in the living room, it started to rain.  It stopped raining and Will walked all the way to the store.  When at the store, Will had a good laugh at a very silly looking dog.  Will heard it start to thunder.  Will looked outside to see if it was raining again, and it was not.  Will was happy he didn't have to get wet walking home.  He went outside smiling.
+"
 "A clever fox invited a stork to dine.  
 The fox only served some soup in a flat and large dish.  
 The fox lapped the soup with relish.  
@@ -2737,6 +3430,504 @@ President Bush came to Baton Rouge yesterday to assess the damage. I have three 
 (ROOT (S (NP (NP (PRP$ Her) (NN mother) (POS 's)) (NN favorite)) (VP (VBD was) (NP (DT the) (JJ red) (CD one))) (. .)))
 ","Kelly woke up one morning and went outside to her back yard. She was in a hurry because it was Mother's Day and she had to collect flowers before her mom woke up to give to her as a present. She was going to give her mom the biggest, most beautiful bunch of flowers her mother had ever seen. She knew where the best flowers were in her yard. She got a lot of different sized flowers. The red ones were big, the orange ones were small, and the green ones were in the middle. After Kelly collected all of the flowers, she went inside and tied them together with string. After that, she had to hide the flowers in a secret spot. She hoped her baby sister Morgan, who was still in diapers, wouldn't find the flowers and eat them. Kelly was worried, so she hid them in a new spot that was up higher. Finally, her mother woke up at 8:30 AM, and Kelly was excited! Kelly gave her mother the flowers. Her mother's favorite was the red one.
 "
+"There once was a group of students and a narrator.  The narrator was a teacher, owned some white slip and owned a desk.  The narrator was teaching the group of students language.  
+The narrator checked the group of students for presence and stood at the front of a classroom.  
+The slip fell because the not-functional elastic of the slip was dysfunctional.  
+The group of students saw that the slip had fallen because the elastic of the slip was dysfunctional.  
+The narrator noticed that the ankle of the narrator was observed.  
+The narrator nervously looked toward the ankle of the narrator and observed that the slip had fallen because the elastic of the slip was dysfunctional.  
+The narrator glanced around the group of students.  
+The narrator carefully stepped over the slip.  
+The narrator feigned bewilderment.  
+The narrator lifted the slip and inserted it into a bottom drawer of the desk.  
+The narrator resumed teaching, and the group of students didn't react.  
+The narrator later feared for the group of students to tell a parent of the group of students that the group of students had seen that the slip had fallen because the elastic of the slip was dysfunctional.  
+","1	There	there	_	EX	_	3	expl	_	_
+2	once	once	_	RB	_	3	advmod	_	_
+3	was	be	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	group	group	_	NN	_	3	nsubj	_	_
+6	of	of	_	IN	_	7	case	_	_
+7	students	student	_	NNS	_	5	nmod	_	_
+8	and	and	_	CC	_	5	cc	_	_
+9	a	a	_	DT	_	10	det	_	_
+10	narrator	narrator	_	NN	_	5	conj	_	_
+11	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	5	nsubj	_	_
+3	was	be	_	VBD	_	5	cop	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	teacher	teacher	_	NN	_	0	root	_	_
+6	,	,	_	,	_	5	punct	_	_
+7	owned	own	_	VBD	_	5	conj	_	_
+8	some	some	_	DT	_	10	det	_	_
+9	white	white	_	JJ	_	10	amod	_	_
+10	slip	slip	_	NN	_	7	dobj	_	_
+11	and	and	_	CC	_	5	cc	_	_
+12	owned	own	_	VBD	_	5	conj	_	_
+13	a	a	_	DT	_	14	det	_	_
+14	desk	desk	_	NN	_	12	dobj	_	_
+15	.	.	_	.	_	5	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	4	nsubj	_	_
+3	was	be	_	VBD	_	4	aux	_	_
+4	teaching	teach	_	VBG	_	0	root	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	group	group	_	NN	_	4	dobj	_	_
+7	of	of	_	IN	_	9	case	_	_
+8	students	student	_	NNS	_	9	compound	_	_
+9	language	language	_	NN	_	6	nmod	_	_
+10	.	.	_	.	_	4	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	3	nsubj	_	_
+3	checked	check	_	VBD	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	group	group	_	NN	_	3	dobj	_	_
+6	of	of	_	IN	_	7	case	_	_
+7	students	student	_	NNS	_	5	nmod	_	_
+8	for	for	_	IN	_	9	case	_	_
+9	presence	presence	_	NN	_	3	nmod	_	_
+10	and	and	_	CC	_	3	cc	_	_
+11	stood	stand	_	VBD	_	3	conj	_	_
+12	at	at	_	IN	_	14	case	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	front	front	_	NN	_	11	nmod	_	_
+15	of	of	_	IN	_	17	case	_	_
+16	a	a	_	DT	_	17	det	_	_
+17	classroom	classroom	_	NN	_	14	nmod	_	_
+18	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	slip	slip	_	NN	_	3	nsubj	_	_
+3	fell	fall	_	VBD	_	0	root	_	_
+4	because	because	_	IN	_	12	mark	_	_
+5	the	the	_	DT	_	7	det	_	_
+6	not-functional	not-functional	_	JJ	_	7	amod	_	_
+7	elastic	elastic	_	JJ	_	12	nsubj	_	_
+8	of	of	_	IN	_	10	case	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	slip	slip	_	NN	_	7	nmod	_	_
+11	was	be	_	VBD	_	12	cop	_	_
+12	dysfunctional	dysfunctional	_	JJ	_	3	advcl	_	_
+13	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	group	group	_	NN	_	5	nsubj	_	_
+3	of	of	_	IN	_	4	case	_	_
+4	students	student	_	NNS	_	2	nmod	_	_
+5	saw	see	_	VBD	_	0	root	_	_
+6	that	that	_	IN	_	10	mark	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	slip	slip	_	NN	_	10	nsubj	_	_
+9	had	have	_	VBD	_	10	aux	_	_
+10	fallen	fall	_	VBN	_	5	ccomp	_	_
+11	because	because	_	IN	_	18	mark	_	_
+12	the	the	_	DT	_	13	det	_	_
+13	elastic	elastic	_	JJ	_	18	nsubj	_	_
+14	of	of	_	IN	_	16	case	_	_
+15	the	the	_	DT	_	16	det	_	_
+16	slip	slip	_	NN	_	13	nmod	_	_
+17	was	be	_	VBD	_	18	cop	_	_
+18	dysfunctional	dysfunctional	_	JJ	_	10	advcl	_	_
+19	.	.	_	.	_	5	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	3	nsubj	_	_
+3	noticed	notice	_	VBD	_	0	root	_	_
+4	that	that	_	IN	_	11	mark	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	ankle	ankle	_	NN	_	11	nsubjpass	_	_
+7	of	of	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	narrator	narrator	_	NN	_	6	nmod	_	_
+10	was	be	_	VBD	_	11	auxpass	_	_
+11	observed	observe	_	VBN	_	3	ccomp	_	_
+12	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	4	nsubj	_	_
+3	nervously	nervously	_	RB	_	4	advmod	_	_
+4	looked	look	_	VBD	_	0	root	_	_
+5	toward	toward	_	IN	_	7	case	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	ankle	ankle	_	NN	_	4	nmod	_	_
+8	of	of	_	IN	_	10	case	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	narrator	narrator	_	NN	_	7	nmod	_	_
+11	and	and	_	CC	_	4	cc	_	_
+12	observed	observe	_	VBN	_	4	conj	_	_
+13	that	that	_	IN	_	17	mark	_	_
+14	the	the	_	DT	_	15	det	_	_
+15	slip	slip	_	NN	_	17	nsubj	_	_
+16	had	have	_	VBD	_	17	aux	_	_
+17	fallen	fall	_	VBN	_	12	ccomp	_	_
+18	because	because	_	IN	_	25	mark	_	_
+19	the	the	_	DT	_	20	det	_	_
+20	elastic	elastic	_	JJ	_	25	nsubj	_	_
+21	of	of	_	IN	_	23	case	_	_
+22	the	the	_	DT	_	23	det	_	_
+23	slip	slip	_	NN	_	20	nmod	_	_
+24	was	be	_	VBD	_	25	cop	_	_
+25	dysfunctional	dysfunctional	_	JJ	_	17	advcl	_	_
+26	.	.	_	.	_	4	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	3	nsubj	_	_
+3	glanced	glance	_	VBD	_	0	root	_	_
+4	around	around	_	IN	_	6	case	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	group	group	_	NN	_	3	nmod	_	_
+7	of	of	_	IN	_	8	case	_	_
+8	students	student	_	NNS	_	6	nmod	_	_
+9	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	4	nsubj	_	_
+3	carefully	carefully	_	RB	_	4	advmod	_	_
+4	stepped	step	_	VBD	_	0	root	_	_
+5	over	over	_	IN	_	7	case	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	slip	slip	_	NN	_	4	nmod	_	_
+8	.	.	_	.	_	4	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	3	nsubj	_	_
+3	feigned	feign	_	VBD	_	0	root	_	_
+4	bewilderment	bewilderment	_	NN	_	3	dobj	_	_
+5	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	3	nsubj	_	_
+3	lifted	lift	_	VBD	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	slip	slip	_	NN	_	3	dobj	_	_
+6	and	and	_	CC	_	3	cc	_	_
+7	inserted	insert	_	VBD	_	3	conj	_	_
+8	it	it	_	PRP	_	7	dobj	_	_
+9	into	into	_	IN	_	12	case	_	_
+10	a	a	_	DT	_	12	det	_	_
+11	bottom	bottom	_	JJ	_	12	amod	_	_
+12	drawer	drawer	_	NN	_	7	nmod	_	_
+13	of	of	_	IN	_	15	case	_	_
+14	the	the	_	DT	_	15	det	_	_
+15	desk	desk	_	NN	_	12	nmod	_	_
+16	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	3	nsubj	_	_
+3	resumed	resume	_	VBD	_	0	root	_	_
+4	teaching	teaching	_	NN	_	3	dobj	_	_
+5	,	,	_	,	_	3	punct	_	_
+6	and	and	_	CC	_	3	cc	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	group	group	_	NN	_	13	nsubj	_	_
+9	of	of	_	IN	_	10	case	_	_
+10	students	student	_	NNS	_	8	nmod	_	_
+11	did	do	_	VBD	_	13	aux	_	_
+12	n't	not	_	RB	_	13	neg	_	_
+13	react	react	_	VB	_	3	conj	_	_
+14	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	narrator	narrator	_	NN	_	4	nsubj	_	_
+3	later	later	_	RB	_	4	advmod	_	_
+4	feared	fear	_	VBD	_	0	root	_	_
+5	for	for	_	IN	_	7	case	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	group	group	_	NN	_	4	nmod	_	_
+8	of	of	_	IN	_	9	case	_	_
+9	students	student	_	NNS	_	7	nmod	_	_
+10	to	to	_	TO	_	11	mark	_	_
+11	tell	tell	_	VB	_	4	xcomp	_	_
+12	a	a	_	DT	_	13	det	_	_
+13	parent	parent	_	NN	_	11	dobj	_	_
+14	of	of	_	IN	_	16	case	_	_
+15	the	the	_	DT	_	16	det	_	_
+16	group	group	_	NN	_	13	nmod	_	_
+17	of	of	_	IN	_	18	case	_	_
+18	students	student	_	NNS	_	16	nmod	_	_
+19	that	that	_	IN	_	25	mark	_	_
+20	the	the	_	DT	_	21	det	_	_
+21	group	group	_	NN	_	25	nsubj	_	_
+22	of	of	_	IN	_	23	case	_	_
+23	students	student	_	NNS	_	21	nmod	_	_
+24	had	have	_	VBD	_	25	aux	_	_
+25	seen	see	_	VBN	_	11	ccomp	_	_
+26	that	that	_	IN	_	30	mark	_	_
+27	the	the	_	DT	_	28	det	_	_
+28	slip	slip	_	NN	_	30	nsubj	_	_
+29	had	have	_	VBD	_	30	aux	_	_
+30	fallen	fall	_	VBN	_	25	ccomp	_	_
+31	because	because	_	IN	_	38	mark	_	_
+32	the	the	_	DT	_	33	det	_	_
+33	elastic	elastic	_	JJ	_	38	nsubj	_	_
+34	of	of	_	IN	_	36	case	_	_
+35	the	the	_	DT	_	36	det	_	_
+36	slip	slip	_	NN	_	33	nmod	_	_
+37	was	be	_	VBD	_	38	cop	_	_
+38	dysfunctional	dysfunctional	_	JJ	_	30	advcl	_	_
+39	.	.	_	.	_	4	punct	_	_
+
+","(ROOT (S (NP (EX There)) (ADVP (RB once)) (VP (VBD was) (NP (NP (DT a) (NN group)) (PP (IN of) (NP (NP (NNS students)) (CC and) (NP (DT a) (NN narrator)))))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (VP (VP (VBD was) (NP (DT a) (NN teacher))) (, ,) (VP (VBD owned) (NP (DT some) (JJ white) (NN slip))) (CC and) (VP (VBD owned) (NP (DT a) (NN desk)))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (VP (VBD was) (VP (VBG teaching) (NP (NP (DT the) (NN group)) (PP (IN of) (NP (NNS students) (NN language)))))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (VP (VP (VBD checked) (NP (NP (DT the) (NN group)) (PP (IN of) (NP (NP (NNS students)) (PP (IN for) (NP (NN presence))))))) (CC and) (VP (VBD stood) (PP (IN at) (NP (NP (DT the) (NN front)) (PP (IN of) (NP (DT a) (NN classroom))))))) (. .)))
+(ROOT (S (NP (DT The) (NN slip)) (VP (VBD fell) (SBAR (IN because) (S (NP (NP (DT the) (JJ not-functional) (JJ elastic)) (PP (IN of) (NP (DT the) (NN slip)))) (VP (VBD was) (ADJP (JJ dysfunctional)))))) (. .)))
+(ROOT (S (NP (NP (DT The) (NN group)) (PP (IN of) (NP (NNS students)))) (VP (VBD saw) (SBAR (IN that) (S (NP (DT the) (NN slip)) (VP (VBD had) (VP (VBN fallen) (SBAR (IN because) (S (NP (NP (DT the) (JJ elastic)) (PP (IN of) (NP (DT the) (NN slip)))) (VP (VBD was) (ADJP (JJ dysfunctional)))))))))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (VP (VBD noticed) (SBAR (IN that) (S (NP (NP (DT the) (NN ankle)) (PP (IN of) (NP (DT the) (NN narrator)))) (VP (VBD was) (VP (VBN observed)))))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (ADVP (RB nervously)) (VP (VP (VBD looked) (PP (IN toward) (NP (NP (DT the) (NN ankle)) (PP (IN of) (NP (DT the) (NN narrator)))))) (CC and) (VP (VBN observed) (SBAR (IN that) (S (NP (DT the) (NN slip)) (VP (VBD had) (VP (VBN fallen) (SBAR (IN because) (S (NP (NP (DT the) (JJ elastic)) (PP (IN of) (NP (DT the) (NN slip)))) (VP (VBD was) (ADJP (JJ dysfunctional))))))))))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (VP (VBD glanced) (PP (IN around) (NP (NP (DT the) (NN group)) (PP (IN of) (NP (NNS students)))))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (ADVP (RB carefully)) (VP (VBD stepped) (PP (IN over) (NP (DT the) (NN slip)))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (VP (VBD feigned) (NP (NN bewilderment))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (VP (VP (VBD lifted) (NP (DT the) (NN slip))) (CC and) (VP (VBD inserted) (NP (PRP it)) (PP (IN into) (NP (NP (DT a) (JJ bottom) (NN drawer)) (PP (IN of) (NP (DT the) (NN desk))))))) (. .)))
+(ROOT (S (S (NP (DT The) (NN narrator)) (VP (VBD resumed) (NP (NN teaching)))) (, ,) (CC and) (S (NP (NP (DT the) (NN group)) (PP (IN of) (NP (NNS students)))) (VP (VBD did) (RB n't) (VP (VB react)))) (. .)))
+(ROOT (S (NP (DT The) (NN narrator)) (ADVP (RB later)) (VP (VBD feared) (PP (IN for) (NP (NP (DT the) (NN group)) (PP (IN of) (NP (NNS students))))) (S (VP (TO to) (VP (VB tell) (NP (NP (DT a) (NN parent)) (PP (IN of) (NP (NP (DT the) (NN group)) (PP (IN of) (NP (NNS students)))))) (SBAR (IN that) (S (NP (NP (DT the) (NN group)) (PP (IN of) (NP (NNS students)))) (VP (VBD had) (VP (VBN seen) (SBAR (IN that) (S (NP (DT the) (NN slip)) (VP (VBD had) (VP (VBN fallen) (SBAR (IN because) (S (NP (NP (DT the) (JJ elastic)) (PP (IN of) (NP (DT the) (NN slip)))) (VP (VBD was) (ADJP (JJ dysfunctional))))))))))))))))) (. .)))
+",blogs-05,"1	Just	just	_	RB	_	2	advmod	_	_
+2	thought	think	_	VBN	_	0	root	_	_
+3	I	I	_	PRP	_	5	nsubj	_	_
+4	would	would	_	MD	_	5	aux	_	_
+5	share	share	_	VB	_	2	ccomp	_	_
+6	with	with	_	IN	_	7	case	_	_
+7	you	you	_	PRP	_	5	nmod	_	_
+8	one	one	_	CD	_	7	dep	_	_
+9	of	of	_	IN	_	13	case	_	_
+10	my	my	_	PRP$	_	13	nmod:poss	_	_
+11	most	most	_	RBS	_	12	advmod	_	_
+12	embarassing	embarassing	_	JJ	_	13	amod	_	_
+13	moments	moment	_	NNS	_	8	nmod	_	_
+14	as	as	_	IN	_	16	case	_	_
+15	a	a	_	DT	_	16	det	_	_
+16	teacher	teacher	_	NN	_	8	nmod	_	_
+17	to	to	_	TO	_	18	case	_	_
+18	date	date	_	NN	_	16	nmod	_	_
+19	.	.	_	.	_	2	punct	_	_
+
+1	Ten	ten	_	CD	_	2	nummod	_	_
+2	years	year	_	NNS	_	3	nmod:npmod	_	_
+3	ago	ago	_	IN	_	6	advmod	_	_
+4	I	I	_	PRP	_	6	nsubj	_	_
+5	was	be	_	VBD	_	6	aux	_	_
+6	teaching	teach	_	VBG	_	0	root	_	_
+7	a	a	_	DT	_	9	det	_	_
+8	mixed	mixed	_	JJ	_	9	amod	_	_
+9	class	class	_	NN	_	6	dobj	_	_
+10	of	of	_	IN	_	13	case	_	_
+11	5th	5th	_	JJ	_	13	amod	_	_
+12	graders	grader	_	NNS	_	13	compound	_	_
+13	ESL	ESL	_	NNP	_	9	nmod	_	_
+14	.	.	_	.	_	6	punct	_	_
+
+1	I	I	_	PRP	_	3	nsubj	_	_
+2	had	have	_	VBD	_	3	aux	_	_
+3	taken	take	_	VBN	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	register	register	_	NN	_	3	dobj	_	_
+6	and	and	_	CC	_	3	cc	_	_
+7	was	be	_	VBD	_	8	aux	_	_
+8	standing	stand	_	VBG	_	3	conj	_	_
+9	at	at	_	IN	_	11	case	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	front	front	_	NN	_	8	nmod	_	_
+12	of	of	_	IN	_	14	case	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	class	class	_	NN	_	11	nmod	_	_
+15	doing	do	_	VBG	_	8	xcomp	_	_
+16	some	some	_	DT	_	17	det	_	_
+17	revision	revision	_	NN	_	15	dobj	_	_
+18	...	...	_	:	_	3	punct	_	_
+19	However	however	_	RB	_	27	advmod	_	_
+20	,	,	_	,	_	27	punct	_	_
+21	all	all	_	DT	_	22	det	_	_
+22	eyes	eye	_	NNS	_	27	nsubj	_	_
+23	were	be	_	VBD	_	27	cop	_	_
+24	not	not	_	RB	_	27	neg	_	_
+25	on	on	_	IN	_	27	case	_	_
+26	my	my	_	PRP$	_	27	nmod:poss	_	_
+27	face	face	_	NN	_	3	parataxis	_	_
+28	but	but	_	CC	_	27	cc	_	_
+29	at	at	_	IN	_	31	case	_	_
+30	my	my	_	PRP$	_	31	nmod:poss	_	_
+31	ankles	ankle	_	NNS	_	27	conj	_	_
+32	.	.	_	.	_	3	punct	_	_
+
+1	Nervously	nervously	_	RB	_	3	advmod	_	_
+2	I	I	_	PRP	_	3	nsubj	_	_
+3	looked	look	_	VBD	_	0	root	_	_
+4	down	down	_	RP	_	3	advmod	_	_
+5	to	to	_	TO	_	6	mark	_	_
+6	see	see	_	VB	_	3	xcomp	_	_
+7	that	that	_	DT	_	12	mark	_	_
+8	my	my	_	PRP$	_	9	nmod:poss	_	_
+9	underslip	underslip	_	NN	_	12	nsubj	_	_
+10	had	have	_	VBD	_	12	aux	_	_
+11	somehow	somehow	_	RB	_	12	advmod	_	_
+12	made	make	_	VBN	_	6	ccomp	_	_
+13	its	its	_	PRP$	_	14	nmod:poss	_	_
+14	way	way	_	NN	_	12	dobj	_	_
+15	to	to	_	TO	_	17	case	_	_
+16	the	the	_	DT	_	17	det	_	_
+17	floor	floor	_	NN	_	12	nmod	_	_
+18	.	.	_	.	_	3	punct	_	_
+
+1	Elastic	elastic	_	JJ	_	2	nsubj	_	_
+2	gone	go	_	VBN	_	0	root	_	_
+3	What	what	_	WP	_	5	nsubj	_	_
+4	to	to	_	TO	_	5	mark	_	_
+5	do	do	_	VB	_	2	ccomp	_	_
+6	?	?	_	.	_	2	punct	_	_
+
+1	So	so	_	IN	_	3	advmod	_	_
+2	I	I	_	PRP	_	3	nsubj	_	_
+3	looked	look	_	VBD	_	0	root	_	_
+4	at	at	_	IN	_	7	case	_	_
+5	my	my	_	PRP$	_	7	nmod:poss	_	_
+6	underwear	underwear	_	NN	_	7	compound	_	_
+7	round	round	_	NN	_	3	nmod	_	_
+8	my	my	_	PRP$	_	9	nmod:poss	_	_
+9	ankles	ankle	_	NNS	_	3	dobj	_	_
+10	,	,	_	,	_	3	punct	_	_
+11	looked	look	_	VBD	_	3	conj	_	_
+12	at	at	_	IN	_	14	case	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	class	class	_	NN	_	11	nmod	_	_
+15	,	,	_	,	_	3	punct	_	_
+16	looked	look	_	VBD	_	3	conj	_	_
+17	back	back	_	RB	_	16	advmod	_	_
+18	at	at	_	IN	_	20	case	_	_
+19	the	the	_	DT	_	20	det	_	_
+20	garment	garment	_	NN	_	16	nmod	_	_
+21	,	,	_	,	_	3	punct	_	_
+22	carefully	carefully	_	RB	_	23	advmod	_	_
+23	stepped	step	_	VBD	_	3	dep	_	_
+24	out	out	_	IN	_	26	case	_	_
+25	of	of	_	IN	_	26	case	_	_
+26	it	it	_	PRP	_	23	nmod	_	_
+27	,	,	_	,	_	3	punct	_	_
+28	said	say	_	VBD	_	3	dep	_	_
+29	,	,	_	,	_	3	punct	_	_
+30	``	``	_	``	_	3	punct	_	_
+31	Oh	oh	_	UH	_	33	discourse	_	_
+32	dear	dear	_	RB	_	33	advmod	_	_
+33	look	look	_	VB	_	3	ccomp	_	_
+34	,	,	_	,	_	33	punct	_	_
+35	what	what	_	WDT	_	40	nsubj	_	_
+36	on	on	_	IN	_	37	case	_	_
+37	earth	earth	_	NN	_	40	nmod	_	_
+38	can	can	_	MD	_	40	aux	_	_
+39	that	that	_	WDT	_	40	nsubj	_	_
+40	be	be	_	VB	_	33	ccomp	_	_
+41	?	?	_	.	_	3	punct	_	_
+42	''	''	_	''	_	3	punct	_	_
+
+1	,	,	_	,	_	2	punct	_	_
+2	lifted	lift	_	VBD	_	0	root	_	_
+3	the	the	_	DT	_	2	dobj	_	_
+4	offending	offend	_	VBG	_	3	acl	_	_
+5	white	white	_	JJ	_	4	xcomp	_	_
+6	(	(	_	-LRB-	_	8	punct	_	_
+7	not	not	_	RB	_	8	neg	_	_
+8	red	red	_	JJ	_	5	dep	_	_
+9	and	and	_	CC	_	8	cc	_	_
+10	black	black	_	JJ	_	8	conj	_	_
+11	thank	thank	_	VB	_	15	dep	_	_
+12	the	the	_	DT	_	13	det	_	_
+13	Lord	Lord	_	NNP	_	15	dep	_	_
+14	)	)	_	-RRB-	_	13	punct	_	_
+15	slip	slip	_	NN	_	8	dep	_	_
+16	and	and	_	CC	_	8	cc	_	_
+17	casually	casually	_	RB	_	18	advmod	_	_
+18	popped	pop	_	VBD	_	8	conj	_	_
+19	it	it	_	PRP	_	18	dobj	_	_
+20	in	in	_	IN	_	23	case	_	_
+21	the	the	_	DT	_	23	det	_	_
+22	bottom	bottom	_	JJ	_	23	amod	_	_
+23	drawer	drawer	_	NN	_	18	nmod	_	_
+24	of	of	_	IN	_	26	case	_	_
+25	my	my	_	PRP$	_	26	nmod:poss	_	_
+26	desk	desk	_	NN	_	23	nmod	_	_
+27	.	.	_	.	_	2	punct	_	_
+
+1	I	I	_	PRP	_	2	nsubj	_	_
+2	continued	continue	_	VBD	_	0	root	_	_
+3	,	,	_	,	_	2	punct	_	_
+4	``	``	_	``	_	2	punct	_	_
+5	Ok	ok	_	JJ	_	6	amod	_	_
+6	class	class	_	NN	_	2	dobj	_	_
+7	,	,	_	,	_	6	punct	_	_
+8	page	page	_	NN	_	6	appos	_	_
+9	33	33	_	CD	_	8	nummod	_	_
+10	.	.	_	.	_	2	punct	_	_
+11	''	''	_	''	_	2	punct	_	_
+
+1	No	no	_	DT	_	2	neg	_	_
+2	one	one	_	NN	_	6	nsubj	_	_
+3	,	,	_	,	_	6	punct	_	_
+4	strangely	strangely	_	RB	_	6	advmod	_	_
+5	,	,	_	,	_	6	punct	_	_
+6	batted	bat	_	VBD	_	0	root	_	_
+7	an	a	_	DT	_	8	det	_	_
+8	eyelid	eyelid	_	NN	_	6	dobj	_	_
+9	.	.	_	.	_	6	punct	_	_
+
+1	Later	later	_	RB	_	3	advmod	_	_
+2	that	that	_	DT	_	3	det	_	_
+3	day	day	_	NN	_	5	nsubj	_	_
+4	I	i	_	CD	_	3	nummod	_	_
+5	wondered	wonder	_	VBD	_	0	root	_	_
+6	how	how	_	WRB	_	9	advmod	_	_
+7	they	they	_	PRP	_	9	nsubj	_	_
+8	had	have	_	VBD	_	9	aux	_	_
+9	described	describe	_	VBN	_	5	ccomp	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	day	day	_	NN	_	9	dobj	_	_
+12	to	to	_	TO	_	14	case	_	_
+13	their	they	_	PRP$	_	14	nmod:poss	_	_
+14	parents	parent	_	NNS	_	9	nmod	_	_
+15	over	over	_	IN	_	16	case	_	_
+16	dinner	dinner	_	NN	_	9	nmod	_	_
+17	.	.	_	.	_	5	punct	_	_
+
+1	``	``	_	``	_	0	root	_	_
+2	So	so	_	RB	_	3	advmod	_	_
+3	Ahmed	Ahmed	_	NNP	_	1	root	_	_
+4	,	,	_	,	_	8	punct	_	_
+5	what	what	_	WP	_	8	dobj	_	_
+6	did	do	_	VBD	_	8	aux	_	_
+7	you	you	_	PRP	_	8	nsubj	_	_
+8	do	do	_	VBP	_	3	dep	_	_
+9	in	in	_	IN	_	10	case	_	_
+10	school	school	_	NN	_	8	nmod	_	_
+11	today	today	_	NN	_	8	nmod:tmod	_	_
+12	?	?	_	.	_	3	punct	_	_
+13	''	''	_	''	_	3	punct	_	_
+
+1	``	``	_	``	_	0	root	_	_
+2	We	we	_	PRP	_	3	nsubj	_	_
+3	looked	look	_	VBD	_	1	root	_	_
+4	at	at	_	IN	_	8	case	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	teacher	teacher	_	NN	_	8	nmod:poss	_	_
+7	's	's	_	POS	_	6	case	_	_
+8	underwear	underwear	_	NN	_	3	nmod	_	_
+9	.	.	_	.	_	3	punct	_	_
+10	''	''	_	''	_	3	punct	_	_
+
+","(ROOT (SINV (ADVP (RB Just)) (VP (VBN thought) (NP (PRP I))) (VP (MD would) (VP (VB share) (PP (IN with) (NP (PRP you))))) (NP (NP (CD one)) (PP (IN of) (NP (NP (PRP$ my) (ADJP (RBS most) (JJ embarassing)) (NNS moments)) (PP (IN as) (NP (NP (DT a) (NN teacher)) (PP (TO to) (NP (NN date)))))))) (. .)))
+(ROOT (S (ADVP (NP (CD Ten) (NNS years)) (IN ago)) (NP (PRP I)) (VP (VBD was) (VP (VBG teaching) (NP (NP (DT a) (JJ mixed) (NN class)) (PP (IN of) (NP (NP (JJ 5th) (NNS graders)) (NP (NNP ESL))))))) (. .)))
+(ROOT (S (S (NP (PRP I)) (VP (VP (VBD had) (VP (VBN taken) (NP (DT the) (NN register)))) (CC and) (VP (VBD was) (VP (VBG standing) (PP (IN at) (NP (NP (DT the) (NN front)) (PP (IN of) (NP (DT the) (NN class))))) (S (VP (VBG doing) (NP (DT some) (NN revision)))))))) (: ...) (S (ADVP (RB However)) (, ,) (NP (DT all) (NNS eyes)) (VP (VBD were) (PP (RB not) (PP (IN on) (NP (PRP$ my) (NN face))) (CC but) (PP (IN at) (NP (PRP$ my) (NNS ankles)))))) (. .)))
+(ROOT (S (ADVP (RB Nervously)) (NP (PRP I)) (VP (VBD looked) (PRT (RP down)) (S (VP (TO to) (VP (VB see) (NP (NP (DT that)) (SBAR (S (NP (PRP$ my) (NN underslip)) (VP (VBD had) (ADVP (RB somehow)) (VP (VBN made) (NP (PRP$ its) (NN way)) (PP (TO to) (NP (DT the) (NN floor)))))))))))) (. .)))
+(ROOT (NP (NP (JJ Elastic)) (VP (VBN gone) (SBAR (WHNP (WP What)) (S (VP (TO to) (VP (VB do)))))) (. ?)))
+(ROOT (S (IN So) (NP (PRP I)) (VP (VP (VBD looked) (PP (IN at) (NP (NP (PRP$ my) (NN underwear) (NN round)) (NP (PRP$ my) (NNS ankles))))) (, ,) (VP (VBD looked) (PP (IN at) (NP (DT the) (NN class)))) (, ,) (VP (VBD looked) (ADVP (RB back)) (PP (IN at) (NP (DT the) (NN garment)))) (, ,) (VP (ADVP (RB carefully)) (VBD stepped) (PRT (IN out)) (PP (IN of) (NP (PRP it)))) (, ,) (VP (VBD said) (, ,) (`` ``) (S (INTJ (UH Oh)) (VP (RB dear) (VP (VB look))))) (, ,) (SBAR (WHNP (WDT what)) (S (PP (IN on) (NP (NN earth))) (VP (MD can) (SBAR (WHNP (WDT that)) (S (VP (VB be)))))))) (. ?) ('' '')))
+(ROOT (SINV (VP (, ,) (S (VP (VBD lifted) (NP (NP (DT the) (VBG offending) (JJ white) (PRN (-LRB- -LRB-) (S (VP (ADVP (RB not) (ADJP (JJ red) (CC and) (JJ black))) (VB thank) (NP (DT the) (NNP Lord)))) (-RRB- -RRB-)) (NN slip)) (CC and) (SBAR (S (VP (ADVP (RB casually))))))))) (VP (VBD popped)) (NP (NP (PRP it)) (PP (IN in) (NP (NP (DT the) (JJ bottom) (NN drawer)) (PP (IN of) (NP (PRP$ my) (NN desk)))))) (. .)))
+(ROOT (S (NP (PRP I)) (VP (VBD continued) (, ,) (`` ``) (ADJP (JJ Ok) (NP-TMP (NP (NN class)) (, ,) (NP (NN page) (CD 33))))) (. .) ('' '')))
+(ROOT (S (NP (DT No) (NN one)) (, ,) (ADVP (RB strangely)) (, ,) (VP (VBD batted) (NP (DT an) (NN eyelid))) (. .)))
+(ROOT (S (NP-TMP (RB Later) (DT that) (NN day)) (NP (CD I)) (VP (VBD wondered) (SBAR (WHADVP (WRB how)) (S (NP (PRP they)) (VP (VBD had) (VP (VBN described) (NP-TMP (DT the) (NN day)) (PP (TO to) (NP (NP (PRP$ their) (NNS parents)) (PP (IN over) (NP (NN dinner)))))))))) (. .)))
+(ROOT (FRAG (`` ``) (NP (NP (RB So) (NNP Ahmed)) (, ,) (SBAR (WHNP (WP what)) (S (VP (VBD did) (SBAR (S (NP (PRP you)) (VP (VBP do) (PP (IN in) (NP (NN school) (NN today)))))))))) (. ?) ('' '')))
+(ROOT (S (`` ``) (NP (PRP We)) (VP (VBD looked) (PP (IN at) (NP (NP (DT the) (NN teacher) (POS 's)) (NN underwear)))) (. .) ('' '')))
+","Just thought I would share with you one of my most embarassing moments as a teacher to date. Ten years ago I was teaching a mixed class of 5th graders ESL. I had taken the register and was standing at the front of the class doing some revision... However, all eyes were not on my face but at my ankles. Nervously I looked down to see that my underslip had somehow made its way to the floor. Elastic gone What to do? So I looked at my underwear round my ankles, looked at the class, looked back at the garment, carefully stepped out of it, said, ""Oh dear look, what on earth can that be?"", lifted the offending white (not red and black thank the Lord) slip and casually popped it in the bottom drawer of my desk. I continued, ""Ok class, page 33."" No one, strangely, batted an eyelid. Later that day I wondered how they had described the day to their parents over dinner. ""So Ahmed, what did you do in school today?"" ""We looked at the teacher's underwear."""
 "An eagle swooped toward a serpent and seized it in order for he to devour it.  
 The eagle fought with the serpent, and the serpent coiled around him.  
 A countryman who owned a drinking vessel tried to help the eagle to escape.  
@@ -2995,7 +4186,7 @@ The eagle spilled the drinking vessel.
 (ROOT (FRAG (PP (IN In) (NP (NP (NN revenge)) (SBAR (S (VP (NP (DT the) (NNP Serpent) (NN spat)) (NP (NP (DT some)) (PP (IN of) (NP (PRP$ his) (NN poison)))) (PP (IN into) (NP (NP (DT the) (NN man) (POS 's)) (NN drinking-horn)))))))) (. .)))
 (ROOT (S (S (ADJP (JJ Heated) (PP (IN with) (NP (PRP$ his) (NNS exertions))))) (, ,) (NP (DT the) (NN man)) (VP (VBD was) (VP (IN about) (S (VP (TO to) (VP (VB slake) (NP (PRP$ his) (NN thirst)) (PP (IN with) (NP (DT a) (NN draught))) (PP (IN from) (NP (NP (DT the) (NN horn)) (, ,) (SBAR (WHADVP (WRB when)) (S (NP (DT the) (NNP Eagle)) (VP (VP (VBD knocked) (NP (PRP it)) (PRT (IN out)) (PP (IN of) (NP (PRP$ his) (NN hand)))) (, ,) (CC and) (VP (VBD spilled) (NP (PRP$ its) (NNS contents)) (PP (IN upon) (NP (DT the) (NN ground)))))))))))))) (. .)))
 ","An Eagle swooped down upon a Serpent and seized it in his talons with the intention of carrying it off and devouring it. But the Serpent was too quick for him and had its coils round him in a moment; and then there ensued a life-and-death struggle between the two. A countryman, who was a witness of the encounter, came to the assistance of the Eagle, and succeeded in freeing him from the Serpent and enabling him to escape. In revenge the Serpent spat some of his poison into the man's drinking-horn. Heated with his exertions, the man was about to slake his thirst with a draught from the horn, when the Eagle knocked it out of his hand, and spilled its contents upon the ground."
-The narrator placed the bowl on the deck in order for Benjamin to drink the bowl's water. The bowl was popular. The birds drank the bowl's water. The birds bathed themselves in the bowl. The birds organized themselves on the deck's railing in order for the birds to wait. The squirrels drank the bowl's water. The squirrel approached the bowl. The squirrel was startled. The squirrel leaped because the squirrel was startled. The squirrel fell over the deck's railing because the squirrel leaped because the squirrel was startled. The squirrel held the deck's railing with the squirrel's paw. The squirrel's paw slipped off the deck's railing. The squirrel fell.,"1	The	the	_	DT	_	2	det	_	_
+ The narrator placed the bowl on the deck in order for Benjamin to drink the bowl's water. The bowl was popular. The birds drank the bowl's water. The birds bathed themselves in the bowl. The birds organized themselves on the deck's railing in order for the birds to wait. The squirrels drank the bowl's water. The squirrel approached the bowl. The squirrel was startled. The squirrel leaped because the squirrel was startled. The squirrel fell over the deck's railing because the squirrel leaped because the squirrel was startled. The squirrel held the deck's railing with the squirrel's paw. The squirrel's paw slipped off the deck's railing. The squirrel fell.,"1	The	the	_	DT	_	2	det	_	_
 2	narrator	narrator	_	NN	_	3	nsubj	_	_
 3	placed	place	_	VBD	_	0	root	_	_
 4	the	the	_	DT	_	5	det	_	_
@@ -3600,6 +4791,526 @@ The narrator placed the bowl on the deck in order for Benjamin to drink the bowl
 (ROOT (S (NP (NNP Alyssa)) (VP (VBD was) (ADJP (JJ happy) (S (VP (TO to) (VP (VB spend) (NP (NN time)) (PP (IN with) (NP (PRP$ her) (NNS friends))) (ADVP (RB again))))))) (. .)))
 ","Alyssa got to the beach after a long trip. She's from Charlotte. She traveled from Atlanta. She's now in Miami. She went to Miami to visit some friends. But she wanted some time to herself at the beach, so she went there first. After going swimming and laying out, she went to her friend Ellen's house. Ellen greeted Alyssa and they both had some lemonade to drink. Alyssa called her friends Kristin and Rachel to meet at Ellen's house. The girls traded stories and caught up on their lives. It was a happy time for everyone. The girls went to a restaurant for dinner. The restaurant had a special on catfish. Alyssa enjoyed the restaurant's special. Ellen ordered a salad. Kristin had soup. Rachel had a steak. After eating, the ladies went back to Ellen's house to have fun. They had lots of fun. They stayed the night because they were tired. Alyssa was happy to spend time with her friends again.
 "
+"There once was a lion.  The lion was sleeping in a lair.  
+The lion awaked because a mouse ran into the face of the lion.  
+The lion lost temper and seized the mouse with the paw of the lion.  
+The lion began attacking the mouse.  
+The mouse began to be extremely frightened and piteously entreated the lion to spare it.  
+The mouse said that -- if the lion were to free the mouse -- the mouse would repay kindness.  
+The lion began to be amused.  
+The lion laughed aloud because he thought that the mouse is extremely not able to help him.  
+The lion good-naturedly freed the mouse.  
+Opportunity arrived.  
+A trapper spread some net in order to catch a big game.  
+The lion entangled himself in the net.  
+The mouse heard that the lion was roaring with anger.  
+The mouse recognized the voice of the lion.  
+The mouse ran to the lion.  
+The mouse immediately began gnawing the rope of the net with the tooth of the mouse.  
+The mouse soon succeeded in freeing the lion.  
+The mouse said that the lion had aloud laughed because he thought that the mouse is extremely not able to help him.  
+The mouse said that the lion was seeing that the mouse is able to help him.  
+","1	There	there	_	EX	_	3	expl	_	_
+2	once	once	_	RB	_	3	advmod	_	_
+3	was	be	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	lion	lion	_	NN	_	3	nsubj	_	_
+6	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	4	nsubj	_	_
+3	was	be	_	VBD	_	4	aux	_	_
+4	sleeping	sleep	_	VBG	_	0	root	_	_
+5	in	in	_	IN	_	7	case	_	_
+6	a	a	_	DT	_	7	det	_	_
+7	lair	lair	_	NN	_	4	nmod	_	_
+8	.	.	_	.	_	4	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	awaked	awake	_	VBD	_	0	root	_	_
+4	because	because	_	IN	_	7	mark	_	_
+5	a	a	_	DT	_	6	det	_	_
+6	mouse	mouse	_	NN	_	7	nsubj	_	_
+7	ran	run	_	VBD	_	3	advcl	_	_
+8	into	into	_	IN	_	10	case	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	face	face	_	NN	_	7	nmod	_	_
+11	of	of	_	IN	_	13	case	_	_
+12	the	the	_	DT	_	13	det	_	_
+13	lion	lion	_	NN	_	10	nmod	_	_
+14	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	lost	lose	_	VBD	_	0	root	_	_
+4	temper	temper	_	NN	_	3	dobj	_	_
+5	and	and	_	CC	_	3	cc	_	_
+6	seized	seize	_	VBD	_	3	conj	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	mouse	mouse	_	NN	_	6	dobj	_	_
+9	with	with	_	IN	_	11	case	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	paw	paw	_	NN	_	6	nmod	_	_
+12	of	of	_	IN	_	14	case	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	lion	lion	_	NN	_	11	nmod	_	_
+15	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	began	begin	_	VBD	_	0	root	_	_
+4	attacking	attack	_	VBG	_	3	xcomp	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	mouse	mouse	_	NN	_	4	dobj	_	_
+7	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	mouse	mouse	_	NN	_	3	nsubj	_	_
+3	began	begin	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	7	mark	_	_
+5	be	be	_	VB	_	7	cop	_	_
+6	extremely	extremely	_	RB	_	7	advmod	_	_
+7	frightened	frightened	_	JJ	_	3	xcomp	_	_
+8	and	and	_	CC	_	7	cc	_	_
+9	piteously	piteously	_	RB	_	10	advmod	_	_
+10	entreated	entreat	_	VBD	_	7	conj	_	_
+11	the	the	_	DT	_	12	det	_	_
+12	lion	lion	_	NN	_	10	dobj	_	_
+13	to	to	_	TO	_	14	mark	_	_
+14	spare	spare	_	VB	_	10	advcl	_	_
+15	it	it	_	PRP	_	14	dobj	_	_
+16	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	mouse	mouse	_	NN	_	3	nsubj	_	_
+3	said	say	_	VBD	_	0	root	_	_
+4	that	that	_	DT	_	3	dep	_	_
+5	--	--	_	:	_	4	punct	_	_
+6	if	if	_	IN	_	9	mark	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	lion	lion	_	NN	_	9	nsubj	_	_
+9	were	be	_	VBD	_	5	root	_	_
+10	to	to	_	TO	_	11	mark	_	_
+11	free	free	_	VB	_	9	xcomp	_	_
+12	the	the	_	DT	_	13	det	_	_
+13	mouse	mouse	_	NN	_	11	dobj	_	_
+14	--	--	_	:	_	18	punct	_	_
+15	the	the	_	DT	_	16	det	_	_
+16	mouse	mouse	_	NN	_	18	nsubj	_	_
+17	would	would	_	MD	_	18	aux	_	_
+18	repay	repay	_	VB	_	13	dep	_	_
+19	kindness	kindness	_	NN	_	18	dobj	_	_
+20	.	.	_	.	_	9	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	began	begin	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	mark	_	_
+5	be	be	_	VB	_	6	auxpass	_	_
+6	amused	amuse	_	VBN	_	3	xcomp	_	_
+7	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	laughed	laugh	_	VBD	_	0	root	_	_
+4	aloud	aloud	_	RB	_	3	advmod	_	_
+5	because	because	_	IN	_	7	mark	_	_
+6	he	he	_	PRP	_	7	nsubj	_	_
+7	thought	think	_	VBD	_	3	advcl	_	_
+8	that	that	_	IN	_	14	mark	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	mouse	mouse	_	NN	_	14	nsubj	_	_
+11	is	be	_	VBZ	_	14	cop	_	_
+12	extremely	extremely	_	RB	_	14	advmod	_	_
+13	not	not	_	RB	_	14	neg	_	_
+14	able	able	_	JJ	_	7	ccomp	_	_
+15	to	to	_	TO	_	16	mark	_	_
+16	help	help	_	VB	_	14	xcomp	_	_
+17	him	he	_	PRP	_	16	dobj	_	_
+18	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	4	nsubj	_	_
+3	good-naturedly	good-naturedly	_	RB	_	4	advmod	_	_
+4	freed	free	_	VBN	_	0	root	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	mouse	mouse	_	NN	_	4	dobj	_	_
+7	.	.	_	.	_	4	punct	_	_
+
+1	Opportunity	Opportunity	_	NNP	_	2	nsubj	_	_
+2	arrived	arrive	_	VBD	_	0	root	_	_
+3	.	.	_	.	_	2	punct	_	_
+
+1	A	a	_	DT	_	2	det	_	_
+2	trapper	trapper	_	NN	_	3	nsubj	_	_
+3	spread	spread	_	VBD	_	0	root	_	_
+4	some	some	_	DT	_	5	det	_	_
+5	net	net	_	NN	_	3	dobj	_	_
+6	in	in	_	IN	_	9	mark	_	_
+7	order	order	_	NN	_	6	mwe	_	_
+8	to	to	_	TO	_	9	mark	_	_
+9	catch	catch	_	VB	_	3	advcl	_	_
+10	a	a	_	DT	_	12	det	_	_
+11	big	big	_	JJ	_	12	amod	_	_
+12	game	game	_	NN	_	9	dobj	_	_
+13	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	lion	lion	_	NN	_	3	nsubj	_	_
+3	entangled	entangled	_	JJ	_	0	root	_	_
+4	himself	himself	_	PRP	_	3	dobj	_	_
+5	in	in	_	IN	_	7	case	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	net	net	_	NN	_	3	nmod	_	_
+8	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	mouse	mouse	_	NN	_	3	nsubj	_	_
+3	heard	hear	_	VBD	_	0	root	_	_
+4	that	that	_	IN	_	8	mark	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	lion	lion	_	NN	_	8	nsubj	_	_
+7	was	be	_	VBD	_	8	aux	_	_
+8	roaring	roar	_	VBG	_	3	ccomp	_	_
+9	with	with	_	IN	_	10	case	_	_
+10	anger	anger	_	NN	_	8	nmod	_	_
+11	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	mouse	mouse	_	NN	_	3	nsubj	_	_
+3	recognized	recognize	_	VBD	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	voice	voice	_	NN	_	3	dobj	_	_
+6	of	of	_	IN	_	8	case	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	lion	lion	_	NN	_	5	nmod	_	_
+9	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	mouse	mouse	_	NN	_	3	nsubj	_	_
+3	ran	run	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	case	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	lion	lion	_	NN	_	3	nmod	_	_
+7	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	mouse	mouse	_	NN	_	4	nsubj	_	_
+3	immediately	immediately	_	RB	_	4	advmod	_	_
+4	began	begin	_	VBD	_	0	root	_	_
+5	gnawing	gnawing	_	NN	_	4	dobj	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	rope	rope	_	NN	_	5	dobj	_	_
+8	of	of	_	IN	_	10	case	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	net	net	_	NN	_	7	nmod	_	_
+11	with	with	_	IN	_	13	case	_	_
+12	the	the	_	DT	_	13	det	_	_
+13	tooth	tooth	_	NN	_	5	nmod	_	_
+14	of	of	_	IN	_	16	case	_	_
+15	the	the	_	DT	_	16	det	_	_
+16	mouse	mouse	_	NN	_	13	nmod	_	_
+17	.	.	_	.	_	4	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	mouse	mouse	_	NN	_	4	nsubj	_	_
+3	soon	soon	_	RB	_	4	advmod	_	_
+4	succeeded	succeed	_	VBD	_	0	root	_	_
+5	in	in	_	IN	_	6	mark	_	_
+6	freeing	free	_	VBG	_	4	advcl	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	lion	lion	_	NN	_	6	dobj	_	_
+9	.	.	_	.	_	4	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	mouse	mouse	_	NN	_	3	nsubj	_	_
+3	said	say	_	VBD	_	0	root	_	_
+4	that	that	_	IN	_	9	mark	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	lion	lion	_	NN	_	9	nsubj	_	_
+7	had	have	_	VBD	_	9	aux	_	_
+8	aloud	aloud	_	RB	_	9	advmod	_	_
+9	laughed	laugh	_	VBN	_	3	ccomp	_	_
+10	because	because	_	IN	_	12	mark	_	_
+11	he	he	_	PRP	_	12	nsubj	_	_
+12	thought	think	_	VBD	_	9	advcl	_	_
+13	that	that	_	IN	_	19	mark	_	_
+14	the	the	_	DT	_	15	det	_	_
+15	mouse	mouse	_	NN	_	19	nsubj	_	_
+16	is	be	_	VBZ	_	19	cop	_	_
+17	extremely	extremely	_	RB	_	19	advmod	_	_
+18	not	not	_	RB	_	19	neg	_	_
+19	able	able	_	JJ	_	12	ccomp	_	_
+20	to	to	_	TO	_	21	mark	_	_
+21	help	help	_	VB	_	19	xcomp	_	_
+22	him	he	_	PRP	_	21	dobj	_	_
+23	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	mouse	mouse	_	NN	_	3	nsubj	_	_
+3	said	say	_	VBD	_	0	root	_	_
+4	that	that	_	IN	_	8	mark	_	_
+5	the	the	_	DT	_	6	det	_	_
+6	lion	lion	_	NN	_	8	nsubj	_	_
+7	was	be	_	VBD	_	8	aux	_	_
+8	seeing	see	_	VBG	_	3	ccomp	_	_
+9	that	that	_	IN	_	13	mark	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	mouse	mouse	_	NN	_	13	nsubj	_	_
+12	is	be	_	VBZ	_	13	cop	_	_
+13	able	able	_	JJ	_	8	ccomp	_	_
+14	to	to	_	TO	_	15	mark	_	_
+15	help	help	_	VB	_	13	xcomp	_	_
+16	him	he	_	PRP	_	15	dobj	_	_
+17	.	.	_	.	_	3	punct	_	_
+
+","(ROOT (S (NP (EX There)) (ADVP (RB once)) (VP (VBD was) (NP (DT a) (NN lion))) (. .)))
+(ROOT (S (NP (DT The) (NN lion)) (VP (VBD was) (VP (VBG sleeping) (PP (IN in) (NP (DT a) (NN lair))))) (. .)))
+(ROOT (S (NP (DT The) (NN lion)) (VP (VBD awaked) (SBAR (IN because) (S (NP (DT a) (NN mouse)) (VP (VBD ran) (PP (IN into) (NP (NP (DT the) (NN face)) (PP (IN of) (NP (DT the) (NN lion))))))))) (. .)))
+(ROOT (S (NP (DT The) (NN lion)) (VP (VP (VBD lost) (NP (NN temper))) (CC and) (VP (VBD seized) (NP (DT the) (NN mouse)) (PP (IN with) (NP (NP (DT the) (NN paw)) (PP (IN of) (NP (DT the) (NN lion))))))) (. .)))
+(ROOT (S (NP (DT The) (NN lion)) (VP (VBD began) (S (VP (VBG attacking) (NP (DT the) (NN mouse))))) (. .)))
+(ROOT (S (NP (DT The) (NN mouse)) (VP (VP (VBD began) (S (VP (TO to) (VP (VB be) (ADJP (RB extremely) (JJ frightened)))))) (CC and) (VP (ADVP (RB piteously)) (VBD entreated) (NP (DT the) (NN lion) (S (VP (TO to) (VP (VB spare) (NP (PRP it)))))))) (. .)))
+(ROOT (S (NP (DT The) (NN mouse)) (VP (VBD said) (NP (NP (DT that)) (PRN (: --) (SBAR (IN if) (S (NP (DT the) (NN lion)) (VP (VBD were) (S (VP (TO to) (VP (VB free) (NP (DT the) (NN mouse)))))))) (: --)) (SBAR (S (NP (DT the) (NN mouse)) (VP (MD would) (VP (VB repay) (NP (NN kindness)))))))) (. .)))
+(ROOT (S (NP (DT The) (NN lion)) (VP (VBD began) (S (VP (TO to) (VP (VB be) (ADJP (VBN amused)))))) (. .)))
+(ROOT (S (NP (DT The) (NN lion)) (VP (VBD laughed) (ADVP (RB aloud)) (SBAR (IN because) (S (NP (PRP he)) (VP (VBD thought) (SBAR (IN that) (S (NP (DT the) (NN mouse)) (VP (VBZ is) (ADJP (RB extremely) (RB not) (JJ able)) (S (VP (TO to) (VP (VB help) (NP (PRP him)))))))))))) (. .)))
+(ROOT (S (NP (DT The) (NN lion)) (ADVP (RB good-naturedly)) (VP (VBN freed) (NP (DT the) (NN mouse))) (. .)))
+(ROOT (S (NP (NNP Opportunity)) (VP (VBD arrived)) (. .)))
+(ROOT (S (NP (DT A) (NN trapper)) (VP (VBD spread) (NP (DT some) (NN net)) (SBAR (IN in) (NN order) (S (VP (TO to) (VP (VB catch) (NP (DT a) (JJ big) (NN game))))))) (. .)))
+(ROOT (S (NP (DT The) (NN lion)) (VP (JJ entangled) (NP (NP (PRP himself)) (PP (IN in) (NP (DT the) (NN net))))) (. .)))
+(ROOT (S (NP (DT The) (NN mouse)) (VP (VBD heard) (SBAR (IN that) (S (NP (DT the) (NN lion)) (VP (VBD was) (NP (NP (VBG roaring)) (PP (IN with) (NP (NN anger)))))))) (. .)))
+(ROOT (S (NP (DT The) (NN mouse)) (VP (VBD recognized) (NP (NP (DT the) (NN voice)) (PP (IN of) (NP (DT the) (NN lion))))) (. .)))
+(ROOT (S (NP (DT The) (NN mouse)) (VP (VBD ran) (PP (TO to) (NP (DT the) (NN lion)))) (. .)))
+(ROOT (S (NP (DT The) (NN mouse)) (ADVP (RB immediately)) (VP (VBD began) (S (VP (NN gnawing) (NP (NP (DT the) (NN rope)) (PP (IN of) (NP (DT the) (NN net)))) (PP (IN with) (NP (NP (DT the) (NN tooth)) (PP (IN of) (NP (DT the) (NN mouse)))))))) (. .)))
+(ROOT (S (NP (DT The) (NN mouse)) (ADVP (RB soon)) (VP (VBD succeeded) (PP (IN in) (S (VP (VBG freeing) (NP (DT the) (NN lion)))))) (. .)))
+(ROOT (S (NP (DT The) (NN mouse)) (VP (VBD said) (SBAR (IN that) (S (NP (DT the) (NN lion)) (VP (VBD had) (ADVP (RB aloud)) (VP (VBN laughed) (SBAR (IN because) (S (NP (PRP he)) (VP (VBD thought) (SBAR (IN that) (S (NP (DT the) (NN mouse)) (VP (VBZ is) (ADJP (RB extremely) (RB not) (JJ able)) (S (VP (TO to) (VP (VB help) (NP (PRP him)))))))))))))))) (. .)))
+(ROOT (S (NP (DT The) (NN mouse)) (VP (VBD said) (SBAR (IN that) (S (NP (DT the) (NN lion)) (VP (VBD was) (VP (VBG seeing) (SBAR (IN that) (S (NP (DT the) (NN mouse)) (VP (VBZ is) (ADJP (JJ able) (S (VP (TO to) (VP (VB help) (NP (PRP him)))))))))))))) (. .)))
+",fables-06,"1	A	a	_	DT	_	2	det	_	_
+2	Lion	Lion	_	NNP	_	8	nsubjpass	_	_
+3	asleep	asleep	_	RB	_	8	advmod	_	_
+4	in	in	_	IN	_	6	case	_	_
+5	his	he	_	PRP$	_	6	nmod:poss	_	_
+6	lair	lair	_	NN	_	3	nmod	_	_
+7	was	be	_	VBD	_	8	auxpass	_	_
+8	waked	wake	_	VBN	_	0	root	_	_
+9	up	up	_	RP	_	8	compound:prt	_	_
+10	by	by	_	IN	_	12	case	_	_
+11	a	a	_	DT	_	12	det	_	_
+12	Mouse	mouse	_	NN	_	8	nmod	_	_
+13	running	run	_	VBG	_	12	acl	_	_
+14	over	over	_	IN	_	16	case	_	_
+15	his	he	_	PRP$	_	16	nmod:poss	_	_
+16	face	face	_	NN	_	13	nmod	_	_
+17	.	.	_	.	_	8	punct	_	_
+
+1	Losing	lose	_	VBG	_	0	root	_	_
+2	his	he	_	PRP$	_	3	nmod:poss	_	_
+3	temper	temper	_	NN	_	1	dobj	_	_
+4	he	he	_	PRP	_	5	nsubj	_	_
+5	seized	seize	_	VBD	_	3	acl:relcl	_	_
+6	it	it	_	PRP	_	5	dobj	_	_
+7	with	with	_	IN	_	9	case	_	_
+8	his	he	_	PRP$	_	9	nmod:poss	_	_
+9	paw	paw	_	NN	_	5	nmod	_	_
+10	and	and	_	CC	_	1	cc	_	_
+11	was	be	_	VBD	_	12	aux	_	_
+12	about	about	_	IN	_	1	conj	_	_
+13	to	to	_	TO	_	14	mark	_	_
+14	kill	kill	_	VB	_	12	xcomp	_	_
+15	it	it	_	PRP	_	14	dobj	_	_
+16	.	.	_	.	_	1	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	Mouse	mouse	_	NN	_	7	nsubj	_	_
+3	,	,	_	,	_	2	punct	_	_
+4	terrified	terrify	_	VBN	_	2	acl	_	_
+5	,	,	_	,	_	2	punct	_	_
+6	piteously	piteously	_	RB	_	7	advmod	_	_
+7	entreated	entreat	_	VBD	_	0	root	_	_
+8	him	he	_	PRP	_	7	dobj	_	_
+9	to	to	_	TO	_	10	mark	_	_
+10	spare	spare	_	VB	_	7	xcomp	_	_
+11	its	its	_	PRP$	_	12	nmod:poss	_	_
+12	life	life	_	NN	_	10	dobj	_	_
+13	.	.	_	.	_	7	punct	_	_
+
+1	``	``	_	``	_	9	punct	_	_
+2	Please	please	_	VB	_	3	discourse	_	_
+3	let	let	_	VB	_	9	ccomp	_	_
+4	me	I	_	PRP	_	5	nsubj	_	_
+5	go	go	_	VB	_	3	ccomp	_	_
+6	,	,	_	,	_	9	punct	_	_
+7	''	''	_	''	_	9	punct	_	_
+8	it	it	_	PRP	_	9	nsubj	_	_
+9	cried	cry	_	VBD	_	0	root	_	_
+10	,	,	_	,	_	9	punct	_	_
+11	``	``	_	``	_	9	punct	_	_
+12	and	and	_	CC	_	9	cc	_	_
+13	one	one	_	CD	_	14	nummod	_	_
+14	day	day	_	NN	_	17	nmod:tmod	_	_
+15	I	i	_	CD	_	14	nummod	_	_
+16	will	will	_	MD	_	17	aux	_	_
+17	repay	repay	_	VB	_	9	conj	_	_
+18	you	you	_	PRP	_	17	dobj	_	_
+19	for	for	_	IN	_	21	case	_	_
+20	your	you	_	PRP$	_	21	nmod:poss	_	_
+21	kindness	kindness	_	NN	_	17	nmod	_	_
+22	.	.	_	.	_	9	punct	_	_
+23	''	''	_	''	_	9	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	idea	idea	_	NN	_	10	nsubj	_	_
+3	of	of	_	IN	_	7	case	_	_
+4	so	so	_	RB	_	5	advmod	_	_
+5	insignificant	insignificant	_	JJ	_	7	amod	_	_
+6	a	a	_	DT	_	7	det	_	_
+7	creature	creature	_	NN	_	2	nmod	_	_
+8	ever	ever	_	RB	_	10	advmod	_	_
+9	being	be	_	VBG	_	10	cop	_	_
+10	able	able	_	JJ	_	0	root	_	_
+11	to	to	_	TO	_	12	mark	_	_
+12	do	do	_	VB	_	10	xcomp	_	_
+13	anything	anything	_	NN	_	12	dobj	_	_
+14	for	for	_	IN	_	15	case	_	_
+15	him	he	_	PRP	_	12	nmod	_	_
+16	amused	amuse	_	VBD	_	10	xcomp	_	_
+17	the	the	_	DT	_	18	det	_	_
+18	Lion	Lion	_	NNP	_	16	dobj	_	_
+19	so	so	_	RB	_	20	advmod	_	_
+20	much	much	_	RB	_	16	advmod	_	_
+21	that	that	_	IN	_	23	mark	_	_
+22	he	he	_	PRP	_	23	nsubj	_	_
+23	laughed	laugh	_	VBD	_	20	advcl	_	_
+24	aloud	aloud	_	RB	_	23	advmod	_	_
+25	,	,	_	,	_	23	punct	_	_
+26	and	and	_	CC	_	23	cc	_	_
+27	good-humouredly	good-humouredly	_	RB	_	28	advmod	_	_
+28	let	let	_	VB	_	23	conj	_	_
+29	it	it	_	PRP	_	30	nsubj	_	_
+30	go	go	_	VB	_	28	ccomp	_	_
+31	.	.	_	.	_	10	punct	_	_
+
+1	But	but	_	CC	_	6	cc	_	_
+2	the	the	_	DT	_	3	det	_	_
+3	Mouse	mouse	_	NN	_	5	nmod:poss	_	_
+4	's	's	_	POS	_	3	case	_	_
+5	chance	chance	_	NN	_	6	nsubj	_	_
+6	came	come	_	VBD	_	0	root	_	_
+7	,	,	_	,	_	6	punct	_	_
+8	after	after	_	IN	_	9	case	_	_
+9	all	all	_	DT	_	6	nmod	_	_
+10	.	.	_	.	_	6	punct	_	_
+
+1	One	one	_	CD	_	2	nummod	_	_
+2	day	day	_	NN	_	5	nmod:tmod	_	_
+3	the	the	_	DT	_	4	det	_	_
+4	Lion	Lion	_	NNP	_	5	nsubj	_	_
+5	got	get	_	VBD	_	0	root	_	_
+6	entangled	entangled	_	JJ	_	5	xcomp	_	_
+7	in	in	_	IN	_	9	case	_	_
+8	a	a	_	DT	_	9	det	_	_
+9	net	net	_	NN	_	6	nmod	_	_
+10	which	which	_	WDT	_	13	nsubjpass	_	_
+11	had	have	_	VBD	_	13	aux	_	_
+12	been	be	_	VBN	_	13	auxpass	_	_
+13	spread	spread	_	VBN	_	9	acl:relcl	_	_
+14	for	for	_	IN	_	15	case	_	_
+15	game	game	_	NN	_	13	nmod	_	_
+16	by	by	_	IN	_	18	case	_	_
+17	some	some	_	DT	_	18	det	_	_
+18	hunters	hunter	_	NNS	_	13	nmod	_	_
+19	,	,	_	,	_	5	punct	_	_
+20	and	and	_	CC	_	5	cc	_	_
+21	the	the	_	DT	_	22	det	_	_
+22	Mouse	mouse	_	NN	_	23	nsubj	_	_
+23	heard	hear	_	VBD	_	5	conj	_	_
+24	and	and	_	CC	_	23	cc	_	_
+25	recognised	recognise	_	VBD	_	23	conj	_	_
+26	his	he	_	PRP$	_	27	nmod:poss	_	_
+27	roars	roar	_	VBZ	_	23	dobj	_	_
+28	of	of	_	IN	_	29	case	_	_
+29	anger	anger	_	NN	_	27	nmod	_	_
+30	and	and	_	CC	_	23	cc	_	_
+31	ran	run	_	VBD	_	23	conj	_	_
+32	to	to	_	TO	_	34	case	_	_
+33	the	the	_	DT	_	34	det	_	_
+34	spot	spot	_	NN	_	31	nmod	_	_
+35	.	.	_	.	_	5	punct	_	_
+
+1	Without	without	_	IN	_	5	mark	_	_
+2	more	more	_	JJR	_	5	advmod	_	_
+3	ado	ado	_	IN	_	5	mark	_	_
+4	it	it	_	PRP	_	5	nsubj	_	_
+5	set	set	_	VBD	_	0	root	_	_
+6	to	to	_	TO	_	7	mark	_	_
+7	work	work	_	VB	_	5	xcomp	_	_
+8	to	to	_	TO	_	9	mark	_	_
+9	gnaw	gnaw	_	VB	_	7	xcomp	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	ropes	rope	_	NNS	_	9	dobj	_	_
+12	with	with	_	IN	_	14	case	_	_
+13	its	its	_	PRP$	_	14	nmod:poss	_	_
+14	teeth	tooth	_	NNS	_	9	nmod	_	_
+15	,	,	_	,	_	5	punct	_	_
+16	and	and	_	CC	_	5	cc	_	_
+17	succeeded	succeed	_	VBD	_	5	conj	_	_
+18	before	before	_	RB	_	19	advmod	_	_
+19	long	long	_	RB	_	17	advmod	_	_
+20	in	in	_	IN	_	21	mark	_	_
+21	setting	set	_	VBG	_	17	advcl	_	_
+22	the	the	_	DT	_	23	det	_	_
+23	Lion	Lion	_	NNP	_	24	nsubj	_	_
+24	free	free	_	JJ	_	21	xcomp	_	_
+25	.	.	_	.	_	5	punct	_	_
+
+1	``	``	_	``	_	0	root	_	_
+2	There	there	_	EX	_	1	root	_	_
+3	!	!	_	.	_	2	punct	_	_
+4	''	''	_	''	_	3	punct	_	_
+
+1	said	say	_	VBD	_	0	root	_	_
+2	the	the	_	DT	_	3	det	_	_
+3	Mouse	mouse	_	NN	_	1	nsubj	_	_
+4	,	,	_	,	_	1	punct	_	_
+5	``	``	_	``	_	1	punct	_	_
+6	you	you	_	PRP	_	7	nsubj	_	_
+7	laughed	laugh	_	VBD	_	1	xcomp	_	_
+8	at	at	_	IN	_	9	case	_	_
+9	me	I	_	PRP	_	7	nmod	_	_
+10	when	when	_	WRB	_	12	advmod	_	_
+11	I	I	_	PRP	_	12	nsubj	_	_
+12	promised	promise	_	VBD	_	7	advcl	_	_
+13	I	I	_	PRP	_	15	nsubj	_	_
+14	would	would	_	MD	_	15	aux	_	_
+15	repay	repay	_	VB	_	12	ccomp	_	_
+16	you	you	_	PRP	_	15	dobj	_	_
+17	:	:	_	:	_	7	punct	_	_
+18	but	but	_	CC	_	7	cc	_	_
+19	now	now	_	RB	_	21	advmod	_	_
+20	you	you	_	PRP	_	21	nsubj	_	_
+21	see	see	_	VBP	_	7	conj	_	_
+22	,	,	_	,	_	21	punct	_	_
+23	even	even	_	RB	_	25	advmod	_	_
+24	a	a	_	DT	_	25	det	_	_
+25	Mouse	mouse	_	NN	_	27	nsubj	_	_
+26	can	can	_	MD	_	27	aux	_	_
+27	help	help	_	VB	_	21	parataxis	_	_
+28	a	a	_	DT	_	29	det	_	_
+29	Lion	Lion	_	NNP	_	27	dobj	_	_
+30	.	.	_	.	_	1	punct	_	_
+31	''	''	_	''	_	1	punct	_	_
+
+","(ROOT (S (NP (NP (NP (DT A) (NNP Lion)) (ADJP (RB asleep))) (PP (IN in) (NP (PRP$ his) (NN lair)))) (VP (VBD was) (VP (VBN waked) (PRT (RP up)) (PP (IN by) (NP (NP (DT a) (NN Mouse)) (VP (VBG running) (PP (IN over) (NP (PRP$ his) (NN face)))))))) (. .)))
+(ROOT (S (S (VP (VBG Losing) (NP (PRP$ his) (NN temper)))) (NP (PRP he)) (VP (VP (VBD seized) (NP (PRP it)) (PP (IN with) (NP (PRP$ his) (NN paw)))) (CC and) (VP (VBD was) (VP (IN about) (S (VP (TO to) (VP (VB kill) (NP (PRP it)))))))) (. .)))
+(ROOT (S (NP (NP (DT The) (NN Mouse)) (, ,) (NP (VBN terrified)) (, ,)) (ADVP (RB piteously)) (VP (VBD entreated) (S (NP (PRP him)) (VP (TO to) (VP (VB spare) (NP (PRP$ its) (NN life)))))) (. .)))
+(ROOT (S (S (`` ``) (S (INTJ (VB Please)) (VP (VB let) (S (NP (PRP me)) (VP (VB go))))) (, ,) ('' '') (NP (PRP it)) (VP (VBD cried))) (, ,) (`` ``) (CC and) (S (NP-TMP (CD one) (NN day)) (NP (CD I)) (VP (MD will) (VP (VB repay) (NP (PRP you)) (PP (IN for) (NP (PRP$ your) (NN kindness)))))) (. .) ('' '')))
+(ROOT (S (NP (NP (DT The) (NN idea)) (PP (IN of) (NP (ADJP (RB so) (JJ insignificant)) (DT a) (NN creature)))) (VP (ADVP (RB ever)) (S (VP (VBG being) (ADJP (JJ able) (S (VP (TO to) (VP (VP (VB do) (NP (NN anything)) (SBAR (IN for) (S (NP (PRP him)) (VP (VBD amused) (NP (DT the) (NNP Lion)) (ADVP (ADVP (RB so) (RB much)) (SBAR (IN that) (S (NP (PRP he)) (VP (VBD laughed) (ADVP (RB aloud)))))))))) (, ,) (CC and) (ADVP (RB good-humouredly)) (VP (VB let) (S (NP (PRP it)) (VP (VB go))))))))))) (. .)))
+(ROOT (S (CC But) (NP (NP (DT the) (NN Mouse) (POS 's)) (NN chance)) (VP (VBD came) (, ,) (ADVP (IN after) (DT all))) (. .)))
+(ROOT (S (S (NP-TMP (CD One) (NN day)) (NP (DT the) (NNP Lion)) (VP (VBD got) (ADJP (JJ entangled)) (PP (IN in) (NP (NP (DT a) (NN net)) (SBAR (WHNP (WDT which)) (S (VP (VBD had) (VP (VBN been) (VP (VBN spread) (PP (IN for) (NP (NN game))) (PP (IN by) (NP (DT some) (NNS hunters)))))))))))) (, ,) (CC and) (S (NP (DT the) (NN Mouse)) (VP (VP (VBD heard)) (CC and) (VP (VBD recognised) (SBAR (S (NP (PRP$ his)) (VP (VP (VBZ roars) (PP (IN of) (NP (NN anger)))) (CC and) (VP (VBD ran) (PP (TO to) (NP (DT the) (NN spot)))))))))) (. .)))
+(ROOT (S (PP (IN Without) (NP (NP (JJR more)) (ADJP (IN ado)))) (NP (PRP it)) (VP (VP (VBD set) (S (VP (TO to) (VP (VB work) (S (VP (TO to) (VP (VB gnaw) (NP (DT the) (NNS ropes)) (PP (IN with) (NP (PRP$ its) (NNS teeth)))))))))) (, ,) (CC and) (VP (VBD succeeded) (ADVP (RB before) (RB long)) (PP (IN in) (S (VP (VBG setting) (S (NP (DT the) (NNP Lion)) (ADJP (JJ free)))))))) (. .)))
+(ROOT (INTJ (`` ``) (EX There) (. !) ('' '')))
+(ROOT (SINV (VP (VBD said)) (NP (DT the) (NN Mouse)) (, ,) (`` ``) (S (S (NP (PRP you)) (VP (VBD laughed) (PP (IN at) (NP (PRP me))) (SBAR (WHADVP (WRB when)) (S (NP (PRP I)) (VP (VBD promised) (SBAR (S (NP (PRP I)) (VP (MD would) (VP (VB repay) (NP (PRP you))))))))))) (: :) (S (S (CC but) (ADVP (RB now)) (NP (PRP you)) (VP (VBP see))) (, ,) (ADVP (RB even)) (S (NP (DT a) (NN Mouse)) (VP (MD can) (VP (VB help) (NP (DT a) (NNP Lion))))))) (. .) ('' '')))
+","A Lion asleep in his lair was waked up by a Mouse running over his face. Losing his temper he seized it with his paw and was about to kill it. The Mouse, terrified, piteously entreated him to spare its life. ""Please let me go,"" it cried, ""and one day I will repay you for your kindness."" The idea of so insignificant a creature ever being able to do anything for him amused the Lion so much that he laughed aloud, and good-humouredly let it go. But the Mouse's chance came, after all. One day the Lion got entangled in a net which had been spread for game by some hunters, and the Mouse heard and recognised his roars of anger and ran to the spot. Without more ado it set to work to gnaw the ropes with its teeth, and succeeded before long in setting the Lion free. ""There!"" said the Mouse, ""you laughed at me when I promised I would repay you: but now you see, even a Mouse can help a Lion."""
 ,,,mc500.train.23,"1	It	it	_	PRP	_	4	nsubj	_	_
 2	was	be	_	VBD	_	4	cop	_	_
 3	Saturday	Saturday	_	NNP	_	4	compound	_	_
@@ -4264,4 +5975,474 @@ And I know this sounds crazy, but I saw this ball of light in the trees above me
 At first, my logical mind thought that it was my brother playing around with his new flashlight (not at all like it, but the closest thing I could imagine)
 And when I went inside the house, everyone was snoring! Lol could this have been what they call an orb 
 PS. Not the first weird experience ive had.
+"
+"There once was a fox and a fowl.  The fox was nightly prowling a yard.  He was stealing the fowl.  
+An agriculturist began to be annoyed by the fox.  
+The agriculturist set a trap and caught the fox.  
+The agriculturist tied some fiber onto the tail of the fox and in order to retaliate.  
+The agriculturist kindled the fiber and freed the fox.  
+The agriculturist began to be unlucky because the fox ran into a field.  
+Some corn began to be ripe in the field and began to be ready to a harvest.  
+The corn ignited and burned completely.  
+The agriculturist lost a crop.  
+","1	There	there	_	EX	_	3	expl	_	_
+2	once	once	_	RB	_	3	advmod	_	_
+3	was	be	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	fox	fox	_	NN	_	3	nsubj	_	_
+6	and	and	_	CC	_	5	cc	_	_
+7	a	a	_	DT	_	8	det	_	_
+8	fowl	fowl	_	NN	_	5	conj	_	_
+9	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	fox	fox	_	NN	_	4	nsubj	_	_
+3	was	be	_	VBD	_	4	cop	_	_
+4	nightly	nightly	_	JJ	_	0	root	_	_
+5	prowling	prowl	_	VBG	_	4	xcomp	_	_
+6	a	a	_	DT	_	7	det	_	_
+7	yard	yard	_	NN	_	5	dobj	_	_
+8	.	.	_	.	_	4	punct	_	_
+
+1	He	he	_	PRP	_	3	nsubj	_	_
+2	was	be	_	VBD	_	3	aux	_	_
+3	stealing	steal	_	VBG	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	fowl	fowl	_	NN	_	3	dobj	_	_
+6	.	.	_	.	_	3	punct	_	_
+
+1	An	a	_	DT	_	2	det	_	_
+2	agriculturist	agriculturist	_	NN	_	3	nsubj	_	_
+3	began	begin	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	mark	_	_
+5	be	be	_	VB	_	6	auxpass	_	_
+6	annoyed	annoy	_	VBN	_	3	xcomp	_	_
+7	by	by	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	fox	fox	_	NN	_	6	nmod	_	_
+10	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	3	det	_	_
+2	agriculturist	agriculturist	_	JJ	_	3	amod	_	_
+3	set	set	_	NN	_	0	root	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	trap	trap	_	NN	_	3	dep	_	_
+6	and	and	_	CC	_	5	cc	_	_
+7	caught	catch	_	VBD	_	5	conj	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	fox	fox	_	NN	_	7	dobj	_	_
+10	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	agriculturist	agriculturist	_	NN	_	3	nsubj	_	_
+3	tied	tie	_	VBD	_	0	root	_	_
+4	some	some	_	DT	_	5	det	_	_
+5	fiber	fiber	_	NN	_	3	dobj	_	_
+6	onto	onto	_	IN	_	8	case	_	_
+7	the	the	_	DT	_	8	det	_	_
+8	tail	tail	_	NN	_	3	nmod	_	_
+9	of	of	_	IN	_	11	case	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	fox	fox	_	NN	_	8	nmod	_	_
+12	and	and	_	CC	_	8	cc	_	_
+13	in	in	_	IN	_	16	mark	_	_
+14	order	order	_	NN	_	13	mwe	_	_
+15	to	to	_	TO	_	16	mark	_	_
+16	retaliate	retaliate	_	VB	_	8	conj	_	_
+17	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	agriculturist	agriculturist	_	NN	_	3	nsubj	_	_
+3	kindled	kindle	_	VBD	_	0	root	_	_
+4	the	the	_	DT	_	5	det	_	_
+5	fiber	fiber	_	NN	_	3	dobj	_	_
+6	and	and	_	CC	_	3	cc	_	_
+7	freed	free	_	VBN	_	3	conj	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	fox	fox	_	NN	_	7	dobj	_	_
+10	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	agriculturist	agriculturist	_	NN	_	3	nsubj	_	_
+3	began	begin	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	mark	_	_
+5	be	be	_	VB	_	6	cop	_	_
+6	unlucky	unlucky	_	JJ	_	3	xcomp	_	_
+7	because	because	_	IN	_	10	mark	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	fox	fox	_	NN	_	10	nsubj	_	_
+10	ran	run	_	VBD	_	6	advcl	_	_
+11	into	into	_	IN	_	13	case	_	_
+12	a	a	_	DT	_	13	det	_	_
+13	field	field	_	NN	_	10	nmod	_	_
+14	.	.	_	.	_	3	punct	_	_
+
+1	Some	some	_	DT	_	2	det	_	_
+2	corn	corn	_	NN	_	3	nsubj	_	_
+3	began	begin	_	VBD	_	0	root	_	_
+4	to	to	_	TO	_	6	mark	_	_
+5	be	be	_	VB	_	6	cop	_	_
+6	ripe	ripe	_	JJ	_	3	xcomp	_	_
+7	in	in	_	IN	_	9	case	_	_
+8	the	the	_	DT	_	9	det	_	_
+9	field	field	_	NN	_	6	nmod	_	_
+10	and	and	_	CC	_	3	cc	_	_
+11	began	begin	_	VBD	_	3	conj	_	_
+12	to	to	_	TO	_	14	mark	_	_
+13	be	be	_	VB	_	14	cop	_	_
+14	ready	ready	_	JJ	_	11	xcomp	_	_
+15	to	to	_	TO	_	17	case	_	_
+16	a	a	_	DT	_	17	det	_	_
+17	harvest	harvest	_	NN	_	14	nmod	_	_
+18	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	corn	corn	_	NN	_	3	nsubj	_	_
+3	ignited	ignite	_	VBN	_	0	root	_	_
+4	and	and	_	CC	_	3	cc	_	_
+5	burned	burn	_	VBN	_	3	conj	_	_
+6	completely	completely	_	RB	_	3	advmod	_	_
+7	.	.	_	.	_	3	punct	_	_
+
+1	The	the	_	DT	_	2	det	_	_
+2	agriculturist	agriculturist	_	NN	_	3	nsubj	_	_
+3	lost	lose	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	crop	crop	_	NN	_	3	dobj	_	_
+6	.	.	_	.	_	3	punct	_	_
+
+","(ROOT (S (NP (EX There)) (ADVP (RB once)) (VP (VBD was) (NP (NP (DT a) (NN fox)) (CC and) (NP (DT a) (NN fowl)))) (. .)))
+(ROOT (S (NP (DT The) (NN fox)) (VP (VBD was) (NP (NP (JJ nightly)) (VP (VBG prowling) (NP (DT a) (NN yard))))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VBD was) (VP (VBG stealing) (NP (DT the) (NN fowl)))) (. .)))
+(ROOT (S (NP (DT An) (NN agriculturist)) (VP (VBD began) (S (VP (TO to) (VP (VB be) (ADJP (VBN annoyed) (PP (IN by) (NP (DT the) (NN fox)))))))) (. .)))
+(ROOT (S (NP (NP (DT The) (JJ agriculturist) (NN set)) (NP (DT a))) (VP (VP (NN trap)) (CC and) (VP (VBD caught) (NP (DT the) (NN fox)))) (. .)))
+(ROOT (S (NP (DT The) (NN agriculturist)) (VP (VBD tied) (NP (DT some) (NN fiber)) (PP (PP (IN onto) (NP (NP (DT the) (NN tail)) (PP (IN of) (NP (DT the) (NN fox))))) (CC and) (PP (IN in) (NP (NN order)))) (S (VP (TO to) (VP (VB retaliate))))) (. .)))
+(ROOT (S (NP (DT The) (NN agriculturist)) (VP (VP (VBD kindled) (NP (DT the) (NN fiber))) (CC and) (VP (VBN freed) (NP (DT the) (NN fox)))) (. .)))
+(ROOT (S (NP (DT The) (NN agriculturist)) (VP (VBD began) (S (VP (TO to) (VP (VB be) (ADJP (JJ unlucky)) (SBAR (IN because) (S (NP (DT the) (NN fox)) (VP (VBD ran) (PP (IN into) (NP (DT a) (NN field)))))))))) (. .)))
+(ROOT (S (NP (DT Some) (NN corn)) (VP (VP (VBD began) (S (VP (TO to) (VP (VB be) (ADJP (JJ ripe) (PP (IN in) (NP (DT the) (NN field)))))))) (CC and) (VP (VBD began) (S (VP (TO to) (VP (VB be) (ADJP (JJ ready) (PP (TO to) (NP (DT a) (NN harvest))))))))) (. .)))
+(ROOT (S (NP (DT The) (NN corn)) (VP (VP (VBN ignited)) (CC and) (VP (VBN burned) (ADVP (RB completely)))) (. .)))
+(ROOT (S (NP (DT The) (NN agriculturist)) (VP (VBD lost) (NP (DT a) (NN crop))) (. .)))
+",fables-05,"1	A	a	_	DT	_	2	det	_	_
+2	Farmer	Farmer	_	NNP	_	5	nsubjpass	_	_
+3	was	be	_	VBD	_	5	auxpass	_	_
+4	greatly	greatly	_	RB	_	5	advmod	_	_
+5	annoyed	annoy	_	VBN	_	0	root	_	_
+6	by	by	_	IN	_	8	case	_	_
+7	a	a	_	DT	_	8	det	_	_
+8	Fox	Fox	_	NNP	_	5	nmod	_	_
+9	,	,	_	,	_	8	punct	_	_
+10	which	which	_	WDT	_	11	nsubj	_	_
+11	came	come	_	VBD	_	8	acl:relcl	_	_
+12	prowling	prowl	_	VBG	_	11	xcomp	_	_
+13	about	about	_	IN	_	15	case	_	_
+14	his	he	_	PRP$	_	15	nmod:poss	_	_
+15	yard	yard	_	NN	_	12	nmod	_	_
+16	at	at	_	IN	_	17	case	_	_
+17	night	night	_	NN	_	11	nmod	_	_
+18	and	and	_	CC	_	11	cc	_	_
+19	carried	carry	_	VBD	_	11	conj	_	_
+20	off	off	_	RP	_	19	compound:prt	_	_
+21	his	he	_	PRP$	_	22	nmod:poss	_	_
+22	fowls	fowl	_	NNS	_	19	dobj	_	_
+23	.	.	_	.	_	5	punct	_	_
+
+1	So	so	_	IN	_	3	dep	_	_
+2	he	he	_	PRP	_	3	nsubj	_	_
+3	set	set	_	VBD	_	0	root	_	_
+4	a	a	_	DT	_	5	det	_	_
+5	trap	trap	_	NN	_	3	dobj	_	_
+6	for	for	_	IN	_	7	case	_	_
+7	him	he	_	PRP	_	5	nmod	_	_
+8	and	and	_	CC	_	3	cc	_	_
+9	caught	catch	_	VBD	_	3	conj	_	_
+10	him	he	_	PRP	_	9	dobj	_	_
+11	;	;	_	:	_	3	punct	_	_
+12	and	and	_	CC	_	3	cc	_	_
+13	in	in	_	IN	_	17	mark	_	_
+14	order	order	_	NN	_	13	mwe	_	_
+15	to	to	_	TO	_	17	mark	_	_
+16	be	be	_	VB	_	17	auxpass	_	_
+17	revenged	revenge	_	VBN	_	22	advcl	_	_
+18	upon	upon	_	IN	_	19	case	_	_
+19	him	he	_	PRP	_	17	nmod	_	_
+20	,	,	_	,	_	22	punct	_	_
+21	he	he	_	PRP	_	22	nsubj	_	_
+22	tied	tie	_	VBD	_	3	conj	_	_
+23	a	a	_	DT	_	24	det	_	_
+24	bunch	bunch	_	NN	_	22	dobj	_	_
+25	of	of	_	IN	_	26	case	_	_
+26	tow	tow	_	NN	_	24	nmod	_	_
+27	to	to	_	TO	_	29	case	_	_
+28	his	he	_	PRP$	_	29	nmod:poss	_	_
+29	tail	tail	_	NN	_	22	nmod	_	_
+30	and	and	_	CC	_	22	cc	_	_
+31	set	set	_	VBN	_	22	conj	_	_
+32	fire	fire	_	NN	_	31	dobj	_	_
+33	to	to	_	TO	_	34	case	_	_
+34	it	it	_	PRP	_	31	nmod	_	_
+35	and	and	_	CC	_	22	cc	_	_
+36	let	let	_	VB	_	22	conj	_	_
+37	him	he	_	PRP	_	38	nsubj	_	_
+38	go	go	_	VB	_	36	ccomp	_	_
+39	.	.	_	.	_	3	punct	_	_
+
+1	As	as	_	IN	_	4	mark	_	_
+2	ill-luck	ill-luck	_	NN	_	4	nsubj	_	_
+3	would	would	_	MD	_	4	aux	_	_
+4	have	have	_	VB	_	11	advcl	_	_
+5	it	it	_	PRP	_	4	dobj	_	_
+6	,	,	_	,	_	11	punct	_	_
+7	however	however	_	RB	_	11	advmod	_	_
+8	,	,	_	,	_	11	punct	_	_
+9	the	the	_	DT	_	10	det	_	_
+10	Fox	Fox	_	NNP	_	11	nsubj	_	_
+11	made	make	_	VBD	_	0	root	_	_
+12	straight	straight	_	JJ	_	11	xcomp	_	_
+13	for	for	_	IN	_	15	case	_	_
+14	the	the	_	DT	_	15	det	_	_
+15	fields	field	_	NNS	_	12	nmod	_	_
+16	where	where	_	WRB	_	20	advmod	_	_
+17	the	the	_	DT	_	18	det	_	_
+18	corn	corn	_	NN	_	20	nsubj	_	_
+19	was	be	_	VBD	_	20	aux	_	_
+20	standing	stand	_	VBG	_	15	acl:relcl	_	_
+21	ripe	ripe	_	JJ	_	20	xcomp	_	_
+22	and	and	_	CC	_	21	cc	_	_
+23	ready	ready	_	JJ	_	21	conj	_	_
+24	for	for	_	IN	_	25	case	_	_
+25	cutting	cut	_	VBG	_	21	nmod	_	_
+26	.	.	_	.	_	11	punct	_	_
+
+1	It	it	_	PRP	_	3	nsubj	_	_
+2	quickly	quickly	_	RB	_	3	advmod	_	_
+3	caught	catch	_	VBD	_	0	root	_	_
+4	fire	fire	_	NN	_	3	dobj	_	_
+5	and	and	_	CC	_	3	cc	_	_
+6	was	be	_	VBD	_	8	auxpass	_	_
+7	all	all	_	DT	_	8	dep	_	_
+8	burnt	burn	_	VBN	_	3	conj	_	_
+9	up	up	_	RP	_	8	compound:prt	_	_
+10	,	,	_	,	_	3	punct	_	_
+11	and	and	_	CC	_	3	cc	_	_
+12	the	the	_	DT	_	13	det	_	_
+13	Farmer	Farmer	_	NNP	_	14	nsubj	_	_
+14	lost	lose	_	VBD	_	3	conj	_	_
+15	all	all	_	PDT	_	17	det:predet	_	_
+16	his	he	_	PRP$	_	17	nmod:poss	_	_
+17	harvest	harvest	_	NN	_	14	dobj	_	_
+18	.	.	_	.	_	3	punct	_	_
+
+","(ROOT (S (NP (DT A) (NNP Farmer)) (VP (VBD was) (ADJP (RB greatly) (VBN annoyed) (PP (IN by) (NP (NP (DT a) (NNP Fox)) (, ,) (SBAR (WHNP (WDT which)) (S (VP (VP (VBD came) (S (VP (VBG prowling) (PP (IN about) (NP (PRP$ his) (NN yard))) (PP (IN at) (NP (NN night)))))) (CC and) (VP (VBD carried) (PRT (RP off)) (NP (PRP$ his) (NNS fowls)))))))))) (. .)))
+(ROOT (S (IN So) (S (S (NP (PRP he)) (VP (VP (VBD set) (NP (DT a) (NN trap)) (PP (IN for) (NP (PRP him)))) (CC and) (VP (VBD caught) (NP (PRP him))))) (: ;) (CC and) (S (SBAR (IN in) (NN order) (S (VP (TO to) (VP (VB be) (VP (VBN revenged) (PP (IN upon) (NP (PRP him)))))))) (, ,) (NP (PRP he)) (VP (VBD tied) (NP (NP (DT a) (NN bunch)) (PP (IN of) (NP (NN tow)))) (PP (TO to) (NP (NP (PRP$ his) (NN tail)) (CC and) (NP (NP (VBN set) (NN fire)) (PP (TO to) (NP (PRP it))))))))) (CC and) (S (VP (VB let) (S (NP (PRP him)) (VP (VB go))))) (. .)))
+(ROOT (S (SBAR (IN As) (S (NP (NN ill-luck)) (VP (MD would) (VP (VB have) (NP (PRP it)))))) (, ,) (ADVP (RB however)) (, ,) (NP (DT the) (NNP Fox)) (VP (VBD made) (ADJP (JJ straight) (PP (IN for) (NP (DT the) (NNS fields)))) (SBAR (WHADVP (WRB where)) (S (NP (DT the) (NN corn)) (VP (VBD was) (VP (VBG standing) (ADJP (JJ ripe) (CC and) (JJ ready)) (PP (IN for) (S (VP (VBG cutting))))))))) (. .)))
+(ROOT (S (S (NP (PRP It)) (VP (VP (ADVP (RB quickly)) (VBD caught) (NP (NN fire))) (CC and) (VP (VBD was) (ADVP (DT all)) (VP (VBN burnt) (PRT (RP up)))))) (, ,) (CC and) (S (NP (DT the) (NNP Farmer)) (VP (VBD lost) (NP (PDT all) (PRP$ his) (NN harvest)))) (. .)))
+","A Farmer was greatly annoyed by a Fox, which came prowling about his yard at night and carried off his fowls. So he set a trap for him and caught him; and in order to be revenged upon him, he tied a bunch of tow to his tail and set fire to it and let him go. As ill-luck would have it, however, the Fox made straight for the fields where the corn was standing ripe and ready for cutting. It quickly caught fire and was all burnt up, and the Farmer lost all his harvest."
+,,,mc500.train.25,"1	Maxine	Maxine	_	NNP	_	5	nsubj	_	_
+2	was	be	_	VBD	_	5	cop	_	_
+3	a	a	_	DT	_	5	det	_	_
+4	happy	happy	_	JJ	_	5	amod	_	_
+5	frog	frog	_	NN	_	0	root	_	_
+6	that	that	_	WDT	_	7	nsubj	_	_
+7	lived	live	_	VBD	_	5	acl:relcl	_	_
+8	in	in	_	IN	_	11	case	_	_
+9	a	a	_	DT	_	11	det	_	_
+10	beautiful	beautiful	_	JJ	_	11	amod	_	_
+11	pond	pond	_	NN	_	7	nmod	_	_
+12	by	by	_	IN	_	14	case	_	_
+13	the	the	_	DT	_	14	det	_	_
+14	river	river	_	NN	_	7	nmod	_	_
+15	.	.	_	.	_	5	punct	_	_
+
+1	She	she	_	PRP	_	2	nsubj	_	_
+2	loved	love	_	VBD	_	0	root	_	_
+3	to	to	_	TO	_	4	mark	_	_
+4	play	play	_	VB	_	2	xcomp	_	_
+5	in	in	_	IN	_	7	case	_	_
+6	the	the	_	DT	_	7	det	_	_
+7	water	water	_	NN	_	4	nmod	_	_
+8	and	and	_	CC	_	4	cc	_	_
+9	take	take	_	VB	_	4	conj	_	_
+10	a	a	_	DT	_	11	det	_	_
+11	bath	bath	_	NN	_	9	dobj	_	_
+12	every	every	_	DT	_	13	det	_	_
+13	day	day	_	NN	_	9	nmod:tmod	_	_
+14	.	.	_	.	_	2	punct	_	_
+
+1	But	but	_	CC	_	13	cc	_	_
+2	her	she	_	PRP$	_	3	nmod:poss	_	_
+3	friends	friend	_	NNS	_	13	nsubj	_	_
+4	,	,	_	,	_	3	punct	_	_
+5	Martin	Martin	_	NNP	_	3	appos	_	_
+6	,	,	_	,	_	5	punct	_	_
+7	Edgar	Edgar	_	NNP	_	5	conj	_	_
+8	,	,	_	,	_	5	punct	_	_
+9	and	and	_	CC	_	5	cc	_	_
+10	Cindy	Cindy	_	NNP	_	5	conj	_	_
+11	did	do	_	VBD	_	13	aux	_	_
+12	n't	not	_	RB	_	13	neg	_	_
+13	like	like	_	VB	_	0	root	_	_
+14	to	to	_	TO	_	15	mark	_	_
+15	take	take	_	VB	_	13	xcomp	_	_
+16	baths	bath	_	NNS	_	15	dobj	_	_
+17	.	.	_	.	_	13	punct	_	_
+
+1	So	so	_	RB	_	11	advmod	_	_
+2	one	one	_	CD	_	3	nummod	_	_
+3	day	day	_	NN	_	11	nmod:tmod	_	_
+4	when	when	_	WRB	_	7	advmod	_	_
+5	she	she	_	PRP	_	7	nsubj	_	_
+6	was	be	_	VBD	_	7	aux	_	_
+7	swimming	swim	_	VBG	_	3	acl:relcl	_	_
+8	alone	alone	_	RB	_	7	advmod	_	_
+9	,	,	_	,	_	11	punct	_	_
+10	she	she	_	PRP	_	11	nsubj	_	_
+11	met	meet	_	VBD	_	0	root	_	_
+12	a	a	_	DT	_	14	det	_	_
+13	new	new	_	JJ	_	14	amod	_	_
+14	friend	friend	_	NN	_	11	dobj	_	_
+15	named	name	_	VBN	_	14	acl	_	_
+16	Thomas	Thomas	_	NNP	_	15	xcomp	_	_
+17	.	.	_	.	_	11	punct	_	_
+
+1	Thomas	Thomas	_	NNP	_	2	nsubj	_	_
+2	loved	love	_	VBD	_	0	root	_	_
+3	to	to	_	TO	_	4	mark	_	_
+4	take	take	_	VB	_	2	xcomp	_	_
+5	lots	lot	_	NNS	_	4	dobj	_	_
+6	of	of	_	IN	_	7	case	_	_
+7	baths	bath	_	NNS	_	5	nmod	_	_
+8	,	,	_	,	_	2	punct	_	_
+9	so	so	_	RB	_	2	dep	_	_
+10	he	he	_	PRP	_	11	nsubj	_	_
+11	became	become	_	VBD	_	2	parataxis	_	_
+12	friends	friend	_	NNS	_	11	xcomp	_	_
+13	with	with	_	IN	_	14	case	_	_
+14	Maxine	maxine	_	NN	_	12	nmod	_	_
+15	.	.	_	.	_	2	punct	_	_
+
+1	But	but	_	CC	_	10	cc	_	_
+2	Martin	Martin	_	NNP	_	10	nsubj	_	_
+3	,	,	_	,	_	2	punct	_	_
+4	Edgar	Edgar	_	NNP	_	2	conj	_	_
+5	,	,	_	,	_	2	punct	_	_
+6	and	and	_	CC	_	2	cc	_	_
+7	Cindy	Cindy	_	NNP	_	2	conj	_	_
+8	did	do	_	VBD	_	10	aux	_	_
+9	n't	not	_	RB	_	10	neg	_	_
+10	like	like	_	VB	_	0	root	_	_
+11	Thomas	Thomas	_	NNP	_	10	dobj	_	_
+12	.	.	_	.	_	10	punct	_	_
+
+1	So	so	_	RB	_	12	advmod	_	_
+2	one	one	_	CD	_	3	nummod	_	_
+3	day	day	_	NN	_	12	nmod:tmod	_	_
+4	when	when	_	WRB	_	9	advmod	_	_
+5	Maxine	Maxine	_	NNP	_	9	nsubj	_	_
+6	and	and	_	CC	_	5	cc	_	_
+7	Thomas	Thomas	_	NNP	_	5	conj	_	_
+8	were	be	_	VBD	_	9	aux	_	_
+9	swimming	swim	_	VBG	_	3	acl:relcl	_	_
+10	,	,	_	,	_	12	punct	_	_
+11	Cindy	Cindy	_	NNP	_	12	nsubj	_	_
+12	did	do	_	VBD	_	0	root	_	_
+13	something	something	_	NN	_	14	nsubj	_	_
+14	mean	mean	_	NN	_	12	ccomp	_	_
+15	.	.	_	.	_	12	punct	_	_
+
+1	She	she	_	PRP	_	2	nsubj	_	_
+2	threw	throw	_	VBD	_	0	root	_	_
+3	rocks	rock	_	NNS	_	2	dobj	_	_
+4	at	at	_	IN	_	5	case	_	_
+5	Maxine	Maxine	_	NNP	_	2	nmod	_	_
+6	and	and	_	CC	_	5	cc	_	_
+7	Thomas	Thomas	_	NNP	_	5	conj	_	_
+8	.	.	_	.	_	2	punct	_	_
+
+1	Maxine	Maxine	_	NNP	_	3	nmod:poss	_	_
+2	's	's	_	POS	_	1	case	_	_
+3	dad	dad	_	NN	_	4	nsubj	_	_
+4	saw	see	_	VBD	_	0	root	_	_
+5	what	what	_	WP	_	6	nsubj	_	_
+6	happened	happen	_	VBD	_	4	ccomp	_	_
+7	and	and	_	CC	_	6	cc	_	_
+8	he	he	_	PRP	_	11	nsubj	_	_
+9	was	be	_	VBD	_	11	cop	_	_
+10	very	very	_	RB	_	11	advmod	_	_
+11	mad	mad	_	JJ	_	6	conj	_	_
+12	.	.	_	.	_	4	punct	_	_
+
+1	He	he	_	PRP	_	2	nsubj	_	_
+2	went	go	_	VBD	_	0	root	_	_
+3	over	over	_	RB	_	2	advmod	_	_
+4	and	and	_	CC	_	2	cc	_	_
+5	yelled	yell	_	VBD	_	2	conj	_	_
+6	at	at	_	IN	_	7	case	_	_
+7	Cindy	Cindy	_	NNP	_	5	nmod	_	_
+8	for	for	_	IN	_	11	mark	_	_
+9	what	what	_	WP	_	11	dobj	_	_
+10	she	she	_	PRP	_	11	nsubj	_	_
+11	did	do	_	VBD	_	5	advcl	_	_
+12	.	.	_	.	_	2	punct	_	_
+
+1	After	after	_	IN	_	6	mark	_	_
+2	that	that	_	DT	_	3	det	_	_
+3	Cindy	Cindy	_	NNP	_	6	nsubj	_	_
+4	did	do	_	VBD	_	6	aux	_	_
+5	n't	not	_	RB	_	6	neg	_	_
+6	throw	throw	_	VB	_	0	root	_	_
+7	any	any	_	DT	_	8	det	_	_
+8	rocks	rock	_	NNS	_	6	dobj	_	_
+9	,	,	_	,	_	6	punct	_	_
+10	and	and	_	CC	_	6	cc	_	_
+11	Maxine	Maxine	_	NNP	_	15	nsubj	_	_
+12	and	and	_	CC	_	11	cc	_	_
+13	Thomas	Thomas	_	NNP	_	11	conj	_	_
+14	could	could	_	MD	_	15	aux	_	_
+15	swim	swim	_	VB	_	6	conj	_	_
+16	together	together	_	RB	_	15	advmod	_	_
+17	and	and	_	CC	_	15	cc	_	_
+18	take	take	_	VB	_	15	conj	_	_
+19	lots	lot	_	NNS	_	18	dobj	_	_
+20	of	of	_	IN	_	21	case	_	_
+21	baths	bath	_	NNS	_	19	nmod	_	_
+22	.	.	_	.	_	6	punct	_	_
+
+1	They	they	_	PRP	_	4	nsubj	_	_
+2	were	be	_	VBD	_	4	cop	_	_
+3	very	very	_	RB	_	4	advmod	_	_
+4	happy	happy	_	JJ	_	0	root	_	_
+5	since	since	_	IN	_	8	mark	_	_
+6	they	they	_	PRP	_	8	nsubj	_	_
+7	could	could	_	MD	_	8	aux	_	_
+8	play	play	_	VB	_	4	advcl	_	_
+9	in	in	_	IN	_	11	case	_	_
+10	the	the	_	DT	_	11	det	_	_
+11	water	water	_	NN	_	8	nmod	_	_
+12	as	as	_	RB	_	13	advmod	_	_
+13	much	much	_	RB	_	8	advmod	_	_
+14	as	as	_	IN	_	16	mark	_	_
+15	they	they	_	PRP	_	16	nsubj	_	_
+16	wanted	want	_	VBD	_	13	advcl	_	_
+17	without	without	_	IN	_	21	mark	_	_
+18	other	other	_	JJ	_	19	amod	_	_
+19	frogs	frog	_	NNS	_	21	nsubj	_	_
+20	being	be	_	VBG	_	21	cop	_	_
+21	mean	mean	_	JJ	_	16	advcl	_	_
+22	to	to	_	TO	_	23	case	_	_
+23	them	they	_	PRP	_	21	nmod	_	_
+24	.	.	_	.	_	4	punct	_	_
+
+","(ROOT (S (NP (NNP Maxine)) (VP (VBD was) (NP (NP (DT a) (JJ happy) (NN frog)) (SBAR (WHNP (WDT that)) (S (VP (VBD lived) (PP (IN in) (NP (DT a) (JJ beautiful) (NN pond))) (PP (IN by) (NP (DT the) (NN river)))))))) (. .)))
+(ROOT (S (NP (PRP She)) (VP (VBD loved) (S (VP (TO to) (VP (VP (VB play) (PP (IN in) (NP (DT the) (NN water)))) (CC and) (VP (VB take) (NP (NP (DT a) (NN bath)) (NP (DT every) (NN day)))))))) (. .)))
+(ROOT (S (CC But) (NP (PRP$ her) (NNS friends)) (, ,) (NP (NNP Martin) (, ,) (NNP Edgar) (, ,) (CC and) (NNP Cindy)) (VP (VBD did) (RB n't) (VP (VB like) (S (VP (TO to) (VP (VB take) (NP (NNS baths))))))) (. .)))
+(ROOT (S (SBAR (ADVP (RB So) (NP (CD one) (NN day))) (WHADVP (WRB when)) (S (NP (PRP she)) (VP (VBD was) (VP (VBG swimming) (ADVP (RB alone)))))) (, ,) (NP (PRP she)) (VP (VBD met) (NP (NP (DT a) (JJ new) (NN friend)) (VP (VBN named) (NP (NNP Thomas))))) (. .)))
+(ROOT (S (S (NP (NNP Thomas)) (VP (VBD loved) (S (VP (TO to) (VP (VB take) (NP (NP (NNS lots)) (PP (IN of) (NP (NNS baths))))))))) (, ,) (RB so) (S (NP (PRP he)) (VP (VBD became) (NP (NNS friends)) (PP (IN with) (NP (NN Maxine))))) (. .)))
+(ROOT (S (CC But) (NP (NNP Martin) (, ,) (NNP Edgar) (, ,) (CC and) (NNP Cindy)) (VP (VBD did) (RB n't) (VP (VB like) (NP (NNP Thomas)))) (. .)))
+(ROOT (S (SBAR (ADVP (RB So) (NP (CD one) (NN day))) (WHADVP (WRB when)) (S (NP (NNP Maxine) (CC and) (NNP Thomas)) (VP (VBD were) (VP (VBG swimming))))) (, ,) (NP (NNP Cindy)) (VP (VBD did) (NP (NN something) (NN mean))) (. .)))
+(ROOT (S (NP (PRP She)) (VP (VBD threw) (NP (NNS rocks)) (PP (IN at) (NP (NNP Maxine) (CC and) (NNP Thomas)))) (. .)))
+(ROOT (S (S (NP (NP (NNP Maxine) (POS 's)) (NN dad)) (VP (VBD saw) (SBAR (WHNP (WP what)) (S (VP (VBD happened)))))) (CC and) (S (NP (PRP he)) (VP (VBD was) (ADJP (RB very) (JJ mad)))) (. .)))
+(ROOT (S (NP (PRP He)) (VP (VP (VBD went) (ADVP (RB over))) (CC and) (VP (VBD yelled) (PP (IN at) (NP (NNP Cindy))) (PP (IN for) (SBAR (WHNP (WP what)) (S (NP (PRP she)) (VP (VBD did))))))) (. .)))
+(ROOT (S (S (PP (IN After) (NP (DT that))) (NP (NNP Cindy)) (VP (VBD did) (RB n't) (VP (VB throw) (NP (DT any) (NNS rocks))))) (, ,) (CC and) (S (NP (NNP Maxine) (CC and) (NNP Thomas)) (VP (MD could) (VP (VP (VB swim) (ADVP (RB together))) (CC and) (VP (VB take) (NP (NP (NNS lots)) (PP (IN of) (NP (NNS baths)))))))) (. .)))
+(ROOT (S (NP (PRP They)) (VP (VBD were) (ADJP (RB very) (JJ happy)) (SBAR (IN since) (S (NP (PRP they)) (VP (MD could) (VP (VB play) (PP (IN in) (NP (DT the) (NN water))) (ADVP (ADVP (RB as) (RB much)) (SBAR (IN as) (S (NP (PRP they)) (VP (VBD wanted) (PP (IN without) (NP (JJ other) (NNS frogs))) (S (VP (VBG being) (ADJP (JJ mean) (PP (TO to) (NP (PRP them))))))))))))))) (. .)))
+","Maxine was a happy frog that lived in a beautiful pond by the river. She loved to play in the water and take a bath every day. But her friends, Martin, Edgar, and Cindy didn't like to take baths. So one day when she was swimming alone, she met a new friend named Thomas. Thomas loved to take lots of baths, so he became friends with Maxine. But Martin, Edgar, and Cindy didn't like Thomas. So one day when Maxine and Thomas were swimming, Cindy did something mean. She threw rocks at Maxine and Thomas. Maxine's dad saw what happened and he was very mad. He went over and yelled at Cindy for what she did. After that Cindy didn't throw any rocks, and Maxine and Thomas could swim together and take lots of baths. They were very happy since they could play in the water as much as they wanted without other frogs being mean to them.
 "

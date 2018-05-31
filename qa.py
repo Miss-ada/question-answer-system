@@ -53,7 +53,8 @@ def get_answer(question, story):
         text = story['sch']
     else:
         text = story['text']
-    print (text)
+    #print (text)
+    print (question['id'], question['sid'],q)
     #qbow = get_bow(get_sentences(q)[0])
     #sentences = get_sentences(text)
     #answer = baseline(qbow, sentences)
