@@ -80,7 +80,7 @@ def add_dependency(node, qgraph):
     if len(node['deps']) > 0:
         deps = get_dependents(node, qgraph)
         deps = sorted(deps, key=operator.itemgetter("address"))
-        return " ".join(dep["lemma"] for dep in deps)
+        return " ".join(dep["word"] for dep in deps) #lemma
     return node['lemma']
 
 

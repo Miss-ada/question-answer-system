@@ -186,7 +186,6 @@ def get_Ada_answer(q,story):
         answer = matched_sent
     elif answer in {'he', 'He', 'she', 'She', 'him', 'Him', 'her', 'Her', 'it', 'It', 'them', 'Them', 'they', 'They', 'we', 'We'}:
         answer = transform_text_by_coreference(answer, text)
-
     return str(answer)
 
 def find_yes_no(q, matched_sent, text, story):
