@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri May 25 12:01:56 2018
-
 @author: wenjia.ma
 """
 
@@ -50,7 +49,7 @@ def find_Ada_time(q, sentence_with_answer, text, story):
     if sgraph is not None:
         dic = parsed_question_dic(sgraph) 
         try:  
-            answer = dic['nsubj']
+            answer = dic['nmod:tmod']
         except TypeError:
             answer = sentence_with_answer
         return answer
@@ -167,7 +166,7 @@ def get_Ada_answer(q,story):
     elif 'someone' in state_question:
         if state_question.startswith('someone'):
             answer = find_Ada_who_subj(q, matched_sent, text, story)
-            answer = transform_text_by_coreference(answer, text)
+            #answer = transform_text_by_coreference(answer, text)
         else:  
             answer = special_cases(q['text'], text)
     elif 'something' in state_question: #something was burned. 
@@ -180,22 +179,61 @@ def get_Ada_answer(q,story):
     elif 'somewhy' in state_question:
         #answer = find_reason(q, matched_sent, text, story)
          answer = matched_sent
-         
+    elif question.startswith("Did") or question.startswith("Has") or question.startswith("Have")or question.startswith("Had"):
+        answer = find_yes_no(q, matched_sent, text, story)
+
     if answer == None or len(answer) == 0:
         answer = matched_sent
-        
+    elif answer in {'he', 'He', 'she', 'She', 'him', 'Him', 'her', 'Her', 'it', 'It', 'them', 'Them', 'they', 'They', 'we', 'We'}:
+        answer = transform_text_by_coreference(answer, text)
+
     return str(answer)
 
+def find_yes_no(q, matched_sent, text, story):
+    #trans_text = transform_text_by_coreference(text, text)
+    qgraph =  q["dep"]
+    sgraph = find_sgraph(matched_sent,text, story)
+    if sgraph is not None:
+        s_dic = parsed_question_dic(sgraph) 
+        if s_dic['neg'] is not None or "never" in matched_sent:
+            return "No"
+    return "Yes"
+
+# def special_cases(question, text):
+#     #special case for 'who is this about?' : 'story' *\b* 'about'
+#     sentences = get_sentences(text)
+#     answer = []
+#     for sent in sentences:
+#         for word, pos in sent:
+#             if pos == 'NNP' and word not in answer:
+#                 answer.append(word)            
+#     return " ".join(answer)
 
 def special_cases(question, text):
     #special case for 'who is this about?' : 'story' *\b* 'about'
     sentences = get_sentences(text)
-    answer = []
+    answers = []
+    dic = {}
     for sent in sentences:
         for word, pos in sent:
-            if pos == 'NNP' and word not in answer:
-                answer.append(word)            
-    return " ".join(answer)
+#            if pos == 'NNP' and word not in answer:
+#                answer.append(word)
+#            else:
+            if pos == 'NN' or pos == 'NNP':
+                if word in dic.keys():
+                        dic[word] += 1
+                else:
+                    dic[word] = 1
+    for key in dic.keys():
+        if dic[key] > 2:
+            if (key.startswith('a') or key.startswith('A') or key.startswith('e') or key.startswith('E')):
+                answer = "an "+ key
+            else:
+                answer = "a " + key
+            answers.append(answer)
+    if len(answers) > 1:
+        return " and ".join(answers)
+    return ' '.join(answers)
 
 def change_passive_to_active_voice(text):
     pass

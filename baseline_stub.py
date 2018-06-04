@@ -3,7 +3,6 @@
 Created on May 14, 2014
 @author: reid
 Brian Schwarzmann, Ada Ma, and Nathaniel Suriawijaya
-
 Modified on May 21, 2015
 '''
 
@@ -14,6 +13,7 @@ import gensim
 import string
 from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
+from collections import deque
 
 model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
 #from word2vec_extractor import Word2vecExtractor
@@ -27,7 +27,7 @@ def get_sentences(text):
     sentences = nltk.sent_tokenize(text)
     sentences = [nltk.word_tokenize(sent) for sent in sentences]
     sentences = [nltk.pos_tag(sent) for sent in sentences]
-    return sentences	
+    return sentences    
 
 def get_answer(text):
     sentences = get_sentences(text)
@@ -79,20 +79,31 @@ def get_address(node, rel):
 def add_dependency(node, qgraph):
     if len(node['deps']) > 0:
         deps = get_dependents(node, qgraph)
-        deps = sorted(deps+[node], key=operator.itemgetter("address"))
+        deps = sorted(deps, key=operator.itemgetter("address"))
         return " ".join(dep["lemma"] for dep in deps)
     return node['lemma']
 
 
+def node_depth_first_iter(node, graph):
+    stack = deque([node])
+    while stack:
+        # Pop out the first element in the stack
+        node = stack.popleft()
+        yield node
+        # push children onto the front of the stack.
+        # Note that with a deque.extendleft, the first on in is the last
+        # one out, so we need to push them in reverse order.
+        children = []
+        for item in node["deps"]:
+            if len(node["deps"][item]) > 0:
+               address = node["deps"][item][0]
+               dep = graph.nodes[address]
+               children.append(dep)
+        stack.extendleft(reversed(children))
+        
 def get_dependents(node, graph):
-    results = []
-    for item in node["deps"]:
-        if len(node["deps"][item]) > 0:
-            address = node["deps"][item][0]
-            dep = graph.nodes[address]
-            results.append(dep)
-            results = results + get_dependents(dep, graph)     
-    return results
+    return [n for n in node_depth_first_iter(node, graph)]
+
 
 def parse_question(qgraph):
     qmain = find_main(qgraph)
@@ -111,6 +122,8 @@ def parse_question(qgraph):
     verb = None
     neg = None
     advcl = None
+    conj = None
+    nmodt = None
     
     nsubj_address = get_address(qnode, 'nsubj')
     nsubjpass_address = get_address(qnode, 'nsubjpass')
@@ -123,6 +136,8 @@ def parse_question(qgraph):
     neg_address = get_address(qnode, 'neg')
     verb_address = None
     advcl_address = get_address(qnode, 'advcl')
+    conj_address = get_address(qnode, 'conj')
+    nmodt_address = get_address(qnode, 'nmod:tmod')
 
     if be_address is None:
         verb = qword
@@ -149,12 +164,16 @@ def parse_question(qgraph):
             neg = add_dependency(node,qgraph)
         elif node['address'] == advcl_address:
             advcl = add_dependency(node,qgraph)
+        elif node['address'] == conj_address:
+            conj = node['lemma']
+        elif node['address'] == nmodt_address:
+            nmodt = add_dependency(node,qgraph)
         
-    return qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg, advcl
+    return qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg, advcl, conj, nmodt
     
 
 def parsed_question_dic(qgraph):
-    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg, advcl = parse_question(qgraph)
+    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg, advcl, conj, nmodt = parse_question(qgraph)
     dic = {}
     dic['nsubj'] = nsubj
     dic['nsubjpass'] = nsubjpass
@@ -167,11 +186,13 @@ def parsed_question_dic(qgraph):
     dic['verb'] = verb
     dic['neg'] = neg
     dic['advcl'] = advcl
+    dic['conj'] = conj
+    dic['nmod:tmod'] = nmodt
     return dic
 
 def reformulate_question(q):
     qgraph = q['dep']
-    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg, advcl = parse_question(qgraph)
+    qnode, dependencies, nsubj, nsubjpass, auxpass, dobj, iobj, nmod, loc, be, verb, neg, advcl, conj, nmodt = parse_question(qgraph)
     
     if nsubj == None:
         nsubj = ''
@@ -195,23 +216,30 @@ def reformulate_question(q):
         neg = ''
     if advcl == None:
         advcl = ''
+    if conj == None:
+        conj = ''
+    if nmodt == None:
+        nmodt = ''
         
     question = q['text']
     #where
     reformulatedQ = ''
-    if "Where" in question:
+    if "Where" in question or "where" in question:
         #a. where is nsubj.?/#b. where did nsubj do something? 
         reformulatedQ = " ".join([nsubj, verb, "somewhere", nmod])
-    elif "When" in question:
+    elif "When" in question or "when" in question:
         reformulatedQ = " ".join([nsubj, verb, "sometime"])
-    elif "Who" in question:
+    elif "Who" in question or "who" in question:
         #a. who did something?
         if verb is not '':
-           reformulatedQ = " ".join(["someone", verb, dobj])
+            if dobj != "Who" and dobj != "who":
+                reformulatedQ = " ".join(["someone", verb, dobj])
+            else:
+                reformulatedQ = " ".join([nsubj, verb, "someone"])
         #b. who is nsubj. about?  qword == "Who"
         else:
             reformulatedQ = " ".join([nsubj, be, nmod, "someone"])
-    elif "What" in question:
+    elif "What" in question or "what" in question:
         #a. what is somebody doing? question on verb
         
         #b. what did nsubj. eat? question on direct object
@@ -220,9 +248,17 @@ def reformulate_question(q):
         #c. what was fired at dobj / what was burned? 
         elif nsubjpass == "what":
             reformulatedQ = " ".join(["something", auxpass, verb, nmod])
+        else:
+            reformulatedQ = " ".join([nsubj, verb, "something"])
         
-    elif "Why" in question:
+    elif "Why" in question or "why" in question:
         reformulatedQ = " ".join([nsubj, neg, verb, iobj, dobj, nmod, "somewhy"])
+    
+    elif "How" in question or "how" in question:
+        reformulatedQ = " ".join([nsubj, neg, verb, iobj, dobj, nmod, "somehow"])
+    
+    elif question.startswith("Did") or question.startswith("did"):
+         reformulatedQ = question[:-1][3:] #find the key word without question mark or did
         
         
     return reformulatedQ
@@ -254,7 +290,9 @@ def QAmatching_reformulate(q,text):
     max_overlap = 0
     for sentence in sentences:
         lemmatized_sentence = lemmatized(sentence)
-        overlap = len(set(lemmatized_sentence.split()) & set(reformulated_question.split()))
+        lemmatized_question = lemmatized(reformulated_question)
+        overlap = len(set(lemmatized_sentence.split()) & set(lemmatized_question.split()))
+        # overlap = len(set(lemmatized_sentence.split()) & set(reformulated_question.split()))
         if overlap > max_overlap:
             max_overlap = overlap
             closest_sentence = sentence
@@ -291,20 +329,3 @@ def QAmatching_combined(q, text):
     elif reformulate == '':
         return wordemb
     return reformulate
-    
-if __name__ == '__main__':
-
-    question_id = "blogs-05-18"
-    # for qid in hw6-questions.csv:
-    driver = QABase()
-    q = driver.get_question(question_id)
-    story = driver.get_story(q["sid"])
-    text = story['sch']
-    question = q["text"]
-    print("question:", question)
-    stopwords = set(nltk.corpus.stopwords.words("english"))
-
-    qbow = get_bow(get_sentences(question)[0])
-    sentences = get_sentences(text)
-    answer = baseline(qbow, sentences)
-    print("answer:", " ".join(t[0] for t in answer))
