@@ -4,6 +4,7 @@ import numpy as np
 
 def score_all_answers(gold, pred):
     all_scores = {"p": [], "r": [], "f": []}
+    file = open("zero_fmeasure_responses.txt", "w")
     for row in gold.itertuples():
 
         print("-"*40)
@@ -24,9 +25,12 @@ def score_all_answers(gold, pred):
 
             # false negatives
             fn = len(gold_words - pred_words)
-
-            precision = tp / (tp + fp)*1.0
-            recall = tp / (tp + fn)*1.0
+            precision= 0
+            recall = 0
+            # check for divide by zero error
+            if tp+fp != 0:
+                precision = tp / (tp + fp)*1.0
+                recall = tp / (tp + fn)*1.0
             if recall + precision == 0:
                 f1 = 0.0
             else:
@@ -45,9 +49,18 @@ def score_all_answers(gold, pred):
         all_scores["f"].append(scores["f"][best])
 
         r, p, f = scores["r"][best], scores["p"][best], scores["f"][best]
+        
+        #write zero_fmeasure_responses to file
+        if f == 0:
+            file.write("\nSCORING {}\n".format(row.Index))
+            file.write('Comparing Gold   "{}"\n      and Resp   "{}"'.format(best_gold, pred_answer.answer))
+            file.write(("\nRECALL:    {:.3f}\nPRECISION: {:.3f}\nF-measure: {:.3f}\n".format(r, p, f)))
+            file.write("\n")
+
         #print("===> ", r, p, f)
         print("\nRECALL:    {:.3f}\nPRECISION: {:.3f}\nF-measure: {:.3f}\n".format(r, p, f))
-
+        
+    file.close()    #close file zero_fmeasure_responses
     print("-" * 40)
     print("done! \n")
     return np.mean(all_scores["p"]), np.mean(all_scores["r"]), np.mean(all_scores["f"])

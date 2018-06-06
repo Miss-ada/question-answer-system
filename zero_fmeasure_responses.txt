@@ -1,0 +1,345 @@
+
+SCORING fables-06-14
+Comparing Gold   "the lion"
+      and Resp   "A trapper some net"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-06-18
+Comparing Gold   "some net"
+      and Resp   "The lion was sleeping in a lair."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-06-20
+Comparing Gold   "the lion"
+      and Resp   "Losing his temper he seized it with his paw and was about to kill it."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-06-21
+Comparing Gold   "the mouse"
+      and Resp   "Losing his temper he seized it with his paw and was about to kill it."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-03-15
+Comparing Gold   "my wife, our five children, and our dog"
+      and Resp   "in an area of the home where we felt safest"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-03-17
+Comparing Gold   "storm"
+      and Resp   "The narrator purchased an important group of things."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-06-5
+Comparing Gold   "we"
+      and Resp   "A couple of weeks a fire"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-01-4
+Comparing Gold   "snatched"
+      and Resp   "A fox observe the crow"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-01-6
+Comparing Gold   "flattered"
+      and Resp   "The crow was sitting on a branch of a tree."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-01-13
+Comparing Gold   "loudly"
+      and Resp   "A fox observed the crow and tried to discover how to get the cheese."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-02-12
+Comparing Gold   "horns"
+      and Resp   "Hunger, however, presently compelled him to do something: and as the use of force did not promise success, he determined to resort to artifice."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-01-10
+Comparing Gold   "were burned "
+      and Resp   "It happens every year and it is where 20 of the leaders of the world come together to talk about how to run their governments effectively and what not."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-04-5
+Comparing Gold   "lapped the soup with relish"
+      and Resp   "A Fox invite a Stork"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-05-7
+Comparing Gold   "i"
+      and Resp   "elastic"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-05-15
+Comparing Gold   "no one"
+      and Resp   "Later that day I"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-05-3
+Comparing Gold   "the farmer"
+      and Resp   "it fire"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-02-7
+Comparing Gold   "everyone"
+      and Resp   "my logical mind"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-02-20
+Comparing Gold   "some bright flash"
+      and Resp   "A young man long ago crashed the motorbike of the young man on the front yard of a narrator and broke the neck of the young man."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-04-5
+Comparing Gold   "squirrels"
+      and Resp   "squirrel"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-04-6
+Comparing Gold   "i"
+      and Resp   "But oh, if you could have seen the look on his startled face and how he jumped back each time he caught his reflection in the bowl!"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING blogs-04-8
+Comparing Gold   "many birds"
+      and Resp   "we a large steel bowl of water outside"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-03-5
+Comparing Gold   "some poison "
+      and Resp   "But the Serpent was too quick for him and had its coils round him in a moment; and then there ensued a life-and-death struggle between the two."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-03-6
+Comparing Gold   "into the man's drinking-horn "
+      and Resp   "upon a Serpent"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING fables-03-20
+Comparing Gold   "some poison "
+      and Resp   "But the Serpent was too quick for him and had its coils round him in a moment; and then there ensued a life-and-death struggle between the two."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.0.9
+Comparing Gold   "catfish"
+      and Resp   "Alyssa enjoyed the restaurant's special."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.0.17
+Comparing Gold   "swimming and laying out"
+      and Resp   "She's from Charlotte."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.0.19
+Comparing Gold   "miami"
+      and Resp   "It was a happy time for everyone."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.0.20
+Comparing Gold   "catfish"
+      and Resp   "Alyssa enjoyed the restaurant's special."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.0.23
+Comparing Gold   "the beach"
+      and Resp   "She's now in Miami."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.0.24
+Comparing Gold   "her friend ellen's house "
+      and Resp   "to the beach"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.23.2
+Comparing Gold   "saturday"
+      and Resp   "He had been watching TV all day."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.23.12
+Comparing Gold   "lots of peanuts "
+      and Resp   "Andrew and his dad read the story."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.23.18
+Comparing Gold   "the elephant"
+      and Resp   "he his dad"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.23.22
+Comparing Gold   "andrew and his dad"
+      and Resp   "
+"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.23.24
+Comparing Gold   "andrew and his dad ate them"
+      and Resp   "There weren't any peanuts left to bring home to the goldfish."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.18.4
+Comparing Gold   "bunch of flowers"
+      and Resp   "The red ones were big, the orange ones were small, and the green ones were in the middle."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.18.5
+Comparing Gold   "a lot of different sized flowers"
+      and Resp   "Kelly woke up one morning and went outside to her back yard."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.18.10
+Comparing Gold   "flowers"
+      and Resp   "Kelly woke up one morning and went outside to her back yard."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.18.11
+Comparing Gold   "excited"
+      and Resp   "one morning"
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.18.14
+Comparing Gold   "the flowers"
+      and Resp   "Kelly was worried, so she hid them in a new spot that was up higher."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.18.16
+Comparing Gold   "“8:30 am”"
+      and Resp   "She was in a hurry because it was Mother's Day and she had to collect flowers before her mom woke up to give to her as a present."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.18.17
+Comparing Gold   "string"
+      and Resp   "Kelly woke up one morning and went outside to her back yard."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
+
+SCORING mc500.train.25.2
+Comparing Gold   "rocks"
+      and Resp   "So one day when Maxine and Thomas were swimming, Cindy did something mean."
+RECALL:    0.000
+PRECISION: 0.000
+F-measure: 0.000
+
