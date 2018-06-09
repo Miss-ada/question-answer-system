@@ -73,7 +73,7 @@ def find_Ada_who_subj(q, sentence_with_answer, text, story):
     if sgraph is not None:
         dic = parsed_question_dic(sgraph) 
         try:  
-            if dic['dobj'] is None and dic['nsubj'] is not None:
+            if dic['nsubj'] is not None: #dic['dobj'] is None and dic['nsubj'] is not None
                 answer = dic['nsubj']
             else:
                 answer = dic['nsubj'] + ' '+ dic['dobj']
@@ -139,15 +139,37 @@ def find_sgraph(sentence_with_answer,text, story):
     elif len(story["story_dep"]) > s_index:
         sgraph = story["story_dep"][s_index]
     return sgraph
+
+def get_text(q, story, discourse = False):
     
-def get_Ada_answer(q,story):
-    
-    answer = None
     text= ''
     if (q['type'] == 'Sch'):
         text = story['sch']
     else:
         text = story['text']
+    
+    if discourse:
+        text = transform_text_by_coreference(text, text)
+        
+    return text
+
+def find_transformed_answer(answer, index, matched_sent, q, story):
+    answer_list = answer.split()
+    new_answer = []
+    new_text = get_text(q, story, discourse = True)
+    new_matched_sent = [sentence.strip(' ')for sentence in nltk.sent_tokenize(new_text)][index]
+    new_sent_list = new_matched_sent.split()
+
+    for answer in answer_list:
+        answer = answer.lower()
+        index = matched_sent.lower().split().index(answer)
+        new_answer.append(new_sent_list[index])
+    return " ".join(new_answer)
+    
+def get_Ada_answer(q,story):
+    
+    answer = None
+    text = get_text(q, story)
 
     # matched_sent contains the sentence containing the answer
     matched_sent = QAmatching_combined(q, text)
@@ -185,7 +207,7 @@ def get_Ada_answer(q,story):
     if answer == None or len(answer) == 0:
         answer = matched_sent
     elif answer in {'he', 'He', 'she', 'She', 'him', 'Him', 'her', 'Her', 'it', 'It', 'them', 'Them', 'they', 'They', 'we', 'We'}:
-        answer = transform_text_by_coreference(answer, text)
+        answer = find_transformed_answer(answer, index, matched_sent, q, story)
     return str(answer)
 
 def find_yes_no(q, matched_sent, text, story):

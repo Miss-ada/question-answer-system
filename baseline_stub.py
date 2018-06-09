@@ -263,12 +263,6 @@ def reformulate_question(q):
         
     return reformulatedQ
 
-def get_tex_without_POS_or_quotes(text):
-    pattern = r'(\,\s)?("\w.*")|(\'\w.*\')'
-    text = re.sub(pattern, '.', text)
-    return nltk.sent_tokenize(text)
-
-
 def lemmatized(sentence):
     lemmatized_tokens = []
     tokens = [token.lower() for token in nltk.word_tokenize(sentence) if token not in punct]
@@ -329,3 +323,11 @@ def QAmatching_combined(q, text):
     elif reformulate == '':
         return wordemb
     return reformulate
+
+if __name__ == '__main__':
+
+    question_id = "mc500.train.25.8"
+    # for qid in hw6-questions.csv:
+    driver = QABase()
+    q = driver.get_question(question_id)
+    story = driver.get_story(q["sid"])
