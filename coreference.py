@@ -134,7 +134,7 @@ def find_reason(q, sentence_with_answer, text, story):
 def find_sgraph(sentence_with_answer,text, story):
     s_index = find_index(sentence_with_answer, text)
     sgraph = None
-    if text == story['sch']:
+    if text == story['sch']and len(story["sch_dep"])>s_index:
         sgraph = story["sch_dep"][s_index]
     elif len(story["story_dep"]) > s_index:
         sgraph = story["story_dep"][s_index]

@@ -180,6 +180,7 @@ def get_better_answer(q,text):
     answer = ' '.join(answers)
     return answer
 
+"""
 def special_cases(question, text):
     #special case for 'who is this about?' : 'story' *\b* 'about'
     sentences = get_sentences(text)
@@ -189,6 +190,7 @@ def special_cases(question, text):
             if pos == 'NNP' and word not in answer:
                 answer.append(word)            
     return answer
+"""
 
 #############################################################
 ###     Dont change the code below here

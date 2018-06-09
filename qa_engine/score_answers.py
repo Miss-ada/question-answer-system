@@ -9,7 +9,11 @@ def score_all_answers(gold, pred):
                        "hard": {"p": [], "r": [], "f": []},
                        "discourse": {"p": [], "r": [], "f": []}}
     all_scores = {"p": [], "r": [], "f": []}
+<<<<<<< HEAD
 
+=======
+    file = open("zero_fmeasure_responses.txt", "w")
+>>>>>>> 5bc36da79147bb8c78a7751690657e06b48c945a
     for row in gold.itertuples():
         difficulty = row.difficulty.lower()
 
@@ -34,6 +38,7 @@ def score_all_answers(gold, pred):
 
             # false negatives
             fn = len(gold_words - pred_words)
+<<<<<<< HEAD
 
             # Updated to handle 0 divisor
             if len(pred_words) == 0:
@@ -49,6 +54,14 @@ def score_all_answers(gold, pred):
             else:
                 recall = tp / (tp + fn)*1.0
 
+=======
+            precision= 0
+            recall = 0
+            # check for divide by zero error
+            if tp+fp != 0:
+                precision = tp / (tp + fp)*1.0
+                recall = tp / (tp + fn)*1.0
+>>>>>>> 5bc36da79147bb8c78a7751690657e06b48c945a
             if recall + precision == 0:
                 f1 = 0.0
             else:
@@ -77,9 +90,18 @@ def score_all_answers(gold, pred):
 
 
         r, p, f = scores["r"][best], scores["p"][best], scores["f"][best]
+        
+        #write zero_fmeasure_responses to file
+        if f == 0:
+            file.write("\nSCORING {}\n".format(row.Index))
+            file.write('Comparing Gold   "{}"\n      and Resp   "{}"'.format(best_gold, pred_answer.answer))
+            file.write(("\nRECALL:    {:.3f}\nPRECISION: {:.3f}\nF-measure: {:.3f}\n".format(r, p, f)))
+            file.write("\n")
+
         #print("===> ", r, p, f)
         print("\nRECALL:    {:.3f}\nPRECISION: {:.3f}\nF-measure: {:.3f}\n".format(r, p, f))
-
+        
+    file.close()    #close file zero_fmeasure_responses
     print("-" * 40)
     print("done! \n")
 
